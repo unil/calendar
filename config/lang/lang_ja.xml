@@ -45,6 +45,8 @@
 	<entry key="day-6-short">金</entry>
 	<entry key="day-7-short">土</entry>	
 	
+	<entry key="today">今日</entry>	
+	
 	<entry key="application-title">ルーム予約システム</entry>
 	<entry key="calendar-information">情報</entry>
 	<entry key="calendar-choice">選択</entry>  

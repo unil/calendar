@@ -24,6 +24,7 @@ body, td, .query_style {
 .V9G {
     font-size: 9px;
     color: #666666;
+    text-align: center;
 }
 .column_header {
     font-size: 9px;
@@ -52,9 +53,8 @@ body, td, .query_style {
 }
 
 #today {
-	background-color:#ffedee;
     height:30px;
-    width: 200px;	
+    width: 400px;	
 }
 
 .day_cell {
@@ -96,7 +96,8 @@ body, td, .query_style {
     margin: 0px;
 }
 
-a {
+a, a:hover {
+	text-decoration: none;
     cursor: pointer;
     cursor: hand;
 }

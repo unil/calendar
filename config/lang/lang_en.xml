@@ -45,6 +45,8 @@
 	<entry key="day-6-short">Fri</entry>
 	<entry key="day-7-short">Sat</entry>	
 	
+	<entry key="today">Today</entry>
+	
 	<entry key="application-title">Room reservation system</entry>
 	<entry key="calendar-information">Information</entry>
 	<entry key="calendar-choice">Choose</entry>  

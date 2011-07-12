@@ -102,6 +102,7 @@ function appUI() {
         	 	   dataType: "script",
         	 	  success: function(msg){
         	 		$('#page-title').html(resourceBundle["application-title"]);
+        	 		$('#today').html(resourceBundle["today"]);
 
         	 	    $('#information-title').html(resourceBundle["calendar-information"]);
         	 	    $('#calendar-choice').html(resourceBundle["calendar-choice"]);
@@ -219,7 +220,17 @@ $(document).ready(function() {
         appUI();
     });
 
+    $("#today").click(function() {
+    	month = new Date().getMonth() + 1;
+    	year = new Date().getFullYear();;
 
+       $.cookie("year", year);
+       $.cookie("month", month);
+
+       calendar();
+
+    });
+    
     $("#prev").click(function() {
         y = parseInt(year);
         m = parseInt(month);

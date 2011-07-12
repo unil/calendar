@@ -9,6 +9,9 @@
  */
 require_once('php/application/GlobalRegistry.php');
 require_once('php/application/LanguageLinker.php');
+
+$globalRegistry = $_SESSION["GlobalRegistry"];
+$languageLinker = $globalRegistry->languageLinker;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
@@ -103,10 +106,11 @@ require_once('php/application/LanguageLinker.php');
                                         <tr valign="top" class="title">
                                             <td class="title_l">
                                                 <h1>
-                                                	<span id="today">Today</span>
+                                                	<a id="today" style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 329px; text-align: left;"></a>
                                                     <span id="prev"><img src="html/img/left.gif" border="0" alt="" align="absmiddle" /></span>
-                                                    <span style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 160px; text-align: center;">
-                                                        <span id="monthname" ></span>&nbsp;<span id="yearName" ></span></span>
+                                                    <span style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 140px; text-align: center;">
+                                                        <span id="monthname" ></span>&nbsp;<span id="yearName" ></span>       
+                                                    </span>     
                                                     <span id="next"><img src="html/img/right.gif" border="0" alt="" align="absmiddle" /></span>
                                                 </h1>
                                                 <div id="roomName" class="V9G" >&nbsp;</div>
