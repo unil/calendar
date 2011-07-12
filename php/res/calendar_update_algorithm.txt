@@ -1,0 +1,12 @@
+1) date change, repeat mode change, begin change, end change
+	1) if new event begin = old begin
+		1) create new one, delete old event
+	2) else (begin > old begin)
+		1) create new event
+		2) update old event_dates >= new begin and bind to new event
+2)	only title, description change
+	1) if begin = old begin
+		1) update event
+	2) else (begin > old begin
+		1) create new event with new title, description
+		2) update event_dates >= new begin and bind to new event
