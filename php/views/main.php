@@ -44,7 +44,7 @@ require_once('php/application/LanguageLinker.php');
     </head>
     <body>
         <div id="main">
-            <span style="color:red; font-weight: bold">Version de développement</span>
+            <span style="color:red; font-weight: bold">Version de développement - <a href="https://github.com/unil/calendar/issues?direction=desc&sort=created&state=open">Suivre l'évolution</a></span>
             <table border="0" cellpadding="0" cellspacing="0" width="1240"
                    style="margin-left: auto;
                    margin-right: auto;
