@@ -51,6 +51,12 @@ body, td, .query_style {
     width: 132px;
 }
 
+#today {
+	background-color:#ffedee;
+    height:30px;
+    width: 200px;	
+}
+
 .day_cell {
     background-color:#FFFFFF;
 }
@@ -59,7 +65,7 @@ body, td, .query_style {
 
 }
 .today_cell {
-    background-color:#F2F9FA;
+    background-color:#ffedee;
 }
 
 /**** day number in upper left corner of each cell ****/

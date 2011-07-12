@@ -103,6 +103,7 @@ require_once('php/application/LanguageLinker.php');
                                         <tr valign="top" class="title">
                                             <td class="title_l">
                                                 <h1>
+                                                	<span id="today">Today</span>
                                                     <span id="prev"><img src="html/img/left.gif" border="0" alt="" align="absmiddle" /></span>
                                                     <span style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 160px; text-align: center;">
                                                         <span id="monthname" ></span>&nbsp;<span id="yearName" ></span></span>
