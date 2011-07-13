@@ -9,6 +9,9 @@
  */
 require_once('php/application/GlobalRegistry.php');
 require_once('php/application/LanguageLinker.php');
+
+$globalRegistry = $_SESSION["GlobalRegistry"];
+$languageLinker = $globalRegistry->languageLinker;
 ?>
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
     <head>
@@ -44,7 +47,7 @@ require_once('php/application/LanguageLinker.php');
     </head>
     <body>
         <div id="main">
-            <span style="color:red; font-weight: bold">Version de développement</span>
+            <span style="color:red; font-weight: bold">Version de développement - <a href="https://github.com/unil/calendar/issues?direction=desc&sort=created&state=open">Suivre l'évolution</a></span>
             <table border="0" cellpadding="0" cellspacing="0" width="1240"
                    style="margin-left: auto;
                    margin-right: auto;
@@ -103,9 +106,11 @@ require_once('php/application/LanguageLinker.php');
                                         <tr valign="top" class="title">
                                             <td class="title_l">
                                                 <h1>
+                                                	<a id="today" style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 329px; text-align: left;"></a>
                                                     <span id="prev"><img src="html/img/left.gif" border="0" alt="" align="absmiddle" /></span>
-                                                    <span style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 160px; text-align: center;">
-                                                        <span id="monthname" ></span>&nbsp;<span id="yearName" ></span></span>
+                                                    <span style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 140px; text-align: center;">
+                                                        <span id="monthname" ></span>&nbsp;<span id="yearName" ></span>       
+                                                    </span>     
                                                     <span id="next"><img src="html/img/right.gif" border="0" alt="" align="absmiddle" /></span>
                                                 </h1>
                                                 <div id="roomName" class="V9G" >&nbsp;</div>
@@ -142,6 +147,33 @@ require_once('php/application/LanguageLinker.php');
                                                 <tr>
                                                     <!-- Begin Menu -->
                                                     <td class="text" height="80" id="roomDescription">
+                                                    </td>
+                                                    <!-- End Menu -->
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><img src="https://wwwfbm.unil.ch/html/img/spacer20.gif" height="15"  width="1" alt="spacer"/>&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td class="calborder">
+                                        <table border="0" cellpadding="0" cellspacing="0" width="100%">
+                                            <tbody><tr>
+                                                    <td class="sideback">
+                                                        <div id="calendar-contact"style="height:16px; font-weight: bold; padding: 3px;">Personne de contact</div>
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <!-- Begin Menu -->
+                                                    <td class="text" height="80">
+                                                       Stefan Meier<br />
+                                                       Décanat<br />
+                                                       Rue du Bugnon 21 | bureau 5246<br />
+                                                       CH-1011 Lausanne<br />
+                                                       stefan.r.meier@unil.ch<br />
+                                                       +41 21 692 54 19
                                                     </td>
                                                     <!-- End Menu -->
                                                 </tr>
