@@ -1,0 +1,36 @@
+#calendar {
+	border: 1px #A1A5A9 solid;
+	vertical-align: top;
+	background: #ffffff;
+	border: 1px #A1A5A9 solid;
+	margin-bottom: 10px;
+}
+#toolbar {
+	height:80px;
+	background-image: url(../img/time_bg.gif);
+}
+
+.day_cell, .empty_day_cell, .today_cell {
+    vertical-align: top;
+    height:120px;
+    width: 132px;
+}
+.column_header {
+    background-color:#F2F2F2;
+    font-weight:900;
+    font-size: 9px
+}
+.day_cell {
+    background-color:#FFFFFF;
+}
+.empty_day_cell {
+    background-color:#F2F2F2;
+
+}
+.today_cell {
+    background-color:#F2F9FA;
+}
+.day_number {
+    font-size:10px;
+    color:#0066FF;
+}
