@@ -131,6 +131,7 @@ $(document).ready(function() {
         $("#end_hour").val("23");
         if (start < 23) {
             value =  parseInt(start)+ 1;
+
             if (start < 10) {
                 value = '0' + value;
             }
