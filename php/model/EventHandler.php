@@ -112,7 +112,7 @@ class EventHandler {
                     event_id='{$event->getId()}'";
 
 		if ($after != null) {
-			$sql .= " AND end >'$after'";
+			$sql .= " AND end >='$after'";
 		}
 
 		$return = $db->select($sql);
