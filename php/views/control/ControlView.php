@@ -5,7 +5,6 @@ include_once("model/class/Building.php");
 include_once("model/BuildingHandler.php");
 include_once("model/RoomHandler.php");
 
-session_start();
 
 $globalRegistry = $_SESSION["GlobalRegistry"];
 $languageLinker = $globalRegistry->languageLinker;
@@ -70,9 +69,14 @@ $rooms = $roomHandler->getRooms($currentBuilding);
 
     });
 </script>
+<!-- BEGIN ROOM-SELECTOR -->
+<div class="box">
+	<h1>Chosir</h1>
+	<div>
+<!-- END CONTACT -->
 <form name="roomChanger" id="roomChanger" action="">
     <?php
-    echo "<select name=\"buildings\" class=\"query_style\" id=\"buildings\">\n";
+    echo "<select name=\"buildings\" id=\"buildings\">\n";
 
     foreach ($buildings as $b) {
         echo "<option value=\"" . $b->getId() . "\">" . $b->getName() . "</option>";
@@ -82,7 +86,7 @@ $rooms = $roomHandler->getRooms($currentBuilding);
 
     echo "</select>\n";
 
-    echo "<select name=\"room\" class=\"query_style\" id=\"room\">\n";
+    echo "<select name=\"room\" id=\"room\">\n";
     echo "<option value=\"default\">---------------------------</option>";
 
     if ($currentBuilding != null) {
@@ -107,4 +111,6 @@ $rooms = $roomHandler->getRooms($currentBuilding);
     echo "</select>\n";
     ?>
 </form>
-
+</div>
+<!-- END ROOM SELECTOR -->
+</div>

@@ -7,7 +7,7 @@
 
 html,body,h1 {
 	vertical-align: top;
-	margin: 0;
+	margin: 0px;
 	font-family: verdana, arial, helvetica;
 	font-size: 11px;
 }
@@ -39,6 +39,7 @@ html,body,h1 {
 	border-bottom: 1px solid #000000;
 }
 #footer {
+	font-weight: normal;
 	text-align: right;
 	clear: both;
 	height: 40px;
@@ -79,7 +80,16 @@ html,body,h1 {
 	height: 16px;
 }
 
-.box p {
+.box div {
 	padding: 6px;
+	vertical-align: top;
 	text-align: justify;
+	height: 50px;
+}
+
+select {
+	background: #eee;
+    border: 1px solid #999999;
+    padding: 2px;
+    width: 185px;
 }

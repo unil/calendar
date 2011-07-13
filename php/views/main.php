@@ -1,3 +1,5 @@
+<?php
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -9,6 +11,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
 <link rel="stylesheet" type="text/css" href="html/css/UNIL-FBM.css" />
+<link rel="stylesheet" type="text/css" href="html/css/calendar.css" />
 
 
 <link rel="icon" href="https://wwwfbm.unil.ch/favicon.ico"
@@ -28,29 +31,25 @@
 		<div id="content">
 			<!-- BEGIN MAIN -->
 			<div id="main">
-				sadf
+				<!-- BEGIN CALENDAR-VIEW -->
+				<?php require("views/calendar/CalendarView.php"); ?>
+				<!-- END CALENDAR-VIEW -->
 			</div>
 			<!-- END MAIN -->
 			<!-- BEGIN SIDEBAR -->
 			<div id="sidebar">
-				<!-- BEGIN BOX 1 -->
-				<div class="box">
-					<h1>Information</h1>
-					<p>Description</p>
-				</div>
-				<!-- END BOX 1 -->
-				<!-- BEGIN BOX 2 -->
-				<div class="box">
-					<h1>Information</h1>
-					<p>Description</p>
-				</div>
-				<!-- END BOX 2 -->
+				<!-- BEGIN ROOM-VIEW -->
+					<?php require("views/room/RoomView.php"); ?>
+				<!-- END ROOM-VIEW -->
+				<!-- BEGIN ROOM-VIEW -->
+					<?php require("views/control/ControlView.php"); ?>
+				<!-- END ROOM-VIEW -->
 			</div>
 			<!-- END SIDEBAR -->
 		</div>
 		<!-- END CONTENT -->
 		<!-- BEGIN FOOTER -->
-		<div id="footer">Footer</div>
+		<div id="footer">&copy; 2011 - Université de Lausanne - All right reserved</div>
 		<!-- END FOOTER -->
 	</div>
 	<!-- END PAGE -->
