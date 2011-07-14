@@ -50,7 +50,7 @@
  *
  * http://docs.jquery.com/UI/Theming/API
  *
- * To view and modify this theme, visit http://jqueryui.com/themeroller/?ctl=themeroller
+ * To view and modify this theme, visit http://jqueryui.com/themeroller/?ffDefault=Verdana,Arial,sans-serif&fwDefault=normal&fsDefault=1.1em&cornerRadius=4px&bgColorHeader=e3eaf1&bgTextureHeader=03_highlight_soft.png&bgImgOpacityHeader=75&borderColorHeader=aaaaaa&fcHeader=222222&iconColorHeader=222222&bgColorContent=ffffff&bgTextureContent=01_flat.png&bgImgOpacityContent=75&borderColorContent=aaaaaa&fcContent=222222&iconColorContent=222222&bgColorDefault=f2f2f2&bgTextureDefault=02_glass.png&bgImgOpacityDefault=75&borderColorDefault=d3d3d3&fcDefault=555555&iconColorDefault=888888&bgColorHover=fffff&bgTextureHover=02_glass.png&bgImgOpacityHover=75&borderColorHover=999999&fcHover=212121&iconColorHover=454545&bgColorActive=ffffff&bgTextureActive=02_glass.png&bgImgOpacityActive=65&borderColorActive=aaaaaa&fcActive=212121&iconColorActive=454545&bgColorHighlight=ffedee&bgTextureHighlight=02_glass.png&bgImgOpacityHighlight=55&borderColorHighlight=ffedee&fcHighlight=363636&iconColorHighlight=2e83ff&bgColorError=fef1ec&bgTextureError=05_inset_soft.png&bgImgOpacityError=95&borderColorError=cd0a0a&fcError=cd0a0a&iconColorError=cd0a0a&bgColorOverlay=aaaaaa&bgTextureOverlay=01_flat.png&bgImgOpacityOverlay=0&opacityOverlay=30&bgColorShadow=aaaaaa&bgTextureShadow=01_flat.png&bgImgOpacityShadow=0&opacityShadow=30&thicknessShadow=8px&offsetTopShadow=-8px&offsetLeftShadow=-8px&cornerRadiusShadow=8px
  */
 
 
@@ -59,16 +59,16 @@
 .box .ui-widget { font-family: Verdana,Arial,sans-serif; font-size: 1.1em; }
 .box .ui-widget .ui-widget { font-size: 1em; }
 .box .ui-widget input, .box .ui-widget select, .box .ui-widget textarea, .box .ui-widget button { font-family: Verdana,Arial,sans-serif; font-size: 1em; }
-.box .ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_glass_75_ffffff_1x400.png) 50% 50% repeat-x; color: #222222; }
+.box .ui-widget-content { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_flat_75_ffffff_40x100.png) 50% 50% repeat-x; color: #222222; }
 .box .ui-widget-content a { color: #222222; }
-.box .ui-widget-header { border: 1px solid #aaaaaa; background: #cccccc url(images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x; color: #222222; font-weight: bold; }
+.box .ui-widget-header { border: 1px solid #aaaaaa; background: #e3eaf1 url(images/ui-bg_highlight-soft_75_e3eaf1_1x100.png) 50% 50% repeat-x; color: #222222; font-weight: bold; }
 .box .ui-widget-header a { color: #222222; }
 
 /* Interaction states
 ----------------------------------*/
-.box .ui-state-default, .box .ui-widget-content .ui-state-default, .box .ui-widget-header .ui-state-default { border: 1px solid #d3d3d3; background: #e6e6e6 url(images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #555555; }
+.box .ui-state-default, .box .ui-widget-content .ui-state-default, .box .ui-widget-header .ui-state-default { border: 1px solid #d3d3d3; background: #f2f2f2 url(images/ui-bg_glass_75_f2f2f2_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #555555; }
 .box .ui-state-default a, .box .ui-state-default a:link, .box .ui-state-default a:visited { color: #555555; text-decoration: none; }
-.box .ui-state-hover, .box .ui-widget-content .ui-state-hover, .box .ui-widget-header .ui-state-hover, .box .ui-state-focus, .box .ui-widget-content .ui-state-focus, .box .ui-widget-header .ui-state-focus { border: 1px solid #999999; background: #dadada url(images/ui-bg_glass_75_dadada_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
+.box .ui-state-hover, .box .ui-widget-content .ui-state-hover, .box .ui-widget-header .ui-state-hover, .box .ui-state-focus, .box .ui-widget-content .ui-state-focus, .box .ui-widget-header .ui-state-focus { border: 1px solid #999999; background: #fffff url(images/ui-bg_glass_75_fffff_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
 .box .ui-state-hover a, .box .ui-state-hover a:hover { color: #212121; text-decoration: none; }
 .box .ui-state-active, .box .ui-widget-content .ui-state-active, .box .ui-widget-header .ui-state-active { border: 1px solid #aaaaaa; background: #ffffff url(images/ui-bg_glass_65_ffffff_1x400.png) 50% 50% repeat-x; font-weight: normal; color: #212121; }
 .box .ui-state-active a, .box .ui-state-active a:link, .box .ui-state-active a:visited { color: #212121; text-decoration: none; }
@@ -76,7 +76,7 @@
 
 /* Interaction Cues
 ----------------------------------*/
-.box .ui-state-highlight, .box .ui-widget-content .ui-state-highlight, .box .ui-widget-header .ui-state-highlight  {border: 1px solid #fcefa1; background: #fbf9ee url(images/ui-bg_glass_55_fbf9ee_1x400.png) 50% 50% repeat-x; color: #363636; }
+.box .ui-state-highlight, .box .ui-widget-content .ui-state-highlight, .box .ui-widget-header .ui-state-highlight  {border: 1px solid #ffedee; background: #ffedee url(images/ui-bg_glass_55_ffedee_1x400.png) 50% 50% repeat-x; color: #363636; }
 .box .ui-state-highlight a, .box .ui-widget-content .ui-state-highlight a,.ui-widget-header .ui-state-highlight a { color: #363636; }
 .box .ui-state-error, .box .ui-widget-content .ui-state-error, .box .ui-widget-header .ui-state-error {border: 1px solid #cd0a0a; background: #fef1ec url(images/ui-bg_inset-soft_95_fef1ec_1x100.png) 50% bottom repeat-x; color: #cd0a0a; }
 .box .ui-state-error a, .box .ui-widget-content .ui-state-error a, .box .ui-widget-header .ui-state-error a { color: #cd0a0a; }
@@ -497,7 +497,7 @@ button.ui-button::-moz-focus-inner { border: 0; padding: 0; } /* reset extra pad
  *
  * http://docs.jquery.com/UI/Datepicker#theming
  */
-.box .ui-datepicker { width: 17em; padding: .2em .2em 0; display: none; }
+.box .ui-datepicker { width: 17em; padding: .2em .2em 0; }
 .box .ui-datepicker .ui-datepicker-header { position:relative; padding:.2em 0; }
 .box .ui-datepicker .ui-datepicker-prev, .box .ui-datepicker .ui-datepicker-next { position:absolute; top: 2px; width: 1.8em; height: 1.8em; }
 .box .ui-datepicker .ui-datepicker-prev-hover, .box .ui-datepicker .ui-datepicker-next-hover { top: 1px; }

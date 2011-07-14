@@ -17,10 +17,10 @@
 <!-- Begin JQuery -->
 <link type="text/css" rel="StyleSheet"
 	href="html/css/jquery-ui-orange.css" />
-<!--  
 <link type="text/css" rel="StyleSheet"
 	href="html/css/jquery-ui-gray.css" />
-	-->
+
+
 <link type="text/css" href="html/css/fg.menu.css" media="screen"
 	rel="stylesheet" />
 <script type="text/javascript" src="html/js/jquery.js"></script>

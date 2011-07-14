@@ -57,7 +57,6 @@
 <!-- END ROOM SELECTOR -->
 <!-- BEGIN DATE-SELECTOR -->
 <div class="box">
-	<h1>Période</h1>
 	<div>
 	<div id="datepicker" style="clear: both;"></div>
 	</div>

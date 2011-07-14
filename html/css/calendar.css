@@ -24,6 +24,7 @@
 
 #action {
 	float: left;
+	position: relative;
 	margin-left: 300px;
 }
 
