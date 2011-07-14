@@ -1,7 +1,14 @@
 <?php
 ?>
 <div id="calendar">
-	<div id="toolbar">asdf</div>
+	<div id="toolbar">  
+	<div id="goTo">
+	<button type="button" class="btn"><span><span>Aujourd'hui</span></span></button>
+	</div>
+	<div id="action">
+	<button type="button" class="btn pill-l"><span><span><-</span></span></button><button type="button" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button" class="btn pill-c"><span><span>Mois</span></span></button><button type="button" class="btn pill-r"><span><span>-></span></span></button>
+	</div>
+	</div>
 	<div>
 		<div id="view">
 			<!-- BEGIN VIEW -->

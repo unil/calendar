@@ -12,6 +12,7 @@
 
 <link rel="stylesheet" type="text/css" href="html/css/UNIL-FBM.css" />
 <link rel="stylesheet" type="text/css" href="html/css/calendar.css" />
+<link rel="stylesheet" type="text/css" href="html/css/button.css" />
 
 <!-- Begin JQuery -->
 <link type="text/css" rel="StyleSheet"
@@ -23,6 +24,7 @@
 
 <!-- End JQuery -->
 <script type="text/javascript" src="html/js/plugins.js"></script>
+<script type="text/javascript" src="html/js/controller/Controller.js"></script>
 <script type="text/javascript" src="html/js/application.js"></script>
 
 
