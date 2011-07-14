@@ -1,16 +1,63 @@
 <?php
 ?>
+	<!-- style exceptions for IE 6 -->
+	<!--[if IE 6]>
+	<style type="text/css">
+		.fg-menu-ipod .fg-menu li { width: 95%; }
+		.fg-menu-ipod .ui-widget-content { border:0; }
+	</style>
+	<![endif]-->	
+    <script type="text/javascript">    
+    $(document).ready(function(){
+    	// BUTTONS
+    	$('.fg-button').hover(
+    		function(){ $(this).removeClass('ui-state-default').addClass('ui-state-focus'); },
+    		function(){ $(this).removeClass('ui-state-focus').addClass('ui-state-default'); }
+    	);
+    	
+    	// MENUS    	
+		$('#building-choose').menu({ 
+			content: $('#building-choose').next().html(), // grab content from this page
+			showSpeed: 400 
+		});
+		$('#room-choose').menu({ 
+			content: $('#room-choose').next().html(), // grab content from this page
+			showSpeed: 400 
+		});
 
+    });
+    </script>
 <div id="calendar">
-	<div id="toolbar">  
+	<div id="toolbar"> 
+
 	<div id="goTo">
 	<button type="button" class="btn"><span><span>Aujourd'hui</span></span></button>
 	</div>
 	<div id="action">
 	<button type="button" class="btn pill-l"><span><span><img id="previous" src="html/img/previous1.gif" alt="previous" /></span></span></button><button type="button" class="btn pill-c primary"><span><span>Semaine</span></span></button><button type="button" class="btn pill-c"><span><span>Mois</span></span></button><button type="button" class="btn pill-r"><span><span><img id="next" src="html/img/next1.gif" alt="next" /></span></span></button>
 	</div>
-	<div id="name">asdf</div>
-	<div id="calendar-information">Juillet 2011</div>
+			<div id="calendar-information">juillet 2011</div> 
+	<div id="name" class="jquery-gray">		<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="building-choose"><span class="ui-icon ui-icon-triangle-1-s"></span>Bugnon 27</a>
+		<div id="search-engines" class="hidden">
+		<ul>
+			<li><a href="#">Google</a></li>
+			<li><a href="#">Yahoo</a></li>
+			<li><a href="#">MSN</a></li>
+			<li><a href="#">Ask</a></li>
+			<li><a href="#">AOL</a></li>
+		</ul>
+		</div>
+		<a tabindex="0" href="#search-engines2" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="room-choose"><span class="ui-icon ui-icon-triangle-1-s"></span>Sous-sol - Animalerie - flux 1b</a>
+		<div id="search-engines2" class="hidden">
+		<ul>
+			<li><a href="#">Google</a></li>
+			<li><a href="#">Yahoo</a></li>
+			<li><a href="#">MSN</a></li>
+			<li><a href="#">Ask</a></li>
+			<li><a href="#">AOL</a></li>
+		</ul>
+		</div></div>
+
 	</div>
 	<div>
 		<div id="view">
