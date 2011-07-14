@@ -36,6 +36,7 @@ html,body,h1 {
 }
 
 #header #language {
+	color: #fff;
 	float: right;
 	text-align: right;
 	margin-top: 8px;
@@ -96,11 +97,13 @@ html,body,h1 {
 	height: 16px;
 }
 
-.box div {
+.box >div {
 	padding: 6px;
 	vertical-align: top;
 	text-align: justify;
-	height: 50px;
+	min-height:50px;
+     height:auto !important;
+     height:50px; 
 }
 
 select {

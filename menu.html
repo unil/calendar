@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en">
+<head>
+<title>Filament Group Lab</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    
+    <script type="text/javascript" src="html/js/jquery.js"></script>
+    <script type="text/javascript" src="html/js/fg.menu.js"></script>
+    
+    <link type="text/css" href="html/css/fg.menu.css" media="screen" rel="stylesheet" />
+	<link type="text/css" rel="StyleSheet"
+	href="html/css/jquery-ui-1.8.4.custom.css" />
+    
+    <!-- styles for this example page only -->
+	<style type="text/css">
+	body { font-size:62.5%; margin:0; padding:0; }
+	
+	</style>
+	<!-- style exceptions for IE 6 -->
+	<!--[if IE 6]>
+	<style type="text/css">
+		.fg-menu-ipod .fg-menu li { width: 95%; }
+		.fg-menu-ipod .ui-widget-content { border:0; }
+	</style>
+	<![endif]-->	
+    
+    <script type="text/javascript">    
+    $(document).ready(function(){
+    	// BUTTONS
+    	$('.fg-button').hover(
+    		function(){ $(this).removeClass('ui-state-default').addClass('ui-state-focus'); },
+    		function(){ $(this).removeClass('ui-state-focus').addClass('ui-state-default'); }
+    	);
+    	
+    	// MENUS    	
+		$('#flat').menu({ 
+			content: $('#flat').next().html(), // grab content from this page
+			showSpeed: 400 
+		});
+    });
+    </script>
+    
+</head>
+
+<body>
+
+<p id="menuLog">You chose: <span id="menuSelection"></span></p>
+
+<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="flat"><span class="ui-icon ui-icon-triangle-1-s"></span>flat menu</a>
+<div id="search-engines" class="hidden">
+<ul>
+	<li><a href="#">Google</a></li>
+	<li><a href="#">Yahoo</a></li>
+	<li><a href="#">MSN</a></li>
+	<li><a href="#">Ask</a></li>
+	<li><a href="#">AOL</a></li>
+</ul>
+</div>
+</body>
+</html>

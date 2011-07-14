@@ -1,82 +1,65 @@
-<?php
-require_once('application/GlobalRegistry.php');
-require_once('application/LanguageLinker.php');
-include_once("model/class/Building.php");
-include_once("model/BuildingHandler.php");
-include_once("model/RoomHandler.php");
+	<!-- style exceptions for IE 6 -->
+	<!--[if IE 6]>
+	<style type="text/css">
+		.fg-menu-ipod .fg-menu li { width: 95%; }
+		.fg-menu-ipod .ui-widget-content { border:0; }
+	</style>
+	<![endif]-->	
+    
+    <script type="text/javascript">    
+    $(document).ready(function(){
+    	// BUTTONS
+    	$('.fg-button').hover(
+    		function(){ $(this).removeClass('ui-state-default').addClass('ui-state-focus'); },
+    		function(){ $(this).removeClass('ui-state-focus').addClass('ui-state-default'); }
+    	);
+    	
+    	// MENUS    	
+		$('#building-choose').menu({ 
+			content: $('#building-choose').next().html(), // grab content from this page
+			showSpeed: 400 
+		});
+		$('#room-choose').menu({ 
+			content: $('#room-choose').next().html(), // grab content from this page
+			showSpeed: 400 
+		});
 
-session_start();
-
-$globalRegistry = $_SESSION["GlobalRegistry"];
-$languageLinker = $globalRegistry->languageLinker;
-
-
-$rooms = null;
-$buildings = null;
-
-
-$buildingId = 27;
-
-if (isset($_GET['id']) && $_GET['id'] != 'undefined') {
-    $buildingId = (int) $_GET['id'];
-}
-$buildingHandler = new BuildingHandler();
-$buildings = $buildingHandler->getBuildings();
-
-$currentBuilding = null;
-
-foreach ($buildings as $b) {
-    if ($buildingId == $b->getId()) {
-        $currentBuilding = $b;
-    }
-}
-$_SESSION['CURRENT_BUILDING'] = $currentBuilding;
-$roomHandler = new RoomHandler();
-$rooms = $roomHandler->getRooms($currentBuilding);
-?>
+		$( "#datepicker" ).datepicker();
+    });
+    </script>
 
 <!-- BEGIN ROOM-SELECTOR -->
 <div class="box">
-	<h1>Chosir</h1>
+	<h1>Calendrier</h1>
 	<div>
-<!-- END CONTACT -->
-<form name="roomChanger" id="roomChanger" action="">
-    <?php
-    echo "<select name=\"buildings\" id=\"buildings\">\n";
-
-    foreach ($buildings as $b) {
-        echo "<option value=\"" . $b->getId() . "\">" . $b->getName() . "</option>";
-    }
-
-
-
-    echo "</select>\n";
-
-    echo "<select name=\"room\" id=\"room\">\n";
-    echo "<option value=\"default\">---------------------------</option>";
-
-    if ($currentBuilding != null) {
-        
-        $room_sorted = null;
-        foreach($rooms as $r) {
-            $room_sorted[$r->getCategory()][] = array("id" => $r->getId(), "local" => $r->getLocal(), "name" => $r->getName());
-        }
-        
-
-        foreach ($room_sorted as $key => $value) {
-        	$catgoryText =  $languageLinker->resourceBundle->get("room-category-". $key);
-        	
-            echo "<optgroup label=\"$catgoryText\">"; 
-            foreach($value as $r) {
-                echo "<option value=\"{$r["id"]}\">{$r["local"]} - {$r["name"]}</option>";
-            //echo "<option value=\"{$r->getId()}\">{$r->getLocal()} - {$r->getName()} - {$r->getCategory()}</option>";
-            }
-            echo "</optgroup>";
-        }
-    }
-    echo "</select>\n";
-    ?>
-</form>
+		<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="building-choose"><span class="ui-icon ui-icon-triangle-1-s"></span>Choose</a>
+		<div id="search-engines" class="hidden">
+		<ul>
+			<li><a href="#">Google</a></li>
+			<li><a href="#">Yahoo</a></li>
+			<li><a href="#">MSN</a></li>
+			<li><a href="#">Ask</a></li>
+			<li><a href="#">AOL</a></li>
+		</ul>
+		</div>
+		<a tabindex="0" href="#search-engines2" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="room-choose"><span class="ui-icon ui-icon-triangle-1-s"></span>Choose</a>
+		<div id="search-engines2" class="hidden">
+		<ul>
+			<li><a href="#">Google</a></li>
+			<li><a href="#">Yahoo</a></li>
+			<li><a href="#">MSN</a></li>
+			<li><a href="#">Ask</a></li>
+			<li><a href="#">AOL</a></li>
+		</ul>
+		</div>
+	</div>
 </div>
 <!-- END ROOM SELECTOR -->
+<!-- BEGIN DATE-SELECTOR -->
+<div class="box">
+	<h1>Période</h1>
+	<div>
+	<div id="datepicker" style="clear: both;"></div>
+	</div>
 </div>
+<!-- END DATE SELECTOR -->

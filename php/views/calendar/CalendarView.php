@@ -1,13 +1,16 @@
 <?php
 ?>
+
 <div id="calendar">
 	<div id="toolbar">  
 	<div id="goTo">
 	<button type="button" class="btn"><span><span>Aujourd'hui</span></span></button>
 	</div>
 	<div id="action">
-	<button type="button" class="btn pill-l"><span><span><-</span></span></button><button type="button" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button" class="btn pill-c"><span><span>Mois</span></span></button><button type="button" class="btn pill-r"><span><span>-></span></span></button>
+	<button type="button" class="btn pill-l"><span><span><img id="login" src="html/img/previous1.gif" alt="previous" /></span></span></button><button type="button" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button" class="btn pill-c"><span><span>Mois</span></span></button><button type="button" class="btn pill-r"><span><span><img id="login" src="html/img/next1.gif" alt="next" /></span></span></button>
 	</div>
+	<div id="name">Bugnon 27 - Sous-sol - Animalerie - Flux 1a</div>
+	<div id="calendar-information">Juillet 2011</div>
 	</div>
 	<div>
 		<div id="view">
