@@ -13,7 +13,6 @@
 <link rel="stylesheet" type="text/css" href="html/css/UNIL-FBM.css" />
 <link rel="stylesheet" type="text/css" href="html/css/calendar.css" />
 
-
 <link rel="icon" href="https://wwwfbm.unil.ch/favicon.ico"
 	type="image/x-icon" />
 <link rel="shortcut icon" href="https://wwwfbm.unil.ch/favicon.ico"
@@ -24,7 +23,9 @@
 	<div id="page">
 		<!-- BEBIN HEADER -->
 		<div id="header">
-			<p>Titre </p>
+			<img id="login"src="https://wwwfbm.unil.ch/html/img/login.gif" alt="login" />
+			<div id="language">English | French</div>
+			<div id="bar">Room reservation system </div>
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN CONTENT -->

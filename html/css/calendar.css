@@ -1,36 +1,52 @@
+/**
+	@author		Stefan Meier
+	@version	20110714
+	
+	UNIL-FBM calendar template
+*/
+
 #calendar {
-	border: 1px #A1A5A9 solid;
-	vertical-align: top;
-	background: #ffffff;
-	border: 1px #A1A5A9 solid;
-	margin-bottom: 10px;
+	background: #999999;
 }
+
 #toolbar {
-	height:80px;
+	border: 1px #A1A5A9 solid;
+	padding: 6px;
+	height: 50px;
 	background-image: url(../img/time_bg.gif);
 }
 
-.day_cell, .empty_day_cell, .today_cell {
-    vertical-align: top;
-    height:120px;
-    width: 132px;
+#monthview {
+	border: 0px;
+	padding: 0px;
+	border-spacing: 1px;
 }
-.column_header {
-    background-color:#F2F2F2;
-    font-weight:900;
-    font-size: 9px
-}
-.day_cell {
-    background-color:#FFFFFF;
-}
-.empty_day_cell {
-    background-color:#F2F2F2;
 
+#monthview th  {
+	background-color: #F2F2F2;
+	font-weight: 900;
+	font-size: 9px
 }
-.today_cell {
-    background-color:#F2F9FA;
+
+#monthview td {
+	font-size: 10px;
+	vertical-align: top;
+	height: 120px;
+	width: 136px;
 }
+
+.day_cell {
+	background-color: #FFFFFF;
+}
+
+.empty_day_cell {
+	background-color: #F2F2F2;
+}
+
+#today {
+	background-color: #FFEDEE;
+}
+
 .day_number {
-    font-size:10px;
-    color:#0066FF;
+	color: #0066FF;
 }

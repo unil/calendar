@@ -1,21 +1,23 @@
 <?php
 ?>
-<div class="calendar">
+<div id="calendar">
 	<div id="toolbar">asdf</div>
 	<div>
 		<div id="view">
-
-			<table border="0" cellpadding="1" cellspacing="1">
-				<tbody>
+			<!-- BEGIN VIEW -->
+			<table id="monthview">
+				<thead>
 					<tr>
-						<td class="column_header" id="day1">Monday</td>
-						<td class="column_header" id="day2">Tuesday</td>
-						<td class="column_header" id="day3">Wednesday</td>
-						<td class="column_header" id="day4">Thursday</td>
-						<td class="column_header" id="day5">Friday</td>
-						<td class="column_header" id="day6">Saturday</td>
-						<td class="column_header" id="day7">Sunday</td>
+						<th id="day1">Monday</th>
+						<th id="day2">Tuesday</th>
+						<th id="day3">Wednesday</th>
+						<th id="day4">Thursday</th>
+						<th id="day5">Friday</th>
+						<th id="day6">Saturday</th>
+						<th id="day7">Sunday</th>
 					</tr>
+				</thead>
+				<tbody>
 					<tr>
 						<td class="empty_day_cell">
 							<!--before--></td>
@@ -77,7 +79,7 @@
 							onclick="newEvent('2011-07-12')"><span class="day_number">12</span>
 						</a> <br>
 						</td>
-						<td class="today_cell"><a class="psf" id="13-13"
+						<td class="day_cell" id="today"><a class="psf" id="13-13"
 							onclick="newEvent('2011-07-13')"><span class="day_number">13</span>
 						</a> <br>
 						</td>
@@ -160,7 +162,7 @@
 					</tr>
 				</tbody>
 			</table>
-
+			<!-- END VIEW -->
 		</div>
 	</div>
 </div>

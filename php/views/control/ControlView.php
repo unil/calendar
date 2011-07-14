@@ -33,42 +33,7 @@ $_SESSION['CURRENT_BUILDING'] = $currentBuilding;
 $roomHandler = new RoomHandler();
 $rooms = $roomHandler->getRooms($currentBuilding);
 ?>
-<script type="text/javascript">
-    $(document).ready(function() {
 
-        $("#year, #month, #room, #buildings").change(function() {
-            year = $("#year").val();
-            month = $("#month").val();
-
-            room = $("#room").val();
-            building = $("#buildings").val();
-
-            $.cookie("year", year);
-            $.cookie("month", month);
-            $.cookie("building", building);
-            //buildings();
-
-            if(room != 'default') {
-                $.cookie("room", room);
-
-                calendar();
-            }
-
-        });
-
-        $("#buildings").change(function() {
-            buildings();
-        });
-        /*$("#buildings, #room").change(function() {
-            month = new Date().getMonth() + 1;
-            year = new Date().getFullYear();
-            $.cookie("year", year);
-            $.cookie("month", month);
-        });*/
-
-
-    });
-</script>
 <!-- BEGIN ROOM-SELECTOR -->
 <div class="box">
 	<h1>Chosir</h1>
