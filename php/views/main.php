@@ -13,6 +13,19 @@
 <link rel="stylesheet" type="text/css" href="html/css/UNIL-FBM.css" />
 <link rel="stylesheet" type="text/css" href="html/css/calendar.css" />
 
+<!-- Begin JQuery -->
+<link type="text/css" rel="StyleSheet"
+	href="html/css/jquery-ui-1.8.4.custom.css" />
+<script type="text/javascript" src="html/js/jquery.js"></script>
+<script type="text/javascript" src="html/js/jquery.ui.core.js"></script>
+<script type="text/javascript" src="html/js/jquery.validate.js"></script>
+
+
+<!-- End JQuery -->
+<script type="text/javascript" src="html/js/plugins.js"></script>
+<script type="text/javascript" src="html/js/application.js"></script>
+
+
 <link rel="icon" href="https://wwwfbm.unil.ch/favicon.ico"
 	type="image/x-icon" />
 <link rel="shortcut icon" href="https://wwwfbm.unil.ch/favicon.ico"
@@ -23,9 +36,10 @@
 	<div id="page">
 		<!-- BEBIN HEADER -->
 		<div id="header">
-			<img id="login"src="https://wwwfbm.unil.ch/html/img/login.gif" alt="login" />
+			<img id="login" src="https://wwwfbm.unil.ch/html/img/login.gif"
+				alt="login" />
 			<div id="language">English | French</div>
-			<div id="bar">Room reservation system </div>
+			<div id="bar">Room reservation system</div>
 		</div>
 		<!-- END HEADER -->
 		<!-- BEGIN CONTENT -->
@@ -33,24 +47,24 @@
 			<!-- BEGIN MAIN -->
 			<div id="main">
 				<!-- BEGIN CALENDAR-VIEW -->
-				<?php require("views/calendar/CalendarView.php"); ?>
 				<!-- END CALENDAR-VIEW -->
 			</div>
 			<!-- END MAIN -->
 			<!-- BEGIN SIDEBAR -->
 			<div id="sidebar">
 				<!-- BEGIN ROOM-VIEW -->
-					<?php require("views/room/RoomView.php"); ?>
+				<div id="room"></div>
 				<!-- END ROOM-VIEW -->
 				<!-- BEGIN ROOM-VIEW -->
-					<?php require("views/control/ControlView.php"); ?>
+				<div id="control"></div>
 				<!-- END ROOM-VIEW -->
 			</div>
 			<!-- END SIDEBAR -->
 		</div>
 		<!-- END CONTENT -->
 		<!-- BEGIN FOOTER -->
-		<div id="footer">&copy; 2011 - Université de Lausanne - All right reserved</div>
+		<div id="footer">&copy; 2011 - Université de Lausanne - All right
+			reserved</div>
 		<!-- END FOOTER -->
 	</div>
 	<!-- END PAGE -->

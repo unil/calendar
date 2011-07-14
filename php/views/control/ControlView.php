@@ -5,6 +5,7 @@ include_once("model/class/Building.php");
 include_once("model/BuildingHandler.php");
 include_once("model/RoomHandler.php");
 
+session_start();
 
 $globalRegistry = $_SESSION["GlobalRegistry"];
 $languageLinker = $globalRegistry->languageLinker;
