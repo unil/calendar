@@ -1,5 +1,3 @@
-<?php
-?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -13,8 +11,12 @@
 <link rel="stylesheet" type="text/css" href="html/css/UNIL-FBM.css" />
 <link rel="stylesheet" type="text/css" href="html/css/calendar.css" />
 <link rel="stylesheet" type="text/css" href="html/css/button.css" />
+<link rel="icon" href="https://wwwfbm.unil.ch/favicon.ico"
+	type="image/x-icon" />
+<link rel="shortcut icon" href="https://wwwfbm.unil.ch/favicon.ico"
+	type="image/x-icon" />
 
-<!-- Begin JQuery -->
+<!-- BEGIN JQUERY -->
 <link type="text/css" rel="StyleSheet"
 	href="html/css/jquery-ui-orange.css" />
 <link type="text/css" rel="StyleSheet"
@@ -27,17 +29,14 @@
 <script type="text/javascript" src="html/js/jquery.ui.core.js"></script>
 <script type="text/javascript" src="html/js/jquery.validate.js"></script>
 <script type="text/javascript" src="html/js/fg.menu.js"></script>
-<!-- End JQuery -->
-
 <script type="text/javascript" src="html/js/plugins.js"></script>
+<!-- END JQUERY -->
+
+<!-- BEGIN APPLICAITON -->
 <script type="text/javascript" src="html/js/controller/Controller.js"></script>
 <script type="text/javascript" src="html/js/application.js"></script>
+<!-- END APPLICATION -->
 
-
-<link rel="icon" href="https://wwwfbm.unil.ch/favicon.ico"
-	type="image/x-icon" />
-<link rel="shortcut icon" href="https://wwwfbm.unil.ch/favicon.ico"
-	type="image/x-icon" />
 </head>
 <body>
 	<!-- BEGIN PAGE -->

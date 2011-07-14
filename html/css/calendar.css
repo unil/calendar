@@ -18,34 +18,39 @@
 	background-image: url(../img/time_bg.gif);
 }
 
-#calendar-information {
-    color: #666666;
-    float: left;
-    font-size: 16px;
-    font-weight: bold;
-    margin-left: 220px;
-    margin-top: 0px;
-}
-
 
 #goTo {
 	float: left;
 	margin-left: 0px;
+	width: 200px;
 }
 
 #action {
 	float: left;
 	position: relative;
-	margin-left: 10px;
+	margin-left: 200px;
+	width: 200px;
 }
 
 #name {
     color: #666666;
     float: right;
-
-    font-weight: bold;
+    text-align: right;
+    width: 300px;
+    margin-right: 0px;
 }
 
+#calendar-information {
+	clear: both;
+	width: 200px;
+	text-align: center;
+    color: #666666;
+    float: left;
+    font-size: 14px;
+    font-weight: bold;
+    margin-left: 376px;
+    margin-top: 6px;
+}
 
 
 #monthview {
@@ -72,7 +77,8 @@
 }
 
 .empty_day_cell {
-	background-color: #F2F2F2;
+	background-color: #f5f5f5;
+
 }
 
 #today {
@@ -81,4 +87,8 @@
 
 .day_number {
 	color: #0066FF;
+}
+
+.week-end {
+	color: #ff0000;
 }

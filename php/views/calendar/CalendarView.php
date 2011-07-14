@@ -36,7 +36,7 @@
 	<div id="action">
 	<button type="button" class="btn pill-l"><span><span><img id="previous" src="html/img/previous1.gif" alt="previous" /></span></span></button><button type="button" class="btn pill-c primary"><span><span>Semaine</span></span></button><button type="button" class="btn pill-c"><span><span>Mois</span></span></button><button type="button" class="btn pill-r"><span><span><img id="next" src="html/img/next1.gif" alt="next" /></span></span></button>
 	</div>
-			<div id="calendar-information">juillet 2011</div> 
+			
 	<div id="name" class="jquery-gray">		<a tabindex="0" href="#search-engines" class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all" id="building-choose"><span class="ui-icon ui-icon-triangle-1-s"></span>Bugnon 27</a>
 		<div id="search-engines" class="hidden">
 		<ul>
@@ -56,8 +56,9 @@
 			<li><a href="#">Ask</a></li>
 			<li><a href="#">AOL</a></li>
 		</ul>
-		</div></div>
-
+		</div>
+		</div>
+	<div id="calendar-information">juillet 2011</div> 
 	</div>
 	<div>
 		<div id="view">
@@ -89,11 +90,11 @@
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="2-13"
-							onclick="newEvent('2011-07-02')"><span class="day_number">2</span>
+							onclick="newEvent('2011-07-02')"><span class="week-end">2</span>
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="3-13"
-							onclick="newEvent('2011-07-03')"><span class="day_number">3</span>
+							onclick="newEvent('2011-07-03')"><span class="week-end">3</span>
 						</a> <br>
 						</td>
 					</tr>
@@ -119,11 +120,11 @@
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="9-13"
-							onclick="newEvent('2011-07-09')"><span class="day_number">9</span>
+							onclick="newEvent('2011-07-09')"><span class="week-end">9</span>
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="10-13"
-							onclick="newEvent('2011-07-10')"><span class="day_number">10</span>
+							onclick="newEvent('2011-07-10')"><span class="week-end">10</span>
 						</a> <br>
 						</td>
 					</tr>
@@ -136,7 +137,7 @@
 							onclick="newEvent('2011-07-12')"><span class="day_number">12</span>
 						</a> <br>
 						</td>
-						<td class="day_cell" id="today"><a class="psf" id="13-13"
+						<td class="day_cell"><a class="psf" id="13-13"
 							onclick="newEvent('2011-07-13')"><span class="day_number">13</span>
 						</a> <br>
 						</td>
@@ -149,11 +150,11 @@
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="16-13"
-							onclick="newEvent('2011-07-16')"><span class="day_number">16</span>
+							onclick="newEvent('2011-07-16')"><span class="week-end">16</span>
 						</a> <br>
 						</td>
-						<td class="day_cell"><a class="psf" id="17-13"
-							onclick="newEvent('2011-07-17')"><span class="day_number">17</span>
+						<td class="day_cell" id="today"><a class="psf" id="17-13"
+							onclick="newEvent('2011-07-17')"><span class="week-end">17</span>
 						</a> <br>
 						</td>
 					</tr>
@@ -179,11 +180,11 @@
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="23-13"
-							onclick="newEvent('2011-07-23')"><span class="day_number">23</span>
+							onclick="newEvent('2011-07-23')"><span class="week-end">23</span>
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="24-13"
-							onclick="newEvent('2011-07-24')"><span class="day_number">24</span>
+							onclick="newEvent('2011-07-24')"><span class="week-end">24</span>
 						</a> <br>
 						</td>
 					</tr>
@@ -209,11 +210,11 @@
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="30-13"
-							onclick="newEvent('2011-07-30')"><span class="day_number">30</span>
+							onclick="newEvent('2011-07-30')"><span class="week-end">30</span>
 						</a> <br>
 						</td>
 						<td class="day_cell"><a class="psf" id="31-13"
-							onclick="newEvent('2011-07-31')"><span class="day_number">31</span>
+							onclick="newEvent('2011-07-31')"><span class="week-end">31</span>
 						</a> <br>
 						</td>
 					</tr>
