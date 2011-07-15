@@ -64,9 +64,9 @@
 				<!-- BEGIN ROOM-VIEW -->
 				<div id="room"></div>
 				<!-- END ROOM-VIEW -->
-				<!-- BEGIN ROOM-VIEW -->
+				<!-- BEGIN CONTROL-VIEW -->
 				<div id="control"></div>
-				<!-- END ROOM-VIEW -->
+				<!-- END CONTROL-VIEW -->
 			</div>
 			<!-- END SIDEBAR -->
 		</div>

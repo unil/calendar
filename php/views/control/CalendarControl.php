@@ -36,7 +36,7 @@
 	</button>
 </div>
 <div id="action">
-	<button type="button" class="btn pill-l"><span><span><img id="previous" src="html/img/previous1.gif"alt="previous" /></span></span></button><button type="button" class="btn pill-c primary"><span><span>Semaine</span></span></button><button type="button" class="btn pill-c"><span><span>Mois</span></span></button><button type="button" class="btn pill-r"><span><span><img id="next" src="html/img/next1.gif" alt="next" /> </span></span></button>
+	<button type="button" class="btn pill-l"><span><span><img id="previous" src="html/img/previous1.gif"alt="previous" /></span></span></button><button type="button" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button" class="btn pill-c primary"><span><span>Mois</span></span></button><button type="button" class="btn pill-r"><span><span><img id="next" src="html/img/next1.gif" alt="next" /> </span></span></button>
 </div>
 
 <div id="name" class="jquery-gray">
