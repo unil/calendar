@@ -27,6 +27,21 @@
 				flyOut: true });
 		});
 
+		 $("#next").click(function() {
+		        if(!(((new Date().getFullYear() + maxYearOffset) == currentDate.getFullYear()) && (currentDate.getMonth() == 12)))
+		        {
+		        	if (currentDate.getMonth() == 11) {
+		        	    currentDate = new Date(currentDate.getFullYear() + 1, 0, 1);
+		        	} else {
+		        	    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
+		        	}
+
+		            $.cookie("currentDate", currentDate);
+
+		        }
+		        alert(currentDate);
+		    });
+
     });
     </script>
 
@@ -36,7 +51,7 @@
 	</button>
 </div>
 <div id="action">
-	<button type="button" class="btn pill-l"><span><span><img id="previous" src="html/img/previous1.gif"alt="previous" /></span></span></button><button type="button" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button" class="btn pill-c primary"><span><span>Mois</span></span></button><button type="button" class="btn pill-r"><span><span><img id="next" src="html/img/next1.gif" alt="next" /> </span></span></button>
+	<button type="button" id="previous" class="btn pill-l"><span><span><img src="html/img/previous1.gif"alt="previous" /></span></span></button><button type="button" id="weekView" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button"  id="monthView" class="btn pill-c primary"><span><span>Mois</span></span></button><button type="button" class="btn pill-r" id="next"><span><span><img src="html/img/next1.gif" alt="next" /> </span></span></button>
 </div>
 
 <div id="name" class="jquery-gray">

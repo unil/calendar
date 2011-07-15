@@ -33,6 +33,8 @@
 <!-- END JQUERY -->
 
 <!-- BEGIN APPLICAITON -->
+<script type="text/javascript" src="html/js/global.js"></script>
+<script type="text/javascript" src="html/js/helper/DateHelper.js"></script>
 <script type="text/javascript" src="html/js/controller/Controller.js"></script>
 <script type="text/javascript" src="html/js/application.js"></script>
 <!-- END APPLICATION -->

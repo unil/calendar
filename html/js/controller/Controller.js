@@ -2,6 +2,7 @@ function load(view, param) {
 	switch (view) {
 	case "room":
 	    $.get("php/views/room/RoomView.php", {
+	    	
 	        //"id": building
 	    },
 	    function(data){
@@ -35,7 +36,7 @@ function load(view, param) {
 	}
 }
 
-function loadAll() {
+function init() {
 	load("calendar");
 	load("room");
 	load("control");
