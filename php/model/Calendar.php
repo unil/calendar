@@ -55,10 +55,10 @@ abstract class Calendar {
     public function getWeekStart() {
         return $this->weekstart;
     }
-
+/*
     abstract function getCalendar();
 
-    abstract function getCalendarEvents();
+    abstract function getCalendarEvents();*/
 }
 
 ?>

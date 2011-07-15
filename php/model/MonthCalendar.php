@@ -9,8 +9,8 @@ include_once("helpers/System.php");
 
 class MonthCalendar extends Calendar {
 
-    private $events;
-    private $weekpos;
+    //private $events;
+    private $startpos;
     private $maxDays;
     private $month;
     private $year;
@@ -35,30 +35,37 @@ class MonthCalendar extends Calendar {
 
         parent::__construct($room, $begin, $end . " 23:59");
 
-        $this->events = parent::getEvents();
+        //$this->events = parent::getEvents();
 
 
-        $this->weekpos = $this->getFirstDayOfMonthPosition($month, $year, parent::getWeekStart());
+        $this->startpos = $this->getFirstDayOfMonthPosition($month, $year, parent::getWeekStart());
     }
+    
+    public function getMaxDays() {
+    	return $this->maxDays;
+    }
+	public function getStartpos() {
+		return $this->startpos;
+	}
 
     private function getFirstDayOfMonthPosition($month, $year, $weekstart) {
-        $weekpos = date("w", mktime(0, 0, 0, $month, 1, $year));
+        $startpos = date("w", mktime(0, 0, 0, $month, 1, $year));
 
         // adjust position if weekstart not Sunday
         if ($weekstart != 0) {
-            if ($weekpos < $weekstart) {
-                $weekpos = $weekpos + 7 - $weekstart;
+            if ($startpos < $weekstart) {
+                $startpos = $startpos + 7 - $weekstart;
             } else {
-                $weekpos = $weekpos - $weekstart;
+                $startpos = $startpos - $weekstart;
             }
         }
-        return $weekpos;
+        return $startpos;
     }
-
+	/*
     public function getCalendarEvents() {
         return $this->events;
-    }
-
+    }*/
+	/*
     public function getCalendar() {
         $_SESSION['CURRENT_EVENTS'] = $this->events;
         $month_cal = "<table cellpadding=\"1\" cellspacing=\"1\" border=\"0\">\n";
@@ -67,7 +74,7 @@ class MonthCalendar extends Calendar {
 
         $month_cal .= parent::getHeader();
 
-        $weekpos = $this->weekpos;
+        $startpos = $this->startpos;
 
         $room = $this->room;
         $roomId = $room->getId();
@@ -76,8 +83,8 @@ class MonthCalendar extends Calendar {
         // get number of days in month
         $days = $this->maxDays;
         $day = 0;
-        // initialize day variable to zero, unless $weekpos is zero
-        if ($weekpos == 0) {
+        // initialize day variable to zero, unless $startpos is zero
+        if ($startpos == 0) {
             $day = 1;
         }
         // initialize today's date variables for color change
@@ -163,8 +170,8 @@ class MonthCalendar extends Calendar {
                     $day++;
                 } elseif ($day == 0) {
                     $month_cal .= "\t\t<td class=\"empty_day_cell\"><!--before--></td>\n";
-                    $weekpos--;
-                    if ($weekpos == 0) {
+                    $startpos--;
+                    if ($startpos == 0) {
                         $day++;
                     }
                 } else {
@@ -178,7 +185,7 @@ class MonthCalendar extends Calendar {
 
 
         return $month_cal;
-    }
+    }*/
 
 }
 

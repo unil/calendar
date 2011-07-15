@@ -1,4 +1,4 @@
-<!-- <table id="monthview">
+<table id="monthview">
 <thead>
 <tr>
 <th>Monday</th>
@@ -12,21 +12,32 @@
 </thead>
 <tbody>
 <?php
-/*
-$month = 12;
-$year = 2010:
+date_default_timezone_set('Europe/Zurich');
+include_once("model/MonthCalendar.php");
+include_once("model/class/Room.php");
+include_once("model/class/Building.php");
+include_once("helpers/System.php");
+
+session_start();
+
+
+$month = 7;
+$year = 2011;
 
 $currentDate = "";
 
+$room = new Room(13);
 
-$weekpos = $this->weekpos;
+$monthCalendar = new MonthCalendar($room, $month, $year);
+$weekpos = $monthCalendar->getStartpos();
+$events = $monthCalendar->getEvents();
 
-$room = $this->room;
 $roomId = $room->getId();
 // get user permission level
 $auth = System::authLevel();
+
 // get number of days in month
-$days = $this->maxDays;
+$days = $monthCalendar->getMaxDays();
 $day = 0;
 // initialize day variable to zero, unless $weekpos is zero
 if ($weekpos == 0) {
@@ -38,13 +49,12 @@ $d = date('j', $timestamp);
 $m = date('n', $timestamp);
 $y = date('Y', $timestamp);
 
-// loop writes empty cells until it reaches position of 1st day of month ($wPos)
-// it writes the days, then fills the last row with empty cells after last day
+
 while ($day <= $days) {
 
-	$month_cal .="\t<tr>\n";
+	echo"\t<tr>\n";
 
-	for ($i = 0; $i < 7; $i++) {
+	for ($weekDay = 0; $weekDay < 7; $weekDay++) {
 
 		if ($day > 0 && $day <= $days) {
 			$currentDate = $year . "-" . $month . "-" . $day;
@@ -59,29 +69,36 @@ while ($day <= $days) {
 			}
 			$currentDate = $year . "-" . $longMonth . "-" . $array_index;
 
-			$month_cal .= "\t\t<td class=\"";
+			echo "\t\t<td class=\"day_cell\" ";
 
 			if (($day == $d) && ($month == $m) && ($year == $y)) {
-				$month_cal .= "today";
-			} else {
-				$month_cal .= "day";
-			}
-
-			$month_cal .= "_cell\">\n";
+				echo "id=\"today\"";
+			} 
 
 
 			if ($auth > 0) {
-				$month_cal .= "\t\t<a class=\"psf\" id=\"$day-$roomId\" onClick=\"newEvent('$currentDate')\"><span class=\"day_number\">$day</span></a>\n";
+				echo "\t\t<a class=\"psf\" id=\"$day-$roomId\" onClick=\"newEvent('$currentDate')\">\n";
+				echo "<span class=\"";
+				
+				if ($weekDay >= 5) {
+					echo "week-end";
+				}
+				else {
+					echo "day_number";
+				}
+				
+				echo "\">$day</span></a>";
+				
 			} else {
-				$month_cal .= "$day";
+				echo "$day";
 			}
 
-			$month_cal .= "\t\t<br />\n";
+			echo "\t\t<br />\n";
 
 			$events = null;
 
-			if (isset($this->events[$array_index])) {
-				$events = $this->events[$array_index];
+			if (isset($events[$array_index])) {
+				$events = $events[$array_index];
 			}
 
 			//s'il existe au moins un événément pour ce jour
@@ -98,39 +115,40 @@ while ($day <= $days) {
 					$title = $e->getTitle();
 					$description = $e->getDescription();
 
-					$month_cal .= "\t\t<a class=\"psf\" onClick=\"editEvent('$posX', '$posY', '$currentDate')\">\n";
+					echo "\t\t<a class=\"psf\" onClick=\"editEvent('$posX', '$posY', '$currentDate')\">\n";
 
-					$month_cal .= "\t\t\t<span class=\"event_entry\">";
-					$month_cal .= "$begin - $end";
-					$month_cal .= "<br/>";
+					echo "\t\t\t<span class=\"event_entry\">";
+					echo "$begin - $end";
+					echo "<br/>";
 
-					$month_cal .= "$title $description";
-					$month_cal .= "</span>\n";
-					$month_cal .= "\t\t</a><br>\n";
+					echo "$title $description";
+					echo "</span>\n";
+					echo "\t\t</a><br>\n";
 					$posY++;
 				}
 			}
 
-			$month_cal .= "\t\t</td>\n";
+			echo "\t\t</td>\n";
 			$day++;
 		} elseif ($day == 0) {
-			$month_cal .= "\t\t<td class=\"empty_day_cell\"><!--before--></td>\n";
+			echo "\t\t<td class=\"empty_day_cell\"><!--before--></td>\n";
 			$weekpos--;
 			if ($weekpos == 0) {
 				$day++;
 			}
 		} else {
-			$month_cal .= "\t\t<td class=\"empty_day_cell\"><!--after--></td>\n";
+			echo "\t\t<td class=\"empty_day_cell\"><!--after--></td>\n";
 		}
 	}
-	$month_cal .= "\t</tr>\n";
+	echo "\t</tr>\n";
 }
-*/
+
 ?>
 </tbody>
 </table>
--->
+
 <!-- BEGIN VIEW -->
+<?php /*
 <table id="monthview">
 	<thead>
 		<tr>
@@ -287,5 +305,6 @@ while ($day <= $days) {
 			</td>
 		</tr>
 	</tbody>
-</table>
+</table> 
+*/?>
 <!-- END VIEW -->
