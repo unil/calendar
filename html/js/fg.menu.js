@@ -242,10 +242,12 @@ function Menu(caller, options){
 	};
 	
 	this.chooseItem = function(item){
-		menu.kill();
-		// edit this for your own custom function/callback:
-		$('#menuSelection').text($(item).text());	
-		location.href = $(item).attr('href');
+		if ($(item).hasClass('isClickable')) {
+			menu.kill();
+			// edit this for your own custom function/callback:
+			$('#menuSelection').text($(item).text());	
+			location.href = $(item).attr('href');
+		}
 	};
 };
 

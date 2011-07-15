@@ -53,8 +53,10 @@
 		<div id="content">
 			<!-- BEGIN MAIN -->
 			<div id="main">
-				<!-- BEGIN CALENDAR-VIEW -->
-				<!-- END CALENDAR-VIEW -->
+				<!-- BEGIN CALENDAR -->
+				<div id="toolbar"></div>
+				<div id="calendar"></div>
+				<!-- END CALENDAR -->
 			</div>
 			<!-- END MAIN -->
 			<!-- BEGIN SIDEBAR -->

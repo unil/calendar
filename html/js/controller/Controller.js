@@ -13,10 +13,16 @@ function load(view, param) {
 	        //"id": building
 	    },
 	    function(data){
-	        $('#main').html(data);
+	        $('#calendar').html(data);
 	    });
 		break;
 	case "control":
+	    $.get("php/views/control/CalendarControl.php", {
+	        //"id": building
+	    },
+	    function(data){
+	        $('#toolbar').html(data);
+	    });
 	    $.get("php/views/control/ControlView.php", {
 	        //"id": building
 	    },
