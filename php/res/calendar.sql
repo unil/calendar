@@ -155,6 +155,9 @@ CREATE TABLE IF NOT EXISTS event_dates (
     ON DELETE cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+CREATE INDEX b ON event_dates (begin);
+CREATE INDEX e ON event_dates (end);
+
 DROP TABLE IF EXISTS logs;
 CREATE TABLE IF NOT EXISTS logs (
   log_id INTEGER(9) NOT NULL AUTO_INCREMENT,

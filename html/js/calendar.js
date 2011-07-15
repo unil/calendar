@@ -42,7 +42,7 @@ function getErrors(errors) {
             case 'unavailable' :
                 i = 0;
                 error = "";
-                error += resourceBundle["calendar-error-unavailable"];
+                
                 error += "<ul>";
                 $.each(val, function(key, val) {
                     start =  val["start"].substring(0,5);
@@ -53,7 +53,9 @@ function getErrors(errors) {
                 });
                 error += "</ul>";
                 if (i> 1) {
-                    $('#dialog-alerte-indisponibilite').html(error);
+
+                    $('#dialog-alerte-indisponibilite').html(resourceBundle["calendar-error-unavailable"] + error);
+                	
                     alerteIndisponibilite();
                 }
                 else {
