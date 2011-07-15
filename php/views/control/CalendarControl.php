@@ -10,8 +10,12 @@
     $(document).ready(function(){
     	// BUTTONS
     	$('.fg-button').hover(
-    		function(){ $(this).removeClass('ui-state-default').addClass('ui-state-focus'); },
-    		function(){ $(this).removeClass('ui-state-focus').addClass('ui-state-default'); }
+    		function(){
+        		 $(this).removeClass('ui-state-default').addClass('ui-state-focus'); 
+        	},
+    		function(){ 
+        		$(this).removeClass('ui-state-focus').addClass('ui-state-default'); 
+        	}
     	);
     	
     	// MENUS    	
@@ -27,26 +31,42 @@
 				flyOut: true });
 		});
 
+		 $("#today").click(function() {
+
+					currentDate = getToday();
+
+		            $.cookie("currentDate", currentDate);
+			        load("calendar", "date=" + dateToString(currentDate));
+
+
+		    });
+
+		 $("#previous").click(function() {
+		        if(!((new Date().getFullYear() == currentDate.getFullYear()) && (new Date().getMonth() == currentDate.getMonth())))
+		        {
+					currentDate = getPreviousMonth(currentDate);
+
+		            $.cookie("currentDate", currentDate);
+			        load("calendar", "date=" + dateToString(currentDate));
+		        }
+
+		    });
+
 		 $("#next").click(function() {
 		        if(!(((new Date().getFullYear() + maxYearOffset) == currentDate.getFullYear()) && (currentDate.getMonth() == 12)))
 		        {
-		        	if (currentDate.getMonth() == 11) {
-		        	    currentDate = new Date(currentDate.getFullYear() + 1, 0, 1);
-		        	} else {
-		        	    currentDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + 1, 1);
-		        	}
+					currentDate = getNextMonth(currentDate);
 
 		            $.cookie("currentDate", currentDate);
-
+		            load("calendar", "date=" + dateToString(currentDate));
 		        }
-		        alert(currentDate);
 		    });
 
     });
     </script>
 
 <div id="goTo">
-	<button type="button" class="btn">
+	<button type="button" class="btn" id="today">
 		<span><span>Aujourd'hui</span> </span>
 	</button>
 </div>

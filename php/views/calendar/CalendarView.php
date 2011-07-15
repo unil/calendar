@@ -72,7 +72,7 @@ while ($day <= $days) {
 			echo "\t\t<td class=\"day_cell\" ";
 
 			if (($day == $d) && ($month == $m) && ($year == $y)) {
-				echo "id=\"today\"";
+				echo "id=\"active\"";
 			} 
 
 
