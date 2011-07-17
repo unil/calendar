@@ -5,6 +5,8 @@
 	UNIL-FBM template
 */
 
+ * {margin:0; padding:0} 
+
 html,body,h1 {
 	vertical-align: top;
 	margin: 0px;

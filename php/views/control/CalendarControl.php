@@ -1,11 +1,10 @@
-
 <!-- style exceptions for IE 6 -->
 <!--[if IE 6]>
 	<style type="text/css">
 		.fg-menu-ipod .fg-menu li { width: 95%; }
 		.fg-menu-ipod .ui-widget-content { border:0; }
 	</style>
-	<![endif]-->
+<![endif]-->
 <script type="text/javascript">    
     $(document).ready(function(){
     	// BUTTONS
@@ -32,22 +31,13 @@
 		});
 
 		 $("#today").click(function() {
-
-					currentDate = getToday();
-
-		            $.cookie("currentDate", currentDate);
-			        load("calendar", "date=" + dateToString(currentDate));
-
-
+					goToToday();
 		    });
 
 		 $("#previous").click(function() {
 		        if(!((new Date().getFullYear() == currentDate.getFullYear()) && (new Date().getMonth() == currentDate.getMonth())))
 		        {
-					currentDate = getPreviousMonth(currentDate);
-
-		            $.cookie("currentDate", currentDate);
-			        load("calendar", "date=" + dateToString(currentDate));
+					goToPreviousMonth();
 		        }
 
 		    });
@@ -55,10 +45,7 @@
 		 $("#next").click(function() {
 		        if(!(((new Date().getFullYear() + maxYearOffset) == currentDate.getFullYear()) && (currentDate.getMonth() == 12)))
 		        {
-					currentDate = getNextMonth(currentDate);
-
-		            $.cookie("currentDate", currentDate);
-		            load("calendar", "date=" + dateToString(currentDate));
+					goToNextMonth();
 		        }
 		    });
 
@@ -66,15 +53,15 @@
     </script>
 
 <div id="goTo">
-	<button type="button" class="btn" id="today">
+	<button type="button" class="btn" id="today" style="width: 100px;">
 		<span><span>Aujourd'hui</span> </span>
 	</button>
 </div>
 <div id="action">
-	<button type="button" id="previous" class="btn pill-l"><span><span><img src="html/img/previous1.gif"alt="previous" /></span></span></button><button type="button" id="weekView" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button"  id="monthView" class="btn pill-c primary"><span><span>Mois</span></span></button><button type="button" class="btn pill-r" id="next"><span><span><img src="html/img/next1.gif" alt="next" /> </span></span></button>
+	<button type="button" id="previous" class="btn pill-l"><span><span><img src="html/img/previous.gif"alt="previous" /></span></span></button><button type="button" id="weekView" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button"  id="monthView" class="btn pill-c primary"><span><span>Mois</span></span></button><button type="button" class="btn pill-r" style="width: 50px;" id="next"><span><span><img src="html/img/next.gif" alt="next" /> </span></span></button>
 </div>
 
-<div id="name" class="jquery-gray">
+<div id="name" class="jquery-gray" style="text-align: right">
 	<a tabindex="0" href="#buildings"
 		class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all"
 		id="buildingChooser"><span class="ui-icon ui-icon-triangle-1-s"></span>Bugnon

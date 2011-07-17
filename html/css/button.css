@@ -1,4 +1,4 @@
- /**
+/**
  
  Credits go to http://stopdesign.com/archive/2009/02/04/recreating-the-button.html
  */
@@ -7,7 +7,7 @@
  /* Start custom button CSS here
     ---------------------------------------- */
     .btn {
-      display:inline-block;
+      /*display:inline-block;*/
       background:none;
       margin:0;
       padding:3px 0;
@@ -15,6 +15,7 @@
       overflow:visible;
       text-decoration:none;
       color:#333;
+      text-align: left;
       }
     * html button.btn {
       padding-bottom:1px;

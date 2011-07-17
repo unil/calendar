@@ -1,8 +1,8 @@
 function showCalendar(type, date) {
 	switch (type) {
 	case "month":
-		calendarStart = date.getFullYear() + "-" + (date.getMonth() + 1) + "-" + date.getDate();
-		load(calendar, "view=month&date=" + calendarStart);
+		calendarStart = dateToString(date);
+		load("calendar", "view=month&date=" + calendarStart);
 		break;
 	case "week":
 		break;
@@ -11,4 +11,25 @@ function showCalendar(type, date) {
 		break;
 	}
 	
+}
+
+function goToNextMonth() {
+	currentDate = getNextMonth(currentDate);
+
+	saveCurrentState();
+    showCalendar("month", currentDate);
+}
+
+function goToPreviousMonth() {
+	currentDate = getPreviousMonth(currentDate);
+
+	saveCurrentState();
+    showCalendar("month", currentDate);
+}
+
+function goToToday() {
+	currentDate = getToday();
+
+	saveCurrentState();
+    showCalendar("month", currentDate);
 }

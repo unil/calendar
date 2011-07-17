@@ -279,5 +279,5 @@ button.fg-button {
 }
 	/* solo icon buttons must have block properties for the text-indent to work */
 .fg-button.ui-state-loading .ui-icon {
-	background: url(spinner_bar.gif) no-repeat 0 0;
+	background: url(html/img/spinner_bar.gif) no-repeat 0 0;
 }

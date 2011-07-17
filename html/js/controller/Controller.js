@@ -1,3 +1,9 @@
+/**
+ * Loads view with specified param via ajax
+ * 
+ * @param view (View to load)
+ * @param param (Params to transmit to view)
+ */
 function load(view, param) {
 	viewURL = null;
 	target = null;
@@ -29,7 +35,16 @@ function load(view, param) {
 		$(target).load(viewURL);
 	}
 }
+/**
+ * Saves global vars to cookie
+ */
+function saveCurrentState() {
+    $.cookie("currentDate", currentDate);
+}
 
+/**
+ * Inits all views with default values;
+ */
 function init() {
 	load("toolbar");
 	load("control");
