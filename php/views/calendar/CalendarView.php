@@ -21,8 +21,15 @@ include_once("helpers/System.php");
 session_start();
 
 
-$month = 7;
-$year = 2011;
+$month = date("n");
+$year = date("Y");
+
+
+if (isset($_GET['date']) && $_GET['date'] != 'undefined') {
+	$date = strtotime($_GET['date']);
+	$month = date("n", strtotime($_GET['date']));
+	$year = date("Y", strtotime($_GET['date']));
+}
 
 $currentDate = "";
 
@@ -31,6 +38,7 @@ $room = new Room(13);
 $monthCalendar = new MonthCalendar($room, $month, $year);
 $weekpos = $monthCalendar->getStartpos();
 $events = $monthCalendar->getEvents();
+
 
 $roomId = $room->getId();
 // get user permission level
@@ -94,18 +102,17 @@ while ($day <= $days) {
 			}
 
 			echo "\t\t<br />\n";
-
-			$events = null;
+			$dayEvents = null;
 
 			if (isset($events[$array_index])) {
-				$events = $events[$array_index];
+				$dayEvents = $events[$array_index];
 			}
 
 			//s'il existe au moins un événément pour ce jour
-			if ($events != null) {
+			if ($dayEvents != null) {
 				$posY = 0;
 				$posX = $array_index;
-				foreach ($events as $e) {
+				foreach ($dayEvents as $e) {
 					$begin = $e->getHBegin();
 					$end = $e->getHEnd();
 					if ($e->getHBegin() == "00:00" && $e->getHEnd() == "00:00") {

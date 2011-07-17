@@ -92,3 +92,12 @@
 .week-end {
 	color: #ff0000;
 }
+
+.event_entry {
+    border: 1px solid #CCCCCC;
+    float: left;
+    width: 98%;
+    margin-top: 2px;
+    font-size: 9px;
+    background: #F2F9FF;
+}
