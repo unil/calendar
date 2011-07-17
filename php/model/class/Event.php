@@ -83,6 +83,10 @@ class Event {
         return $this->lastDate;
     }
 
+    public function setLastDate($lastDate) {
+    	$this->lastDate = $lastDate;
+    }
+    
     public function setTitle($title) {
         $this->title = $title;
     }

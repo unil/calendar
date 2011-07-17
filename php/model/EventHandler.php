@@ -29,13 +29,7 @@ class EventHandler {
                     DATE_FORMAT(D.end, '%Y-%m-%d') AS E_Dend,
                     DATE_FORMAT(D.end, '%H:%i') AS E_Hend,
                     D.event_date_id,
-                    E.mode,
-                    (SELECT
-                        DATE_FORMAT(MAX(D.end), '%Y-%m-%d') as lastDate
-                     FROM
-                        event_dates D
-                     WHERE
-                        E.event_id = D.event_id) AS lastDate
+                    E.mode
                 FROM events E
                      LEFT OUTER JOIN event_dates D
                          ON E.event_id = D.event_id ";
@@ -67,9 +61,8 @@ class EventHandler {
 		$sql_orderby .= "ORDER BY D.begin";
 
 		$sql = $select_Event . $sql_where . $sql_orderby;
-
+		
 		$return = $db->select($sql);
-
 
 		foreach ($return as $ret) {
 			$E_id = $ret["event_id"];
@@ -82,16 +75,25 @@ class EventHandler {
 			$E_Hend = $ret["E_Hend"];
 			$D_id = $ret["event_date_id"];
 			$E_mode = $ret["mode"];
-			$E_lastDate = $ret["lastDate"];
 
-			$event = new Event($E_id, $E_owner, $E_title, $E_description, $E_Dbegin, $E_Hbegin, $E_Dend, $E_Hend, $E_mode, $D_id, $E_lastDate);
+			$event = new Event($E_id, $E_owner, $E_title, $E_description, $E_Dbegin, $E_Hbegin, $E_Dend, $E_Hend, $E_mode, $D_id);
 
 			$events[] = $event;
 		}
-
 		return $events;
 	}
 
+	public function getLastDate($event) {
+		$db = new Db();
+		$sql = "(SELECT DATE_FORMAT(MAX(D.end), '%Y-%m-%d') AS lastDate
+									FROM event_dates D 
+									WHERE '{$event->getId()}' = D.event_id)";
+			
+		$ret = $db->select($sql);
+		$lastDate = $ret[0]["lastDate"];
+		return $lastDate;
+	}
+	
 	/* is called for current repeating event in eventdialog
 	 * get all other repeating dates for event
 	*/
@@ -112,7 +114,7 @@ class EventHandler {
                     event_id='{$event->getId()}'";
 
 		if ($after != null) {
-			$sql .= " AND end >='$after'";
+			$sql .= " AND end >'$after'";
 		}
 
 		$return = $db->select($sql);

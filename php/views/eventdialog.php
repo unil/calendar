@@ -4,6 +4,7 @@
 require_once('application/GlobalRegistry.php');
 require_once('application/LanguageLinker.php');
 include_once("model/class/Event.php");
+include_once("model/EventHandler.php");
 
 session_start();
 include_once("helpers/System.php");
@@ -65,7 +66,18 @@ switch ($mode) {
             $description = $event->getDescription();
 
             $repeatMode = $event->getMode();
+            
+            $lastDate = $event->getDBegin();
+            
+            if ($repeatMode != "n") {
+            	$eventHandler = new EventHandler();
+            	$lastDate = $eventHandler->getLastDate($event);
+            }
+
+            $event->setLastDate($lastDate);
             $repeatEnd = $event->getLastDate();
+            
+            
             $date_id = $event->getDateId();
             $event_id = $event->getId();
         }
