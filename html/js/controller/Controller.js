@@ -46,8 +46,8 @@ function saveCurrentState() {
  * Inits all views with default values;
  */
 function init() {
-	load("toolbar");
 	load("control");
 	load("room");
+	load("toolbar");
 	load("calendar");
 }

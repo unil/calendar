@@ -245,7 +245,16 @@ function Menu(caller, options){
 		if ($(item).hasClass('isClickable')) {
 			menu.kill();
 			// edit this for your own custom function/callback:
-			$('#room-text').text($(item).text());	
+			//$('#room-text').text($(item).text());
+			/*
+			 * Gets the link attribute href from the menuitem selected
+			 * and sets it as the value of the principal menu item 
+			 */
+			$(caller.selector).attr('href', $(item).attr('href'));
+			$(caller.selector + ":nth-child(2)").text($(item).text());
+			//console.log(caller);
+			//alert($(item).attr('href'));
+
 		}
 	};
 };

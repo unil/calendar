@@ -51,6 +51,11 @@
 		        }
 		    });
 
+		 el = $("#roomChooser");
+		 el.watch("href", function (data, i) {
+			console.log("sd");
+			 setTimeout(function () { console.log("asdfasdf"); },10);
+		    });
     });
     </script>
 
@@ -64,12 +69,12 @@
 </div>
 
 <div id="name" class="jquery-gray" style="text-align: right">
-	<a tabindex="0" href="#buildings"
+	<a tabindex="0" href="default"
 		class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all"
-		id="buildingChooser"><span class="ui-icon ui-icon-triangle-1-s"></span>Bugnon
-		27</a> <a tabindex="0" href="#rooms"
+		id="buildingChooser"><span class="ui-icon ui-icon-triangle-1-s"></span><span id="current-building">Bugnon
+		27</span></a> <a tabindex="0" href="default"
 		class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all"
-		id="roomChooser"><span class="ui-icon ui-icon-triangle-1-s"></span><span id="room-text">Sous-sol
+		id="roomChooser"><span class="ui-icon ui-icon-triangle-1-s"></span><span id="current-room">Sous-sol
 		- animalerie - flux 1b</span></a>
 </div>
 <div id="calendar-information">juillet 2011</div>

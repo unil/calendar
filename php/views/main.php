@@ -25,11 +25,12 @@
 
 <link type="text/css" href="html/css/fg.menu.css" media="screen"
 	rel="stylesheet" />
-<script type="text/javascript" src="html/js/jquery.js"></script>
-<script type="text/javascript" src="html/js/jquery.ui.core.js"></script>
-<script type="text/javascript" src="html/js/jquery.validate.js"></script>
-<script type="text/javascript" src="html/js/fg.menu.js"></script>
-<script type="text/javascript" src="html/js/plugins.js"></script>
+<script type="text/javascript" src="html/js/lib/jquery.js"></script>
+<script type="text/javascript" src="html/js/lib/jquery.ui.core.js"></script>
+<script type="text/javascript" src="html/js/lib/jquery.validate.js"></script>
+<script type="text/javascript" src="html/js/lib/jquery.livequery.min.js"></script>
+<script type="text/javascript" src="html/js/lib/fg.menu.js"></script>
+<script type="text/javascript" src="html/js/lib/plugins.js"></script>
 <!-- END JQUERY -->
 
 <!-- BEGIN APPLICAITON -->
@@ -39,7 +40,6 @@
 <script type="text/javascript" src="html/js/controller/CalendarController.js"></script>
 <script type="text/javascript" src="html/js/application.js"></script>
 <!-- END APPLICATION -->
-
 </head>
 <body>
 	<!-- BEGIN PAGE -->
