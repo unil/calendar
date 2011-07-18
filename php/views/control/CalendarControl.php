@@ -21,13 +21,15 @@
 		$.get('php/views/control/BuildingControl.php', function(data){ // grab content from another page
 			$('#buildingChooser').menu({ 
 				content: data, 
-				flyOut: true });
+				flyOut: true,
+				width: 100 });
 		});
 
 		$.get('php/views/control/RoomControl.php', function(data){ // grab content from another page
 			$('#roomChooser').menu({ 
 				content: data, 
-				flyOut: true });
+				flyOut: true,
+				width: 300 });
 		});
 
 		 $("#today").click(function() {
@@ -67,8 +69,8 @@
 		id="buildingChooser"><span class="ui-icon ui-icon-triangle-1-s"></span>Bugnon
 		27</a> <a tabindex="0" href="#rooms"
 		class="fg-button fg-button-icon-right ui-widget ui-state-default ui-corner-all"
-		id="roomChooser"><span class="ui-icon ui-icon-triangle-1-s"></span>Sous-sol
-		- animalerie - flux 1b</a>
+		id="roomChooser"><span class="ui-icon ui-icon-triangle-1-s"></span><span id="room-text">Sous-sol
+		- animalerie - flux 1b</span></a>
 </div>
 <div id="calendar-information">juillet 2011</div>
 

@@ -15,7 +15,7 @@ $rooms = null;
 $buildings = null;
 
 
-$buildingId = 7;
+$buildingId = 27;
 
 if (isset($_GET['id']) && $_GET['id'] != 'undefined') {
 	$buildingId = (int) $_GET['id'];
@@ -38,7 +38,7 @@ $rooms = $roomHandler->getRooms($currentBuilding);
 
 
 <?php
-/*if ($currentBuilding != null) {
+if ($currentBuilding != null) {
 
 	$room_sorted = null;
 	foreach($rooms as $r) {
@@ -59,9 +59,9 @@ $rooms = $roomHandler->getRooms($currentBuilding);
 
 	}
 	echo "</ul>\n";
-}*/
+}
 ?>
-
+<!-- 
 	<ul>
 		<li><a href="#">Animalerie</a></li>
 		<li><a href="#">Appareils scientifiques</a>
@@ -78,5 +78,5 @@ $rooms = $roomHandler->getRooms($currentBuilding);
 			</ul>
 		</li>
 		<li><a href="#">Matériel de prêt</a></li>
-	</ul>
+	</ul> -->
 </div>
