@@ -71,7 +71,7 @@ class DateCalc {
                 $offset = "next " . $weekday . "+3 week";
                 break;
             case "y" :
-                $offset = "next " . $weekday . "+51 week";
+                $offset = "on " . $weekday . "+1 year";
                 ;
                 break;
         }

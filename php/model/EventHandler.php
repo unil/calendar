@@ -339,7 +339,7 @@ class EventHandler {
 				if ($isAvailable) {
 					$verifiedEvents["available"][$date] = $e;
 				} else {
-					$verifiedEvents["unavailable"][$date] = $e;
+					$verifiedEvents["unavailable"][$date] = $currentEvents[$date];
 				}
 			}
 		}

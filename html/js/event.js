@@ -150,7 +150,9 @@ $(document).ready(function() {
         firstDay: 1,
         maxDate: (new Date().getFullYear() + maxYearOffset) + '-12-31',
         minDate: new Date().getFullYear() + '-1-1',
-        dateFormat: 'yy-mm-dd'
+        dateFormat: 'yy-mm-dd',
+        changeMonth: true,
+		changeYear: true
     });
 
     wholeDay();

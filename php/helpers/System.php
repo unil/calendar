@@ -11,11 +11,14 @@ class System {
     public static function authLevel() {
 
         $authLevel = 0;
-
-        if (isset($_SESSION['ADMIN']) && isset($_SESSION['SUPER_ADMIN']) && isset($_SESSION['ACCEPT_STUDENTS'])) {
+        if (isset($_SESSION['ADMIN']) && isset($_SESSION['SUPER_ADMIN'])) {
             $adminGroups = explode(";", $_SESSION['ADMIN']);
             $superAdminGroups = explode(";", $_SESSION['SUPER_ADMIN']);
-            $acceptStudents = $_SESSION['ACCEPT_STUDENTS'];
+            $acceptStudents = false;
+            if(isset($_SESSION['ACCEPT_STUDENTS'])) {
+            	$acceptStudents = $_SESSION['ACCEPT_STUDENTS'];
+            }
+            
 
             if (isset($_SERVER['HTTP_SHIB_EP_AFFILIATION']) && isset($_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'])) {
 
@@ -30,6 +33,7 @@ class System {
 
                     foreach ($superAdminGroups as $group) {
                         if (in_array($group, $aai_groups)) {
+
                             $authLevel = 2;
                         }
                     }

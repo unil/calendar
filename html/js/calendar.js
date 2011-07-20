@@ -42,14 +42,16 @@ function getErrors(errors) {
             case 'unavailable' :
                 i = 0;
                 error = "";
-                
+                console.log(val);
                 error += "<ul>";
-                $.each(val, function(key, val) {
-                    start =  val["start"].substring(0,5);
-                    end = val["end"].substring(0,5);
+                $.each(val, function(key2, date) {
+                	$.each(date, function(key3, val2) {
+                    start =  val2["start"].substring(0,5);
+                    end = val2["end"].substring(0,5);
                     
-                    error += "<li>" + key + " " + start +  "-" + end + "</li>";
+                    error += "<li>" + key2 + " " + start +  "-" + end + "</li>";
                     i++;
+                	});
                 });
                 error += "</ul>";
                 if (i> 1) {
