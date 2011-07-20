@@ -329,7 +329,7 @@ class EventHandler {
 				if (isset($currentEvents[$date])) {
 					 
 					/*
-					 * Si maxEvents <= 0, on ne teste pas la disponibilité
+					 * Si maxEvents > 0 on teste la disponibilité
 					*/
 					if ($maxEvents > 0) {
 
