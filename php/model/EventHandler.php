@@ -318,7 +318,6 @@ class EventHandler {
 
 			$currentEvents[$date][] = array("start" => $Hbegin, "end" => $Hend, "id" => $id);
 		}
-
 		foreach ($dates as $date => $events) {
 
 			foreach ($events as $e) {
@@ -339,7 +338,15 @@ class EventHandler {
 				if ($isAvailable) {
 					$verifiedEvents["available"][$date] = $e;
 				} else {
-					$verifiedEvents["unavailable"][$date] = $currentEvents[$date];
+					$tmp = $currentEvents[$date];
+
+					foreach ($currentEvents[$date] as $key => $value) {
+						if ($value["id"] == $e["id"]) {
+							unset($tmp[$key]);
+						}
+					}
+					
+					$verifiedEvents["unavailable"][$date] = $tmp;
 				}
 			}
 		}

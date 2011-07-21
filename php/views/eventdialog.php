@@ -1,142 +1,163 @@
 <!-- BEGIN NEW EVENT DIALOG -->
-<script type="text/javascript" src="html/js/event.js" ></script>
-<?php
-require_once('application/GlobalRegistry.php');
-require_once('application/LanguageLinker.php');
-include_once("model/class/Event.php");
-include_once("model/EventHandler.php");
+<script
+	type="text/javascript" src="html/js/event.js"></script>
 
-session_start();
-include_once("helpers/System.php");
+	<?php
+	require_once('application/GlobalRegistry.php');
+	require_once('application/LanguageLinker.php');
+	include_once("model/class/Event.php");
+	include_once("model/EventHandler.php");
 
-
-$globalRegistry = $_SESSION["GlobalRegistry"];
-$languageLinker = $globalRegistry->languageLinker;
-
-$posX = $_GET['posX'];
-$posY = $_GET['posY'];
-
-$mode = $_GET['mode'];
-$disabled = false;
-$title = "";
-$edate = "";
-$wholeDay = false;
-$supprimer = false;
-$startH = 0;
-$startM = 0;
-$endH = 0;
-$endM = 0;
-$repeatMode = "n";
-$repeatEnd = "";
-$description = "";
-$recurrence_id = "";
-$currentUser = $_SESSION['REMOTE_USER'];
-$uid = "";
-$date_id = "";
-$event_id = "";
+	session_start();
+	include_once("helpers/System.php");
 
 
-$disable = false;
+	$globalRegistry = $_SESSION["GlobalRegistry"];
+	$languageLinker = $globalRegistry->languageLinker;
 
-switch ($mode) {
-    case "add" :
-        break;
-    case "edit" :
-        if (isset($posX) && isset($posY)) {
-            $event = $_SESSION['CURRENT_EVENTS'][$posX][$posY];
-            $uid = $event->getOwner();
+	$posX = $_GET['posX'];
+	$posY = $_GET['posY'];
 
-            $title = $event->getTitle();
-            $edate = $event->getDBegin();
+	$mode = $_GET['mode'];
+	$disabled = false;
+	$title = "";
+	$edate = "";
+	$wholeDay = false;
+	$supprimer = false;
+	$startH = 0;
+	$startM = 0;
+	$endH = 0;
+	$endM = 0;
+	$repeatMode = "n";
+	$repeatEnd = "";
+	$description = "";
+	$recurrence_id = "";
+	$currentUser = $_SESSION['REMOTE_USER'];
+	$uid = "";
+	$date_id = "";
+	$event_id = "";
 
-            $startTime = $event->getHBegin();
 
-            $startH = substr($startTime, 0, 2);
-            $startM = substr($startTime, 3, 2);
+	$disable = false;
+
+	switch ($mode) {
+		case "add" :
+			break;
+		case "edit" :
+			if (isset($posX) && isset($posY)) {
+				$event = $_SESSION['CURRENT_EVENTS'][$posX][$posY];
+				$uid = $event->getOwner();
+
+				$title = $event->getTitle();
+				$edate = $event->getDBegin();
+
+				$startTime = $event->getHBegin();
+
+				$startH = substr($startTime, 0, 2);
+				$startM = substr($startTime, 3, 2);
 
 
-            $endTime = $event->getHEnd();
-            $endH = substr($endTime, 0, 2);
-            $endM = substr($endTime, 3, 2);
+				$endTime = $event->getHEnd();
+				$endH = substr($endTime, 0, 2);
+				$endM = substr($endTime, 3, 2);
 
-            if ($startH == "00" && $startM == "00" && $endH == "00" && $endM == "00") {
-                $wholeDay = true;
-            }
+				if ($startH == "00" && $startM == "00" && $endH == "00" && $endM == "00") {
+					$wholeDay = true;
+				}
 
-            $description = $event->getDescription();
+				$description = $event->getDescription();
 
-            $repeatMode = $event->getMode();
-            
-            $lastDate = $event->getDBegin();
-            
-            if ($repeatMode != "n") {
-            	$eventHandler = new EventHandler();
-            	$lastDate = $eventHandler->getLastDate($event);
-            }
+				$repeatMode = $event->getMode();
 
-            $event->setLastDate($lastDate);
-            $repeatEnd = $event->getLastDate();
-            
-            
-            $date_id = $event->getDateId();
-            $event_id = $event->getId();
+				$lastDate = $event->getDBegin();
+
+				if ($repeatMode != "n") {
+					$eventHandler = new EventHandler();
+					$lastDate = $eventHandler->getLastDate($event);
+				}
+
+				$event->setLastDate($lastDate);
+				$repeatEnd = $event->getLastDate();
+
+
+				$date_id = $event->getDateId();
+				$event_id = $event->getId();
+			}
+
+			if (!(($uid == $currentUser && System::authLevel() > 0) || System::authLevel() == 2)) {
+				$disable = true;
+				echo "<script type=\"text/javascript\">disableForm()</script>";
+			}
+			break;
+	}
+
+	if (!$disable) {
+		if ($recurrence_id != "") {
+			echo "<span style=\"font-weight: bold;\" id=\"message-repeat\"></span>";
+		}
+		if ($uid != $currentUser && System::authLevel() < 2 && $mode == "edit") {
+			echo "<span style=\"font-weight: bold;\" id=\"message-other-user\"></span>";
+		}
+	}
+	?>
+	<?php if ($mode == 'edit') {
+		?>
+<script type="text/javascript">
+
+        function eventChanged() {
+                alert($("#name") + "== " + '<?php echo $title ?>' &&
+                	$("#edate") + "== " + '<?php echo $edate ?>' &&
+                		$("#startH") + "== " + '<?php echo $startH ?>' &&
+                			$("#startM") + "== " +  '<?Php echo $startM ?>' &&
+                				$("#endH") + "== " + '<?php echo $endH ?>' &&
+                					$("#repeatMode") + "== " + '<?php echo $repeatMode ?>' &&
+                						$("#repeatEnd") + "== " + '<?php echo $repeatEnd ?>' &&
+                							$("#description") + "== " + '<?php echo $description ?>');
+
+            return !($("#name").val() == "<?php echo $title ?>" &&
+            		$("#edate") == "<?php echo $edate ?>" &&
+            		$("#whole_day") == "<?php echo $wholeDay ?>" &&
+            		$("#start_hour") == "<?php echo $startH ?>" &&
+            		$("#start_min") == "<?Php echo $startM ?>" &&
+            		$("#end_hour") == "<?php echo $endH ?>" &&
+            		$("#repeat") == "<?php echo $repeatMode ?>" &&
+            		$("#repeat_date") == "<?php echo $repeatEnd ?>" &&
+            		$("#description") == "<?php echo $description ?>");
         }
 
-        if (!(($uid == $currentUser && System::authLevel() > 0) || System::authLevel() == 2)) {
-            $disable = true;
-            echo "<script type=\"text/javascript\">disableForm()</script>";
-        }
-        break;
-}
-
-if (!$disable) {
-    if ($recurrence_id != "") {
-        echo "<span style=\"font-weight: bold;\" id=\"message-repeat\"></span>";
-    }
-    if ($uid != $currentUser && System::authLevel() < 2 && $mode == "edit") {
-        echo "<span style=\"font-weight: bold;\" id=\"message-other-user\"></span>";
-    }
-}
-?>
-<?php if ($mode == 'edit') {
-    ?>
-    <script type="text/javascript">
-
-        /*function eventChanged(name, 
-                            edate, 
-                            startH, 
-                            startM, 
-                            endH, 
-                            endM, 
-                            repeatMode, 
-                            repeatDate, 
-                            description) {
-                
-            return !(name == '<?php echo $title ?>' &&
-                    edate == '<?php echo $edate ?>' &&
-                    startH == '<?php echo $startH ?>' &&
-                    startM == '<?Php echo $startM ?>' &&
-                    endH == '<?php echo $endH ?>' &&
-                    repeatMode == '<?php echo $repeatMode ?>' &&
-                    repeatEnd == '<?php echo $repeatEnd ?>' &&
-                    description == '<?php echo $description ?>');
-        }
-
-        $("#name, #edate, #whole_day, #start_hour, #start_min, #end_hour, #end_min, #repeat, #repeat_date, #description").change(function () {
+        $('#name, #description').bind('textchange', function (event, previousText) {
             $('#save').attr('disabled', eventChanged(
-                $('#name').value()));
-        });*/
+                    $(this).val())).addClass( 'ui-state-disabled' );
+        });
+        	        
+
+        $("#edate, #whole_day, #start_hour, #start_min, #end_hour, #end_min, #repeat, #repeat_date").change(function () {
+
+            $('#save').attr('disabled', eventChanged(
+                $(this).val())).addClass( 'ui-state-disabled' );
+
+        });
         
     </script>
-<?php } ?>
+
+    <?php } ?>
 <div id="message"></div>
 <form id="eventform" name="eventform" action="" method="post">
-    <?php if ($mode == "edit") { ?>
-        <div class="input text">
-            <?php if ($uid != $currentUser) {
-                ?>
-                <label for="creator" id="event-user"><?php echo $languageLinker->resourceBundle->get("calendar-event-owner");?></label>
-                <input type="text" name="creator" id="creator" value="<?php echo $uid ?>" readonly="readonly" />
+
+
+<?php if ($mode == "edit") { ?>
+	<div class="input text">
+
+
+	<?php if ($uid != $currentUser) {
+		?>
+		<label for="creator" id="event-user"><?php echo $languageLinker->resourceBundle->get("calendar-event-owner");?>
+		</label> <input type="text" name="creator" id="creator"
+			value="<?php echo $uid ?>" readonly="readonly" />
+		
+		
+		
+		
             <?php } ?>
             <!-- original entries, to know which part has been modified -->
             <input type="hidden" name="original_name" id="original_name" value="<?php echo $title; ?>"/>
@@ -148,6 +169,10 @@ if (!$disable) {
             <input type="hidden" name="original_repeat_end" id="original_repeat_end" value="<?php echo $repeatEnd; ?>"/>
             <input type="hidden" name="original_description" id="original_description" value="<?php echo $description; ?>"/>
         </div>
+	
+	
+	
+	
     <?php } ?>
     <div class="input text">
         <label for="name" id="event-title"><?php echo $languageLinker->resourceBundle->get("calendar-event-title");?></label>
@@ -265,7 +290,11 @@ if (!$disable) {
     </div>
 </form>
 
-<div id="dialog-confirm-repeat" title="<?php echo $languageLinker->resourceBundle->get("calendar-message-confirm-title");?>"></div>
-<div id="dialog-alerte-indisponibilite" title="<?php echo $languageLinker->resourceBundle->get("calendar-error-unavailable-title");?>"></div>
+<div
+	id="dialog-confirm-repeat"
+	title="<?php echo $languageLinker->resourceBundle->get("calendar-message-confirm-title");?>"></div>
+<div
+	id="dialog-alerte-indisponibilite"
+	title="<?php echo $languageLinker->resourceBundle->get("calendar-error-unavailable-title");?>"></div>
 
 <!-- END NEW EVENT DIALOG -->
