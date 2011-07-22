@@ -105,8 +105,7 @@
 <script type="text/javascript">
 		disableSave();
         function eventChanged() {
-
-            return ("'" + $("#name").val() + "'" == "'<?php echo $title ?>'" &&
+            return !("'" + $("#name").val() + "'" == "'<?php echo $title ?>'" &&
             		"'" + $("#edate").val() + "'" == "'<?php echo $edate ?>'" &&
             		"'" + $('#whole_day').is(':checked') + "'" == "'<?php echo $wholeDay ? "true" : "false"; ?>'" &&
             		"'" +$("#start_hour").val() + "'" == "'<?php echo $startH ?>'" &&
@@ -120,12 +119,10 @@
 
         function disableSave() {
             if (eventChanged()) {
-                console.log("changed");
-            	$('#save').attr('disabled', true).addClass( 'ui-state-disabled');
+            	$('#save').attr('disabled', false).removeClass( 'ui-state-disabled');
             }
             else {
-            	console.log("not changed");
-            	$('#save').attr('disabled', false).removeClass( 'ui-state-disabled');
+            	$('#save').attr('disabled', true).addClass( 'ui-state-disabled');
             }
         }
 
