@@ -100,10 +100,10 @@
 	<entry key="calendar-event-repeat">Repeat</entry>	
 	<entry key="calendar-event-never">Never</entry>	
 	<entry key="calendar-event-daily">Daily</entry>	
-	<entry key="calendar-event-weekly">Weekly - same day</entry>	
-	<entry key="calendar-event-halfMonthly">Every two weeks - same day</entry>	
-	<entry key="calendar-event-monthly">Monthly - same day</entry>	
-	<entry key="calendar-event-yearly">Yearly - same day</entry>	
+	<entry key="calendar-event-weekly">Same day - Weekly</entry>	
+	<entry key="calendar-event-halfMonthly">Same day - Every two weeks</entry>	
+	<entry key="calendar-event-monthly">Same day - Monthly</entry>	
+	<entry key="calendar-event-yearly">Same day - Yearly</entry>	
 	<entry key="calendar-event-until">Until</entry>	
 	<entry key="calendar-event-description">Description</entry>
 </properties> 

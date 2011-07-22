@@ -12,7 +12,11 @@ function sendForm(action) {
     else if(action == 'insert-available') {
         actionURL = "php/controller/event_verify.php?insert-available=true";
     }
-
+    //showLoading();
+    $('.ui-dialog').block({ 
+        message: '<img src="html/img/loading.gif" />', 
+        css: { border: 'none' } 
+    }); 
     dataString = $('form').serialize();
     $.ajax({
         type: "POST",
@@ -29,6 +33,8 @@ function sendForm(action) {
                 $('#message').html(getErrors(res));
                 $('#message').css("color", "red");
             }
+            $('.ui-dialog').unblock(); 
+           // hideLoading();
         }
 
     });
@@ -42,7 +48,7 @@ function getErrors(errors) {
             case 'unavailable' :
                 i = 0;
                 error = "";
-                console.log(val);
+                /*console.log(val);*/
                 error += "<ul>";
                 $.each(val, function(key2, date) {
                 	$.each(date, function(key3, val2) {
@@ -94,6 +100,7 @@ function getErrors(errors) {
     return errorMessage;
 }
 
+
 //Initialisation de JQuery
 $(document).ready(function() {
 
@@ -119,10 +126,7 @@ $(document).ready(function() {
         id : 'delete'
     });       
     buttonsOpts[resourceBundle["calendar-event-save"]] = $.extend(function() {
-
         var errors = 0;
-
-
         $("#eventform :input").each(function() {
             if($(this).val() == '' && $(this).hasClass('required') ){
                 $(this).prev().css("color", "red");
@@ -133,17 +137,13 @@ $(document).ready(function() {
             }
         });
 
-        if (errors == 0){
-            
+        if (errors == 0){       
             if($('#original_repeat_mode').val() != 'n' && $('#original_repeat_mode').val() != "" && $('#action').val() == "edit") {
                 updateConfirm();
             }
             else {
                 sendForm('edit');
             }
-        //sendForm('');
-            
-            
         }
     },{
         id : 'save'

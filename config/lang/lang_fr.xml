@@ -99,10 +99,10 @@
 	<entry key="calendar-event-repeat">Répéter</entry>	
 	<entry key="calendar-event-never">Jamais</entry>	
 	<entry key="calendar-event-daily">Chaque jour</entry>	
-	<entry key="calendar-event-weekly">Chaque semaine - même jour</entry>	
-	<entry key="calendar-event-halfMonthly">Toutes les deux semaines - même jour</entry>	
-	<entry key="calendar-event-monthly">Chaque mois - même jour</entry>	
-	<entry key="calendar-event-yearly">Chaque année - même jour</entry>	
+	<entry key="calendar-event-weekly">Même jour - Chaque semaine</entry>	
+	<entry key="calendar-event-halfMonthly">Même jour - Toutes les deux semaines</entry>	
+	<entry key="calendar-event-monthly">Même jour - Chaque mois</entry>	
+	<entry key="calendar-event-yearly">Même jour - Chaque année</entry>	
 	<entry key="calendar-event-until">Jusqu'à</entry>	
 	<entry key="calendar-event-description">Description</entry>
 </properties> 	

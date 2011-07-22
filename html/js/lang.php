@@ -42,7 +42,7 @@ $keys = array(
 "calendar-message-confirm-button-yes" => $languageLinker->resourceBundle->get("calendar-message-confirm-button-yes"),
 "calendar-message-confirm-button-no" => $languageLinker->resourceBundle->get("calendar-message-confirm-button-no"),
 "calendar-message-confirm-button-allFuture" => $languageLinker->resourceBundle->get("calendar-message-confirm-button-allFuture"),
-"calendar-message-confirm-button-thisEvent" => $languageLinker->resourceBundle->get("today"),
+"calendar-message-confirm-button-thisEvent" => $languageLinker->resourceBundle->get("calendar-message-confirm-button-thisEvent"),
 "today" => $languageLinker->resourceBundle->get("today")
 );
 ?>
