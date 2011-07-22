@@ -103,39 +103,38 @@
 	<?php if ($mode == 'edit') {
 		?>
 <script type="text/javascript">
-
+		disableSave();
         function eventChanged() {
-                alert($("#name") + "== " + '<?php echo $title ?>' &&
-                	$("#edate") + "== " + '<?php echo $edate ?>' &&
-                		$("#startH") + "== " + '<?php echo $startH ?>' &&
-                			$("#startM") + "== " +  '<?Php echo $startM ?>' &&
-                				$("#endH") + "== " + '<?php echo $endH ?>' &&
-                					$("#repeatMode") + "== " + '<?php echo $repeatMode ?>' &&
-                						$("#repeatEnd") + "== " + '<?php echo $repeatEnd ?>' &&
-                							$("#description") + "== " + '<?php echo $description ?>');
 
-            return !($("#name").val() == "<?php echo $title ?>" &&
-            		$("#edate") == "<?php echo $edate ?>" &&
-            		$("#whole_day") == "<?php echo $wholeDay ?>" &&
-            		$("#start_hour") == "<?php echo $startH ?>" &&
-            		$("#start_min") == "<?Php echo $startM ?>" &&
-            		$("#end_hour") == "<?php echo $endH ?>" &&
-            		$("#repeat") == "<?php echo $repeatMode ?>" &&
-            		$("#repeat_date") == "<?php echo $repeatEnd ?>" &&
-            		$("#description") == "<?php echo $description ?>");
+            return ("'" + $("#name").val() + "'" == "'<?php echo $title ?>'" &&
+            		"'" + $("#edate").val() + "'" == "'<?php echo $edate ?>'" &&
+            		"'" + $('#whole_day').is(':checked') + "'" == "'<?php echo $wholeDay ? "true" : "false"; ?>'" &&
+            		"'" +$("#start_hour").val() + "'" == "'<?php echo $startH ?>'" &&
+            		"'" +$("#start_min").val() + "'" == "'<?Php echo $startM ?>'" &&
+            		"'" +$("#end_hour").val() + "'" == "'<?php echo $endH ?>'" &&
+            		"'" +$("#end_min").val() + "'" == "'<?php echo $endM ?>'" &&
+            		"'" +$("#repeat").val() + "'"  == "'<?php echo $repeatMode ?>'" &&
+            		"'" + $("#repeat_end").val() + "'" == "'<?php echo $repeatEnd ?>'" &&
+            		"'" + $("#description").val() + "'" == "'<?php echo $description ?>'");
+        }
+
+        function disableSave() {
+            if (eventChanged()) {
+                console.log("changed");
+            	$('#save').attr('disabled', true).addClass( 'ui-state-disabled');
+            }
+            else {
+            	console.log("not changed");
+            	$('#save').attr('disabled', false).removeClass( 'ui-state-disabled');
+            }
         }
 
         $('#name, #description').bind('textchange', function (event, previousText) {
-            $('#save').attr('disabled', eventChanged(
-                    $(this).val())).addClass( 'ui-state-disabled' );
+			disableSave();
         });
-        	        
 
         $("#edate, #whole_day, #start_hour, #start_min, #end_hour, #end_min, #repeat, #repeat_date").change(function () {
-
-            $('#save').attr('disabled', eventChanged(
-                $(this).val())).addClass( 'ui-state-disabled' );
-
+			disableSave();
         });
         
     </script>
