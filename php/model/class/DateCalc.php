@@ -70,10 +70,6 @@ class DateCalc {
             case "m" :
                 $offset = "next " . $weekday . "+3 week";
                 break;
-            case "y" :
-                $offset = "on " . $weekday . "+1 year";
-                ;
-                break;
         }
 
         $counter_end = $this->diffDate();
@@ -86,6 +82,15 @@ class DateCalc {
             $year = (int) substr($date_c, 0, 4);
             $month = (int) substr($date_c, 5, 2);
             $day = (int) substr($date_c, 8, 2);
+            
+            if ($this->mode == "y") {
+            	$nb_week = 51;
+            	if( (($year % 4 == 0) && !($year % 100 == 0)) || ($year % 400 == 0)) {
+            		$nb_week = 52;
+            	}
+
+            	$offset = "next " . $weekday . "+" . $nb_week . " week";
+            }
 
             $timestamp = mktime(0, 0, 0, $month, $day, $year);
             $date_c = (string) date("Y-m-d", strtotime($offset, $timestamp));
