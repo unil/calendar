@@ -12,7 +12,6 @@ function sendForm(action) {
     else if(action == 'insert-available') {
         actionURL = "php/controller/event_verify.php?insert-available=true";
     }
-    //showLoading();
     $('.ui-dialog').block({ 
         message: '<img src="html/img/loading.gif" />', 
         css: { border: 'none' } 
@@ -34,7 +33,6 @@ function sendForm(action) {
                 $('#message').css("color", "red");
             }
             $('.ui-dialog').unblock(); 
-           // hideLoading();
         }
 
     });
@@ -54,14 +52,18 @@ function getErrors(errors) {
                 	$.each(date, function(key3, val2) {
                     start =  val2["start"].substring(0,5);
                     end = val2["end"].substring(0,5);
-                    
-                    error += "<li>" + key2 + " " + start +  "-" + end + "</li>";
+	                if (i < 5) {
+	                    error += "<li>" + key2 + " " + start +  "-" + end + "</li>";
+	                }
                     i++;
                 	});
                 });
+                if (i >= 4) {
+                	error += "<li>etc.</li>";
+                }
+                
                 error += "</ul>";
                 if (i> 1) {
-
                     $('#dialog-alerte-indisponibilite').html(resourceBundle["calendar-error-unavailable"] + error);
                 	
                     alerteIndisponibilite();

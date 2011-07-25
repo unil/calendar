@@ -192,7 +192,7 @@ jQuery.cookie = function (key, value, options) {
  		textAlign:	'center',
  		color:		'#000',
  		border:		'3px solid #aaa',
- 		backgroundColor:'#fff',
+ 		/*backgroundColor:'#fff',*/
  		cursor:		'wait'
  	},
  	
