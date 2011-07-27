@@ -195,7 +195,7 @@
         <select name="start_hour" id="start_hour">
             <?php
             for ($i = 0; $i <= 23; $i++) {
-                echo "<option";
+                echo "<option value=\"$i\"";
                 if ($startH == $i) {
                     echo " selected";
                 }
@@ -212,7 +212,7 @@
         <select name="start_min" id="start_min">
             <?php
             for ($i = 0; $i < 60; $i += 5) {
-                echo "<option";
+                echo "<option value=\"$i\"";
                 if ($startM == $i) {
                     echo " selected";
                 }

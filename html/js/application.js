@@ -19,7 +19,7 @@ var year = new Date().getFullYear();
 var room = 13;
 var building = 27;
 
-var maxYearOffset = 5; //date max. dans le futur
+var maxYearOffset = 3; //date max. dans le futur
 
 function init() {
     /*Fonction pour réécrire le buttonpane afin de pouvoir
