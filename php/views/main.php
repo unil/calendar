@@ -24,6 +24,7 @@ $languageLinker = $globalRegistry->languageLinker;
 
         <link type="text/css" rel="StyleSheet" href="html/css/UNIL-FBM_default.css" />
         <link rel="stylesheet" type="text/css" href="html/css/default.css" />
+        <link rel="stylesheet" type="text/css" href="html/css/button.css" />
 
         <!-- Begin JQuery -->
         <link type="text/css" rel="StyleSheet" href="html/css/jquery-ui-1.8.4.custom.css" />
@@ -106,12 +107,15 @@ $languageLinker = $globalRegistry->languageLinker;
                                         <tr valign="top" class="title">
                                             <td class="title_l">
                                                 <h1>
-                                                	<a id="today" style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 329px; text-align: left;"></a>
-                                                    <span id="prev"><img src="html/img/left.gif" border="0" alt="" align="absmiddle" /></span>
+                                                <button type="button" class="btn" id="today" style="width: 100px;">
+														<span><span id="todayLabel">Aujourd'hui</span> </span>
+												</button>
+												<span style="width: 230px; display: inline-block">&nbsp;</span>
+                                                    <span id="prev"><img src="html/img/left.gif" border="0" alt="" style="vertical-align: middle;" /></span>
                                                     <span style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 140px; text-align: center;">
                                                         <span id="monthname" ></span>&nbsp;<span id="yearName" ></span>       
                                                     </span>     
-                                                    <span id="next"><img src="html/img/right.gif" border="0" alt="" align="absmiddle" /></span>
+                                                    <span id="next"><img src="html/img/right.gif" border="0" alt="" style="vertical-align: middle;" /></span>
                                                 </h1>
                                                 <div id="roomName" class="V9G" >&nbsp;</div>
                                             </td>
@@ -218,7 +222,7 @@ $languageLinker = $globalRegistry->languageLinker;
                             <tr>
                                 <td><img src="https://wwwfbm.unil.ch/html/img/foot_fbm.gif" alt="Barre verticale" border="0" /></td>
                                 <td>&nbsp;</td>
-                                <td valign="bottom" align="right"><span id="ja" class="language"><font color="#FFFFFF">&copy; 2010 - Université de Lausanne - All right reserved</font></span></td>
+                                <td valign="bottom" align="right"><span id="ja" class="language"><font color="#FFFFFF">&copy; 2011 - Université de Lausanne - All right reserved</font></span></td>
                             </tr>
                         </table>
                     </td>

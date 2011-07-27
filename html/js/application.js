@@ -119,7 +119,7 @@ function appUI() {
         	 	   dataType: "script",
         	 	  success: function(msg){
         	 		$('#page-title').html(resourceBundle["application-title"]);
-        	 		$('#today').html(resourceBundle["today"]);
+        	 		$('#todayLabel').html(resourceBundle["today"]);
 
         	 	    $('#information-title').html(resourceBundle["calendar-information"]);
         	 	    $('#calendar-choice').html(resourceBundle["calendar-choice"]);
