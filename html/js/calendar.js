@@ -103,7 +103,7 @@ function getErrors(errors) {
 
 //Initialisation de JQuery
 $(document).ready(function() {
-    buttonsOpts = {}
+    buttonsOpts = {};
     buttonsOpts[resourceBundle["calendar-event-cancel"]] = $.extend(function() {
         $(this).dialog("close");
     },{
