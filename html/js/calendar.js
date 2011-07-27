@@ -52,6 +52,9 @@ function getErrors(errors) {
                 	$.each(date, function(key3, val2) {
                     start =  val2["start"].substring(0,5);
                     end = val2["end"].substring(0,5);
+                    if (start == end && start == "00:00") {
+                    	end = "24:00";
+                    }
 	                if (i < 5) {
 	                    error += "<li>" + key2 + " " + start +  "-" + end + "</li>";
 	                }
@@ -63,14 +66,9 @@ function getErrors(errors) {
                 }
                 
                 error += "</ul>";
-                if (i> 1) {
-                    $('#dialog-alerte-indisponibilite').html(resourceBundle["calendar-error-unavailable"] + error);
+                $('#dialog-alerte-indisponibilite').html(resourceBundle["calendar-error-unavailable"] + error);
                 	
-                    alerteIndisponibilite();
-                }
-                else {
-                    errorMessage += resourceBundle["calendar-error-unavailable"];
-                }
+                alerteIndisponibilite();
                 break;
             case 'time' :
                 errorMessage += resourceBundle["calendar-error-time"];
