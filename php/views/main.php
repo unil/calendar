@@ -106,17 +106,17 @@ $languageLinker = $globalRegistry->languageLinker;
                                     <table width="100%" border="0" cellspacing="0" cellpadding="0">
                                         <tr valign="top" class="title">
                                             <td class="title_l">
-                                                <h1>
+                                                
                                                 <button type="button" class="btn" id="today" style="width: 100px;">
 														<span><span id="todayLabel">Aujourd'hui</span> </span>
 												</button>
 												<span style="width: 230px; display: inline-block">&nbsp;</span>
                                                     <span id="prev"><img src="html/img/left.gif" border="0" alt="" style="vertical-align: middle;" /></span>
                                                     <span style="display:-moz-inline-block; display:-moz-inline-box; display:inline-block;width: 140px; text-align: center;">
-                                                        <span id="monthname" ></span>&nbsp;<span id="yearName" ></span>       
+                                                       <h1><span id="monthname" ></span>&nbsp;<span id="yearName" ></span>     </h1>   
                                                     </span>     
                                                     <span id="next"><img src="html/img/right.gif" border="0" alt="" style="vertical-align: middle;" /></span>
-                                                </h1>
+                                                
                                                 <div id="roomName" class="V9G" >&nbsp;</div>
                                             </td>
                                             <td class="title_r">
