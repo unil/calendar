@@ -16,8 +16,8 @@ var eventPosY;
 var eventSalle;
 var month = new Date().getMonth() + 1;
 var year = new Date().getFullYear();
-var room = 13;
-var building = 27;
+var room;
+var building;
 
 var maxYearOffset = 3; //date max. dans le futur
 
@@ -67,6 +67,23 @@ function init() {
         }
 
     })();
+    
+    $.getJSON('php/application/ip.php', function(data){
+    	subdmain = parseInt(data.subdomain);
+    	 switch (subdmain) {
+    	 case 194 :
+    		 room = 13;
+    		 building = 21;
+    		 break;
+    	 case 201 :
+    		 room = 44;
+    		 building = 7;
+    	 default: 
+    		 room = 13;
+    	 	 building = 27;
+    	 }
+    });
+    setTimeout('sessionTimeout()', 3600001);
 }
 
 function newEvent(caldate) {
@@ -142,7 +159,6 @@ function buildings() {
 function calendar() {
     if ($.cookie("room") != null) {
         room = $.cookie("room");
-
     }
     if ($.cookie("year") != null) {
         year = $.cookie("year");
@@ -205,6 +221,7 @@ function browserLang() {
 
 //Initialisation de JQuery
 $(document).ready(function() {
+	init();
 	if ($.cookie("lang") == null) {
 	    if (browserLang() != null && browserLang() != 'undefined' && browserLang() != "") {
 	        lang = browserLang();

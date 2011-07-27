@@ -15,8 +15,12 @@ else
 }
 
 
+preg_match_all("/\d+/", $ip, $matches);
+$subdomain = (int)$matches[0][2];
 
-print json_encode(array('ip' => $ip));
+
+
+print json_encode(array("ip" => $ip, "subdomain" => $subdomain));
 
 /*
  * $.getJSON('getip.php', function(data){

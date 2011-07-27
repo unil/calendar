@@ -103,9 +103,6 @@ function getErrors(errors) {
 
 //Initialisation de JQuery
 $(document).ready(function() {
-
-    setTimeout('sessionTimeout()', 3600001);
-    init();
     buttonsOpts = {}
     buttonsOpts[resourceBundle["calendar-event-cancel"]] = $.extend(function() {
         $(this).dialog("close");
