@@ -25,6 +25,7 @@ $name = $_POST['name'];
 $start = $_POST['start_hour'] . ":" . $_POST['start_min'] . ":00";
 $end = $_POST['end_hour'] . ":" . $_POST['end_min'] . ":00";
 $description = $_POST['description'];
+$repeatEnd = $_POST['repeat_end'];
 
 $wholeDay = false;
 if (isset($_POST['whole_day'])) {
@@ -79,6 +80,9 @@ if (System::authLevel() > 0) {
 //if no error
 if ($valide) {
     $eventController = new EventController($room, $user);
+    if ($repeatEnd < $date) {
+    	 $repeatEnd = $date;
+    }
     $formEvent = new Event(
                     $_POST['event_id'],
                     $_POST['uid'],
@@ -90,7 +94,7 @@ if ($valide) {
                     $end,
                     $_POST['repeat'],
                     $_POST['date_id'],
-                    $_POST['repeat_end']
+                    $repeatEnd
     );
 
     $modifyAll = $_POST["modifyall"];
@@ -122,6 +126,7 @@ if ($valide) {
 
         $events = null;
         $event = $formEvent;
+
         if ($action == "edit") {
             $originalEvent = new Event(
                             $_POST['event_id'],
@@ -135,6 +140,8 @@ if ($valide) {
                             $_POST['original_repeat_mode'],
                             $_POST['date_id'],
                             $_POST['original_repeat_end']);
+            
+
 
             $name = $formEvent->getTitle();
             $date = $formEvent->getDBegin();

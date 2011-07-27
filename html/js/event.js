@@ -119,11 +119,15 @@ $(document).ready(function() {
     if ($("#repeat_end").val() == '') {
         $("#repeat_end").val(caldate);
     }
-    /*$("#edate").change(function() {
+    $("#edate").change(function() {
 
-        edate = $("#edate").val();
-        $("#repeat_end").val(edate);
-    });*/
+        eventDate = $("#edate").val();
+        repeatEnd = $("#repeat_end").val();
+        
+        if (eventDate > repeatEnd) {
+        	$("#repeat_end").val(eventDate);
+        }
+    });
 
     $("#start_hour").change(function() {
         startHour = $("#start_hour").val();

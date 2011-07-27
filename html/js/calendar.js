@@ -50,13 +50,13 @@ function getErrors(errors) {
                 error += "<ul>";
                 $.each(val, function(key2, date) {
                 	$.each(date, function(key3, val2) {
-                    start =  val2["start"].substring(0,5);
-                    end = val2["end"].substring(0,5);
-                    if (start == end && start == "00:00") {
-                    	end = "24:00";
+                    startTime =  val2["start"].substring(0,5);
+                    endTime = val2["end"].substring(0,5);
+                    if (startTime == endTime && startTime == "00:00") {
+                    	endTime = "24:00";
                     }
 	                if (i < 5) {
-	                    error += "<li>" + key2 + " " + start +  "-" + end + "</li>";
+	                    error += "<li>" + key2 + " " + startTime +  "-" + endTime + "</li>";
 	                }
                     i++;
                 	});
