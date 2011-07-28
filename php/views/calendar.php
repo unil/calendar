@@ -5,6 +5,7 @@ include_once("model/MonthCalendar.php");
 include_once("model/class/Room.php");
 include_once("model/class/Building.php");
 include_once("model/RoomHandler.php");
+include_once("model/BuildingHandler.php");
 include_once("helpers/System.php");
 session_start();
 
@@ -13,6 +14,7 @@ session_start();
 $month = date("n");
 $year = date("Y");
 $roomId = 13;
+$buildingId = 27;
 
 if (isset($_GET['year']) && $_GET['year'] != 'undefined') {
     $year = (int) $_GET['year'];
@@ -25,6 +27,24 @@ if (isset($_GET['month']) && $_GET['month'] != 'undefined') {
 if (isset($_GET['room']) && $_GET['room'] != 'undefined') {
     $roomId = (string) $_GET['room'];
 }
+if (isset($_GET['building']) && $_GET['building'] != 'undefined') {
+	$buildingId = (int) $_GET['building'];
+}
+$building = null;
+if (isset($_SESSION['CURRENT_BUILDING'])) {
+	$building = $_SESSION['CURRENT_BUILDING'];
+}
+else {
+	$buildingHandler = new BuildingHandler();
+	$buildings = $buildingHandler->getBuildings();
+
+	foreach ($buildings as $b) {
+		if ($buildingId == $b->getId()) {
+			$building = $b;
+		}
+	}
+}
+
 
 $roomHandler = new RoomHandler();
 $room = $roomHandler->getRooms(null, $roomId);
@@ -41,7 +61,6 @@ $_SESSION['ACCEPT_STUDENTS'] = $room->getAcceptStudents();
 $_SESSION['DB_LOGGING'] = $room->getIsLogged();
 
 
-$building = $_SESSION['CURRENT_BUILDING'];
 ?>
 <script type="text/javascript" src="html/js/calendar.js" ></script>
 

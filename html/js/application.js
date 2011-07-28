@@ -68,21 +68,41 @@ function init() {
 
     })();
     
-    $.getJSON('php/application/ip.php', function(data){
-    	subdmain = parseInt(data.subdomain);
-    	 switch (subdmain) {
-    	 case 194 :
-    		 room = 13;
-    		 building = 21;
-    		 break;
-    	 case 201 :
-    		 room = 44;
-    		 building = 7;
-    	 default: 
-    		 room = 13;
-    	 	 building = 27;
-    	 }
-    });
+	$.getJSON('php/application/ip.php', function(data){
+	    	subdmain = parseInt(data.subdomain);
+	    	 switch (subdmain) {
+	    	 case 194 :
+	    		 room = 13;
+	    		 building = 21;
+	    		 break;
+	    	 case 201 :
+	    		 room = 44;
+	    		 building = 7;
+	    	 default: 
+	    		 room = 13;
+	    	 	 building = 27;
+	    	 }
+	});
+    if ($.cookie("building") != null) {
+        building = $.cookie("building");
+    }
+    if ($.cookie("room") != null) {
+        room = $.cookie("room");
+    }
+    if ($.cookie("year") != null) {
+        year = $.cookie("year");
+    }
+    if ($.cookie("month") != null) {
+        month = $.cookie("month");
+    }
+	if ($.cookie("lang") == null) {
+	    if (browserLang() != null && browserLang() != 'undefined' && browserLang() != "") {
+	        lang = browserLang();
+	        $.cookie("lang", lang);
+	    }
+	}
+   
+    
     setTimeout('sessionTimeout()', 3600001);
 }
 
@@ -128,7 +148,6 @@ function appUI() {
 
         	       $('#month').html('');
         	       for (i = 1; i <= 12; i++) {
-
         	           $('#month').append('<option value=\"' + i + '\">' + resourceBundle["month-" + i + "-full"] + '</option>');
         	       }
 
@@ -142,10 +161,6 @@ function appUI() {
 }
 
 function buildings() {
-    if ($.cookie("building") != null) {
-        building = $.cookie("building");
-    }
-
     $.get("php/views/buildings.php", {
         "id": building
     },
@@ -157,20 +172,12 @@ function buildings() {
 }
 
 function calendar() {
-    if ($.cookie("room") != null) {
-        room = $.cookie("room");
-    }
-    if ($.cookie("year") != null) {
-        year = $.cookie("year");
-    }
-    if ($.cookie("month") != null) {
-        month = $.cookie("month");
-    }
     $.get("php/views/calendar.php", {
         "view": view,
         "room": room,
         "year" : year,
-        "month" : month
+        "month" : month,
+        "building" : building
     },
     function(data){
         $('#calendar').html(data);
@@ -222,12 +229,7 @@ function browserLang() {
 //Initialisation de JQuery
 $(document).ready(function() {
 	init();
-	if ($.cookie("lang") == null) {
-	    if (browserLang() != null && browserLang() != 'undefined' && browserLang() != "") {
-	        lang = browserLang();
-	        $.cookie("lang", lang);
-	    }
-	}
+
     appUI();
 
     $(".language").click(function() {
@@ -252,9 +254,7 @@ $(document).ready(function() {
         y = parseInt(year);
         m = parseInt(month);
 
-        if(!((new Date().getFullYear() == year) && (month == 1)))
-        {
-
+        if(!((new Date().getFullYear() == year) && (month == 1))) {
             prevYear = (m != 1) ? y : (y - 1);
             prevMonth = (m == 1) ? 12 : (m - 1);
 
@@ -269,7 +269,6 @@ $(document).ready(function() {
     });
 
     $("#next").click(function() {
-
         y = parseInt(year);
         m = parseInt(month);
 
