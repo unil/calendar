@@ -12,7 +12,7 @@ $languageLinker = $globalRegistry->languageLinker;
 
 
 $rooms = null;
-
+$buildings = null;
 
 
 $buildingId = 27;

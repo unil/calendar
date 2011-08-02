@@ -17,15 +17,15 @@ $roomId = 13;
 $buildingId = 27;
 
 if (isset($_GET['year']) && $_GET['year'] != 'undefined') {
-    $year = (int) $_GET['year'];
+	$year = (int) $_GET['year'];
 }
 
 if (isset($_GET['month']) && $_GET['month'] != 'undefined') {
-    $month = (int) $_GET['month'];
+	$month = (int) $_GET['month'];
 }
 
 if (isset($_GET['room']) && $_GET['room'] != 'undefined') {
-    $roomId = (string) $_GET['room'];
+	$roomId = (string) $_GET['room'];
 }
 if (isset($_GET['building']) && $_GET['building'] != 'undefined') {
 	$buildingId = (int) $_GET['building'];

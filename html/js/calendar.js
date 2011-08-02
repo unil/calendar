@@ -1,6 +1,6 @@
 /**
  * @author:     Stefan Meier
- * @version:    20110710
+ * @version:    20110802
  * 
  * This script is a listener for all calendar events
  */
