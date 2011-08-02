@@ -153,7 +153,7 @@ $(document).ready(function() {
         .dialog({
             title: dialogTitle,
             autoOpen: false,
-            width: 280,
+            width: 290,
             buttons: buttonsOpts,
             close: function(ev, ui) {
                 calendar();

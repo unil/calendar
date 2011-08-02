@@ -82,26 +82,30 @@ function init() {
 	    		 room = 13;
 	    	 	 building = 27;
 	    	 }
+	    	 
+	    	if ($.cookie("building") != null) {
+        		building = $.cookie("building");
+
+		    }
+		    if ($.cookie("room") != null) {
+		        room = $.cookie("room");
+		
+		    }
+		    if ($.cookie("year") != null) {
+		        year = $.cookie("year");
+		    }
+		    if ($.cookie("month") != null) {
+		        month = $.cookie("month");
+		    }
+		    if ($.cookie("lang") == null) {
+			    if (browserLang() != null && browserLang() != 'undefined' && browserLang() != "") {
+			        lang = browserLang();
+			        $.cookie("lang", lang);
+			    }
+			}
+		    appUI();
 	});
-    if ($.cookie("building") != null) {
-        building = $.cookie("building");
-    }
-    if ($.cookie("room") != null) {
-        room = $.cookie("room");
-    }
-    if ($.cookie("year") != null) {
-        year = $.cookie("year");
-    }
-    if ($.cookie("month") != null) {
-        month = $.cookie("month");
-    }
-	if ($.cookie("lang") == null) {
-	    if (browserLang() != null && browserLang() != 'undefined' && browserLang() != "") {
-	        lang = browserLang();
-	        $.cookie("lang", lang);
-	    }
-	}
-   
+
     
     setTimeout('sessionTimeout()', 3600001);
 }
@@ -121,10 +125,9 @@ function editEvent(posX, posY, caldate) {
 }
 
 function appUI() {
-
-    if ($.cookie("lang") != null) {
-        this.lang = $.cookie("lang");
-    }
+	if ($.cookie("lang") != null) {
+		this.lang = $.cookie("lang");
+	}
 
     $('.language').css('font-weight', 'normal');
     $('#' + lang).css('font-weight', 'bold');
@@ -229,9 +232,6 @@ function browserLang() {
 //Initialisation de JQuery
 $(document).ready(function() {
 	init();
-
-    appUI();
-
     $(".language").click(function() {
 
         lang = $(this).attr('id');
