@@ -74,8 +74,10 @@ $rooms = $roomHandler->getRooms($currentBuilding);
     <?php
     echo "<select name=\"buildings\" class=\"query_style\" id=\"buildings\">\n";
 
-    foreach ($buildings as $b) {
-        echo "<option value=\"" . $b->getId() . "\">" . $b->getName() . "</option>";
+    if ($buildings != null) {
+	    foreach ($buildings as $b) {
+	        echo "<option value=\"" . $b->getId() . "\">" . $b->getName() . "</option>";
+	    }
     }
 
 
