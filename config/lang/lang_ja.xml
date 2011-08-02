@@ -53,14 +53,14 @@
 	<entry key="calendar-goTo">日付</entry> 
 	
 	<entry key="room-category-other">Other</entry>
-	<entry key="room-category-setup">Scientific setup</entry> 
-	<entry key="room-category-room">Room</entry> 
+	<entry key="room-category-scientifcSetup">Scientific setup</entry> 
+	<entry key="room-category-seminarRoom">Room</entry> 
 	<entry key="room-category-animalLab">Animal experimentation lab</entry> 
 	<entry key="room-category-animalFacility">Animal facility</entry> 
 	<entry key="room-category-p2">Secured Lab P2</entry> 
 	<entry key="room-category-microscope">Microscope</entry> 
-	<entry key="room-category-machine">Machine room</entry> 
-	<entry key="room-category-rent">Rental material</entry>
+	<entry key="room-category-machineRoom">Machine room</entry> 
+	<entry key="room-category-rental">Rental material</entry>
 	 
 	<entry key="calendar-error-time">時間のエラーがあります。</entry> 
 	<entry key="calendar-error-unavailable-title">Dates unavailable</entry> 	

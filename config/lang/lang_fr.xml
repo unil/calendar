@@ -53,14 +53,14 @@
 	<entry key="calendar-goTo">Aller à</entry> 
 	
 	<entry key="room-category-other">Autre</entry>
-	<entry key="room-category-setup">Appareils de mesure scientifique</entry> 
-	<entry key="room-category-room">Salles</entry> 
+	<entry key="room-category-scientificSetup">Appareils de mesure scientifique</entry> 
+	<entry key="room-category-seminarRoom">Salles</entry> 
 	<entry key="room-category-animalLab">Laboratoire d'expérimentation animale</entry> 
 	<entry key="room-category-animalFacility">Animalerie</entry> 
 	<entry key="room-category-p2">Laboratoires sécurisés P2</entry> 
 	<entry key="room-category-microscope">Microscope</entry> 
-	<entry key="room-category-machine">Salle des appareils</entry> 
-	<entry key="room-category-rent">Matériel de prêt</entry> 
+	<entry key="room-category-machineRoom">Salle des appareils</entry> 
+	<entry key="room-category-rental">Matériel de prêt</entry> 
 	 
 	<entry key="calendar-error-time">L'heure de fin doit être supérieure à l'heure de début.</entry> 
 	<entry key="calendar-error-unavailable-title">Plages horaires indisponibles</entry> 
