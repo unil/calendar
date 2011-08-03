@@ -1,8 +1,12 @@
-
 <!-- BEGIN INFORMATION -->
 <div class="box">
 	<h1>Information</h1>
-	<div>Ceci est une description de test. Ne veuillez pas en tenir compte.</div>
+	<div>
+		Ceci est une description de test. Ne veuillez pas en tenir compte.
+		<br />
+		<br />
+		Max. réservations: 1
+	</div>
 </div>
 <!-- END INFORMATION -->
 <!-- BEGIN CONTACT -->
