@@ -80,9 +80,10 @@
 	<entry key="calendar-message-confirm-repeat-delete">Souhaitez-vous supprimer cet événement ainsi que toutes ses résevations futures ou uniquement celle sélectionnée ?</entry> 	
 	<entry key="calendar-message-confirm-button-ok">Ok</entry> 
 	<entry key="calendar-message-confirm-button-yes">Oui</entry> 
-	<entry key="calendar-message-confirm-button-no">No</entry> 
+	<entry key="calendar-message-confirm-button-no">Non</entry> 
 	<entry key="calendar-message-confirm-button-allFuture">Toutes les réservations futures</entry> 
 	<entry key="calendar-message-confirm-button-thisEvent">Seulement cet événement</entry> 
+	<entry key="calendar-message-checkAvailability">Vérifier la disponibilité</entry> 	
 	
 	<entry key="calendar-event-owner">Propriétaire</entry> 
 	<entry key="calendar-event-new">Nouvel événement</entry> 

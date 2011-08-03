@@ -83,6 +83,7 @@
 	<entry key="calendar-message-confirm-button-no">No</entry> 
 	<entry key="calendar-message-confirm-button-allFuture">All future reservations</entry> 
 	<entry key="calendar-message-confirm-button-thisEvent">Only this reservation</entry> 
+	<entry key="calendar-message-checkAvailability">Check availability</entry> 
 
 	<entry key="calendar-event-owner">所有者</entry> 
 	<entry key="calendar-event-new">イベントを入力</entry> 

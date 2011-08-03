@@ -1,6 +1,8 @@
 
 <?php
 date_default_timezone_set('Europe/Zurich');
+require_once('application/GlobalRegistry.php');
+require_once('application/LanguageLinker.php');
 include_once("model/MonthCalendar.php");
 include_once("model/class/Room.php");
 include_once("model/class/Building.php");
@@ -9,7 +11,8 @@ include_once("model/BuildingHandler.php");
 include_once("helpers/System.php");
 session_start();
 
-
+$globalRegistry = $_SESSION["GlobalRegistry"];
+$languageLinker = $globalRegistry->languageLinker;
 
 $month = date("n");
 $year = date("Y");
@@ -74,8 +77,19 @@ echo $calendar->getCalendar();
 
 <span id="cal_roomDescription">
 <?php
-echo $room->getDescription();
-?>
+$description = $room->getDescription();
+echo $description;
+if (strlen($description) > 0) {
+	echo "<br /><br />";
+}
+echo "{$languageLinker->resourceBundle->get("calendar-message-checkAvailability")}: ";
+$maxEvents = $room->getMaxEvents();
+if ($maxEvents > 0) {
+
+	echo $languageLinker->resourceBundle->get("calendar-message-confirm-button-yes");
+}else {
+	echo $languageLinker->resourceBundle->get("calendar-message-confirm-button-no");
+}?>
 </span>
 
 
