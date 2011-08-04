@@ -128,7 +128,9 @@ INSERT INTO `rooms` (`room_id`, `building_id`, `room_category_id`, `local`, `nam
 (45, 27, 4, 'Sous-sol', 'Boxs circadiens', '', ' ', 'fbm-calendar-bu27-setups-g', 'fbm-dp-admin-g', 0, 0, 0),
 (46, 7, 5, '01 043', 'Poste in vivo Moloney', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
 (47, 7, 2, '03 corridor', 'ChemiDoc XRS+ (chemiluminescence)', '', '', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
-(48, 7, 2, '03 015', 'ViiA 7 Real-Time PCR System', '', '', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1);
+(48, 7, 2, '03 015', 'ViiA 7 Real-Time PCR System', '', '', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
+(49, 21, 8, '5222', 'MacBook Pro 15"', NULL, '<ul>\r\n<li>DEC14546</li>\r\n<li>Sacoche noir</li>\r\n<li>Chargeur</li>\r\n<li>Batterie faible durée</li>\r\n<li>Adaptateur VGA et DVI</li>\r\n</ul>', 'fbm-decanat-informatique-g', 'fbm-admin-g', 0, 0, 1),
+(50, 21, 8, '5222', 'Dell Latitude XT', NULL, '<ul>\r\n<li>DEC17581</li>\r\n<li>Ecran tactile</li>\r\n<li>Fourre de protection noir</li>\r\n<li>Chargeur</li>\r\n<li>Batterie faible durée</li>\r\n</ul>\r\n', 'fbm-decanat-informatique-g', 'fbm-admin-g', 0, 0, 1);
 
 
 DROP TABLE IF EXISTS events;
