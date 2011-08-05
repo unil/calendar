@@ -15,6 +15,8 @@ class MonthCalendar extends Calendar {
 	private $month;
 	private $year;
 	private $room;
+	private $title_char_limit = 20;
+	private $description_char_limit = 20;
 
 	public function __construct($room, $month, $year) {
 		if (!empty($month)) {
@@ -159,6 +161,15 @@ class MonthCalendar extends Calendar {
 
 							$title = $e->getTitle();
 							$description = $e->getDescription();
+								
+							if (strlen($title) > $this->title_char_limit)
+							$title = substr(stripslashes($title), 0, $this->title_char_limit) . "...";
+
+
+							if (strlen($description) > $this->description_char_limit) {
+								$description = substr(stripslashes($description), 0, $this->title_char_limit) . "...";
+							}
+								
 
 							$month_cal .= "\t\t<a class=\"psf\" onClick=\"editEvent('$posX', '$posY', '$currentDate')\">\n";
 
@@ -166,7 +177,7 @@ class MonthCalendar extends Calendar {
 							$month_cal .= "$begin - $end";
 							$month_cal .= "<br/>";
 
-							$month_cal .= "$title $description";
+							$month_cal .= "$title</br> $description";
 							$month_cal .= "</span>\n";
 							$month_cal .= "\t\t</a><br>\n";
 							$posY++;
