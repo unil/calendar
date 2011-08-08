@@ -1,6 +1,6 @@
 /**
  * @author:     Stefan Meier
- * @version:    20110802
+ * @version:    20110710
  * 
  * This script holds the application params
  */
@@ -69,18 +69,20 @@ function init() {
     })();
     
 	$.getJSON('php/application/ip.php', function(data){
-	    	subdmain = parseInt(data.subdomain);
-	    	 switch (subdmain) {
+	    	subdomain = parseInt(data.subdomain);
+	    	 switch (subdomain) {
 	    	 case 194 :
-	    		 room = 13;
+	    		 room = 49;
 	    		 building = 21;
 	    		 break;
-	    	 case 201 :
+	    	 case 200, 201 :
 	    		 room = 44;
 	    		 building = 7;
+	    		 break;
 	    	 default: 
 	    		 room = 13;
 	    	 	 building = 27;
+	    	 	 break;
 	    	 }
 	    	 
 	    	if ($.cookie("building") != null) {
