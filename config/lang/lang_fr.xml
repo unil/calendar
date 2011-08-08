@@ -83,7 +83,7 @@
 	<entry key="calendar-message-confirm-button-no">Non</entry> 
 	<entry key="calendar-message-confirm-button-allFuture">Toutes les réservations futures</entry> 
 	<entry key="calendar-message-confirm-button-thisEvent">Seulement cet événement</entry> 
-	<entry key="calendar-message-checkAvailability">Chevauchement de dates</entry> 	
+	<entry key="calendar-message-checkAvailability">Test de chevauchement de dates</entry> 	
 	
 	<entry key="calendar-event-owner">Propriétaire</entry> 
 	<entry key="calendar-event-new">Nouvel événement</entry> 
