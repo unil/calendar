@@ -1,5 +1,49 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd"> 
 
-<config>
+<!--
+/**
+ * @author:     Stefan Meier
+ * @version:    20110809
+ * 
+ * This file holds global application settings
+ */
+-->
 
-</config>
+<properties>  
+	<comment>This is the global application property file</comment>  
+	
+	<!--
+	******************************
+			Application params
+	******************************
+	-->
+	<!-- Application root-->
+	<entry key="application-path">/Volumes/FILES/smeier/Sites/calendar/</entry>
+	<!-- Application timeout in miliseconds-->
+	<entry key="application-timeout">3600001</entry>
+	<!-- Database settings-->
+	<entry key="database-host">localhost</entry>
+	<entry key="database-name">calendar</entry>
+	<entry key="database-user">calendar</entry>
+	<entry key="database-password"></entry>
+	<!-- Global logging. 1 = everything will be logged, 0 = no logging-->
+	<entry key="global-logging">0</entry>
+	<!-- Default application language, take care to provide language property file-->
+	<entry key="default-lang">en</entry>
+	
+	<!--
+	******************************
+			Calendar params
+	******************************
+	-->
+	
+	<!-- Char limit in event preview-->
+	<entry key="preview-char-length">40</entry>
+	<!-- Show description in preview. 1 = yes; 0 = no-->
+	<entry key="preview-description">1</entry>
+	<!-- Default calendar view. month | week-->
+	<entry key="default-view">month</entry>
+	<!-- Max years in the future which are displayed-->
+	<entry key="max-yearOffset">3</entry>
+</properties> 
