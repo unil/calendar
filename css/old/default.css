@@ -1,0 +1,215 @@
+/**************************************************************
+********* Formatting For Month Table and Text *****************
+**************************************************************/
+
+html, body, #main {
+    text-align: center;
+    margin:0;
+    padding:0;
+    height: 100%;
+}
+body, td, .query_style {
+    font-family: Verdana, Geneva, Arial, Helvetica, sans-serif;
+    font-size: 11px;
+}
+
+.language {
+    cursor: pointer;
+}
+
+.error {
+    color: red;
+}
+
+.V9G {
+    font-size: 9px;
+    color: #666666;
+}
+.column_header {
+    font-size: 9px;
+    font-weight: 900;
+}
+/**** month and year header at top of calendar ****/
+.date_header {
+    font-size:16px;
+    color:#FFF;
+    font-weight:bold
+}
+.date_header2 {
+    font-size:20px;
+    color:#FFF;
+    font-weight:bold }
+
+.time_str {
+    font-size: 9px;
+}
+
+/**** color and size of calendar cells.  ****/
+.day_cell, .empty_day_cell, .today_cell {
+    vertical-align: top;
+    height:120px;
+    width: 132px;
+}
+
+.day_cell {
+    background-color:#FFFFFF;
+}
+.empty_day_cell {
+    background-color:#F2F2F2;
+
+}
+.today_cell {
+    background-color:#F2F9FA;
+}
+
+/**** day number in upper left corner of each cell ****/
+.day_number {
+    font-size:10px;
+    color:#0066FF;
+}
+
+.title {
+    background-image: url(../img/time_bg.gif);
+}
+.title_l {
+    padding: 5px;
+    border: 1px solid #A1A5A9;
+    border-right-width: 0px;
+    text-align: left;
+}
+.title_r {
+    padding: 5px;
+    border: 1px solid #A1A5A9;
+    border-left-width: 0px;
+    text-align: right
+}
+.title h1 {
+    font-family: Helvetica, sans-serif;
+    font-size: 18px;
+    color: #000;
+    margin: 0px;
+}
+
+a {
+    cursor: pointer;
+    cursor: hand;
+}
+
+a.psf {
+    text-decoration: none;
+}
+a.psf:link {
+    color: #0066FF;
+}
+a.psf:visited {
+    color: #0066FF;
+}
+
+
+.event_entry {
+    border: 1px solid #CCCCCC;
+    float: left;
+    width: 98%;
+    margin-top: 2px;
+    font-size: 9px;
+    background: #F2F9FF;
+}
+
+/**** column headers or days of the week ****/
+.column_header {
+    background-color:#F2F2F2;
+    font-weight:900;
+    font-size: 9px
+}
+
+.sideback {
+    background-image: url(../img/side_bg.gif);
+}
+.calborder {
+    background-color: #fff;
+    border: 1px #A1A5A9 solid;
+}
+
+
+.query_style {
+    /*width: 145px;*/
+    background: #eee;
+    border: 1px solid #999999;
+    padding: 2px;
+    width: 185px;
+}
+
+form .instructions {
+    padding: 6px;
+    height: 20px;
+    background: #eee;
+    border: 1px dotted #999;
+    padding: 2px 4px 2px 4px;
+}
+fieldset {
+    padding:10px;
+    margin-bottom:10px;
+    border: 1px solid #999999;
+}
+legend {
+    color:#e88c13;
+    font-weight:bold
+}
+form div.input {
+    clear: both;
+    margin: 4px 0;
+    padding: 2px;
+    -moz-border-radius: 4px;
+    border: 0px;
+    background: #eee;
+}
+form div.input.required {
+    font-weight: bold;
+}
+form div.input.error {
+    border-color: #900;
+    background-color: #FCC;
+    color: #900;
+}
+form div.input label {
+    float: left;
+    text-align: right;
+    width: 60px;
+    margin-right: 10px;
+}
+form div.text input,
+form div.password input,
+form div.select select,
+form div.datetime select,
+form div.textarea textarea,
+form div.time select,
+form div.submit input,
+form div.submit input {
+    background: #eee;
+    border: 1px solid #999999;
+    padding: 2px;
+    width: 175px;
+}
+form div.time select {
+    width: 50px;
+}
+form div.textarea textarea {
+    height: 100px;
+}
+form option {
+    padding-right: .5em;
+}
+form div.input.error div.error-message {
+    margin-left: 14.5em;
+    padding: 2px 2px 2px 22px;
+    background: url(../img/icons/error.png) no-repeat center;
+}
+form div.input input.form-error {
+    border-color: #C00;
+}
+
+form div.submit input:hover {
+    background-color: #9C9;
+    color: #333;
+    text-decoration: none;
+}

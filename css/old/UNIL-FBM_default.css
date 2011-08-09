@@ -1,0 +1,164 @@
+/* 
+nom: 					Feuille de style UNIL-FBM principale
+auteur: 				Stefan Meier
+version:				2009.06.01
+*/
+
+/* styles generaux ----------------------------------------- */
+body, td { 
+	font-family: verdana, arial, helvetica;
+	font-size: 11px;
+}
+
+a:link, a:visited, a:hover, .navigation a:link, .navigation a:visited, .navigation a:hover {
+	color: #000000;
+	text-decoration: underline;
+}
+
+img {
+	border: 0px;
+}
+
+.page {
+	width: 850px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 20px;
+	border: 1px solid #000000;
+}
+
+/* navigation ---------------------------------------------- */
+
+.navigation_top, .header_title {
+	color: #FFFFFF;
+	font-weight: bold;
+	background: #e88c13;
+	padding: 6px;
+	height: 22px;;
+	border-bottom: 1px solid #000000;
+}
+.navigation {
+	color: #000000;
+	border: 1px solid #000000;
+}
+
+.navigation a:link, .navigation a:visited, .navigation a:hover {
+	line-height: 1.5;
+}
+.menu ul {
+	list-style: none;
+	padding-left: 12px;
+	margin-left: 8px;
+}
+
+/* en-tete ------------------------------------------------- */
+
+.header {
+	color: #FFFFFF;
+	height: 75px;;
+	padding-bottom: 3px;
+	border-bottom: 1px solid #000000;
+	vertical-align: bottom;
+}
+.header_title, .header_title td, .header_title a {
+	border-top: 0px;
+	color: #FFFFFF;
+	background: #e88c13;
+}
+.header_title a {
+	text-decoration: underline;
+}
+
+/* pied de page -------------------------------------------- */
+.footer {
+	color: #FFFFFF;
+	background: #e88c13;
+	height: 22px;
+	padding-left: 6px;
+	padding-top: 3px;
+	padding-bottom: 3px;
+	border-top: 1px solid #000000;
+}
+
+/* contenu ------------------------------------------------- */
+
+h2,h3 {
+	font-size: 12px;
+}
+
+h1, h2, h3, h4, h5 {
+ 	margin: 0px;
+ 	padding: 0px; 
+}
+.content {
+	border: 1px solid #000000;
+	vertical-align: top;
+}
+.title {
+	color: #000000;
+	font-weight: bold;
+	background: #cccccc;
+	padding: 6px;
+	height: 22px;;
+	border-bottom: 1px solid #000000;
+}
+.text, .menu{
+	padding: 6px;
+	vertical-align: top;
+	text-align: justify;
+	background: #FFFFFF;
+}
+.text #title, .menu #title {
+	padding: 6px;
+	vertical-align: top;
+	text-align: left;
+	background: #FFFFFF;
+	border-bottom: 1px solid #000000;
+}
+.text ul {
+	list-style-image: url("http://wwwfbm.unil.ch/html/img/tiret.png");
+	padding-left: 12px;
+	margin-left: 8px;
+}
+
+.left {
+	text-align: left;
+}
+.right {
+	text-align: right;
+}
+.center {
+	text-align: center;
+}
+.justify {
+	text-align: justify;
+}
+
+
+/* tableau ---------------------------------------------- */
+table.tabular thead, table.clickable thead, table.tabular th, table.clickable th
+{
+	text-align: left;
+  	background-color: #e0e0e0;
+	color: #000000;
+  	font-size: 10px;
+}
+
+table.tabular, table.clickable
+{
+	border: 1px solid #999999;
+	border-collapse: collapse;
+
+}
+table.tabular td, table.clickable td, table.tabular th, table.clickable th
+{
+	padding: 3px;
+	height: 20px;
+	border: 1px solid #999999;
+}
+table.clickable tr:hover
+{
+	cursor:pointer;
+	cursor:hand;
+	background: #eee;
+}
