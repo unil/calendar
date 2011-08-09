@@ -3,7 +3,7 @@
  * Contrôleur de l'application
  * @author Stefan Meier
  *
- * Version 20100817
+ * Version 20110908
  *
  */
 
