@@ -65,7 +65,7 @@
 	</button>
 </div>
 <div id="action">
-	<button type="button" id="previous" class="btn pill-l"><span><span><img src="html/img/previous.gif"alt="previous" /></span></span></button><button type="button" id="weekView" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button"  id="monthView" class="btn pill-c primary"><span><span>Mois</span></span></button><button type="button" class="btn pill-r" style="width: 50px;" id="next"><span><span><img src="html/img/next.gif" alt="next" /> </span></span></button>
+	<button type="button" id="previous" class="btn pill-l"><span><span><img src="img/previous.gif"alt="previous" /></span></span></button><button type="button" id="weekView" class="btn pill-c"><span><span>Semaine</span></span></button><button type="button"  id="monthView" class="btn pill-c primary"><span><span>Mois</span></span></button><button type="button" class="btn pill-r" style="width: 50px;" id="next"><span><span><img src="img/next.gif" alt="next" /> </span></span></button>
 </div>
 
 <div id="name" class="jquery-gray" style="text-align: right">

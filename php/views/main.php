@@ -8,9 +8,9 @@
 <meta http-equiv="pragma" content="no-cache" />
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 
-<link rel="stylesheet" type="text/css" href="html/css/UNIL-FBM.css" />
-<link rel="stylesheet" type="text/css" href="html/css/calendar.css" />
-<link rel="stylesheet" type="text/css" href="html/css/button.css" />
+<link rel="stylesheet" type="text/css" href="css/UNIL-FBM.css" />
+<link rel="stylesheet" type="text/css" href="css/calendar.css" />
+<link rel="stylesheet" type="text/css" href="css/button.css" />
 <link rel="icon" href="https://wwwfbm.unil.ch/favicon.ico"
 	type="image/x-icon" />
 <link rel="shortcut icon" href="https://wwwfbm.unil.ch/favicon.ico"
@@ -18,27 +18,27 @@
 
 <!-- BEGIN JQUERY -->
 <link type="text/css" rel="StyleSheet"
-	href="html/css/jquery-ui-orange.css" />
+	href="css/jquery-ui-orange.css" />
 <link type="text/css" rel="StyleSheet"
-	href="html/css/jquery-ui-gray.css" />
+	href="css/jquery-ui-gray.css" />
 
 
-<link type="text/css" href="html/css/fg.menu.css" media="screen"
+<link type="text/css" href="css/fg.menu.css" media="screen"
 	rel="stylesheet" />
-<script type="text/javascript" src="html/js/lib/jquery.js"></script>
-<script type="text/javascript" src="html/js/lib/jquery.ui.core.js"></script>
-<script type="text/javascript" src="html/js/lib/jquery.validate.js"></script>
-<script type="text/javascript" src="html/js/lib/jquery.livequery.min.js"></script>
-<script type="text/javascript" src="html/js/lib/fg.menu.js"></script>
-<script type="text/javascript" src="html/js/lib/plugins.js"></script>
+<script type="text/javascript" src="javascript/lib/jquery.js"></script>
+<script type="text/javascript" src="javascript/lib/jquery.ui.core.js"></script>
+<script type="text/javascript" src="javascript/lib/jquery.validate.js"></script>
+<script type="text/javascript" src="javascript/lib/jquery.livequery.min.js"></script>
+<script type="text/javascript" src="javascript/lib/fg.menu.js"></script>
+<script type="text/javascript" src="javascript/lib/plugins.js"></script>
 <!-- END JQUERY -->
 
 <!-- BEGIN APPLICAITON -->
-<script type="text/javascript" src="html/js/global.js"></script>
-<script type="text/javascript" src="html/js/helper/DateHelper.js"></script>
-<script type="text/javascript" src="html/js/controller/Controller.js"></script>
-<script type="text/javascript" src="html/js/controller/CalendarController.js"></script>
-<script type="text/javascript" src="html/js/application.js"></script>
+<script type="text/javascript" src="javascript/global.js"></script>
+<script type="text/javascript" src="javascript/helper/DateHelper.js"></script>
+<script type="text/javascript" src="javascript/controller/Controller.js"></script>
+<script type="text/javascript" src="javascript/controller/CalendarController.js"></script>
+<script type="text/javascript" src="javascript/application.js"></script>
 <!-- END APPLICATION -->
 </head>
 <body>
