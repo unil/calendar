@@ -3,13 +3,13 @@ require_once('application/SerializableDomDocument.php');
 
 /**
  * 
- * @author pizar
+ * @author pizar, Stefan Meier
  * @copyright Copyright &copy; 2008, pizar
  * 
  * version 1.0
  * Required PHP 5.0
  * 
- * The class is build to read from the xml structure define from the sun.
+ * The class is build to read from the xml structure define from sun.
  * 
  * <!DOCTYPE properties SYSTEM "http://java.sun.com/dtd/properties.dtd">
  * <?xml version="1.0" encoding="iso-8859-1"?>
@@ -23,7 +23,7 @@ require_once('application/SerializableDomDocument.php');
 class XMLResourceBoundle{
 
     /**
-     * A private variable, who maintain the reference on the xml file
+     * A private variable, who maintains the reference on the xml file
      * @access private
      * @var string
      */

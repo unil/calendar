@@ -22,6 +22,8 @@
 	<entry key="application-path">/Volumes/FILES/smeier/Sites/calendar/</entry>
 	<!-- Application timeout in miliseconds-->
 	<entry key="application-timeout">3600001</entry>
+	<!-- Default time zone-->
+	<entry key="timeZone">Europe/Berlin</entry>
 	<!-- Database settings-->
 	<entry key="database-host">localhost</entry>
 	<entry key="database-name">calendar</entry>
