@@ -16,5 +16,6 @@ include 'config/init.php';
 require_once('php/application/BootLoader.php');
 BootLoader::init();
 
-require("views/main.php");
+//require("views/main.php");
+require("test.php");
 ?>

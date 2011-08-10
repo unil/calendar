@@ -12,8 +12,11 @@ class Person extends Element {
 	private $postCode;
 	private $location;
 	
-	public function __cunstruct($firstName, $lastName, $email, $phone = null, $office = null, $address = null, $postCode = null, $location = null) {
+	public function __cunstruct($id, $firstName, $lastName, $email, $phone = null, $office = null, $address = null, $postCode = null, $location = null) {
+		parent::__construct($id);
+	
 		$this->firstName = $firstName;
+
 		$this->lastName = $lastName;
 		$this->email = $email;
 		$this->phone = $phone;
@@ -64,6 +67,7 @@ class Person extends Element {
 	}
 	
 	public function __toString() {
+		echo "toString";
 		return $this->firstName . " " . $this->lastName;
 	}
 }
