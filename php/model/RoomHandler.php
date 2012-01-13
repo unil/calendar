@@ -22,16 +22,16 @@ class RoomHandler {
                             ra.read,
                             ra.write,
                             ra.overwrite,
-                            ra.admin
+                            ra.admin,
                             ra.denyShibAttrib,
                             monitoring,
                             maxEvents
-                FROM rooms r, room_categories rc
+                FROM rooms r, room_categories rc, room_acls ra
                 WHERE r.room_category_id = rc.room_category_id AND r.room_id = ra.room_id";
 		if ($building != null) {
 			$sql_select .= " AND building_id = " . $building->getId() . " ";
 		} else if ($roomId != null) {
-			$sql_select .= " AND room_id = " . $roomId . " ";
+			$sql_select .= " AND r.room_id = " . $roomId . " ";
 		}
 		$sql_orderby = "ORDER BY local, r.name";
 
@@ -53,7 +53,7 @@ class RoomHandler {
 			$aclWrite = explode(";", $ret["write"]);
 			$aclOverwrite = explode(";", $ret["overwrite"]);
 			$aclAdmin = explode(";", $ret["admin"]);
-			$aclDenyShibAttrib = explode(";", $ret["aclDenyShibAttrib"]);
+			$aclDenyShibAttrib = explode(";", $ret["denyShibAttrib"]);
 			
 			$acl = array("read" => $aclRead, "write" => $aclWrite,
 						"overwrite" => $aclOverwrite, "admin" => $aclAdmin,

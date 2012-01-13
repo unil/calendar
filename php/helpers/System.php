@@ -9,25 +9,27 @@ class System {
 
 	private static function checkAttr($attr, $group, $aai_groups) {
 
-		for ($i = 0; $i <count($acl[$attr]) && $acl[$attr] != true; $i++) {
-			if (in_array($group, $aai_groups)) {
-				$auth[$attr] = true;
+		$ret = false;
+		
+		for ($i = 0; $i < count($group) && !$ret; $i++) {
+			if (in_array($group[$i], $aai_groups)) {
+				$ret = true;
 			}
 		}
 
-		return $auth[$attr];
+		return $ret;
 	}
 
 	public static function auth($acl) {
 
 		$auth = array("read" => false, "write" => false, "overwrite" => false, "admin" => false);
 
-		if ($acl["read"] == "*") {
+		if (in_array("*", $acl["read"])) {
 			$auth["read"] = true;
 		}
 		if (isset($_SERVER['HTTP_SHIB_EP_AFFILIATION']) && isset($_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'])) {
 				
-			$auth["read"] = $auth["read"] && !in_array($_SERVER['HTTP_SHIB_EP_AFFILIATION'], $acl["denyShibAttr"]);
+			$auth["read"] = $auth["read"] && !in_array($_SERVER['HTTP_SHIB_EP_AFFILIATION'], $acl["denyShibAttrib"]);
 
 			##On récupère les groupes UNIL et on en fait un array
 			$aai_groups = explode(";", $_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF']);
@@ -35,16 +37,16 @@ class System {
 			##si un des groupes de ADMIN_GROUPS est contenu dans les attributs AAI, on est admin
 
 			if (!$auth["read"]) {
-				checkAttrib("read", $acl["read"], $aai_groups);
+				self::checkAttr("read", $acl["read"], $aai_groups);
 			}
 			if (!$auth["write"]) {
-				checkAttrib("write", $acl["write"], $aai_groups);
+				self::checkAttr("write", $acl["write"], $aai_groups);
 			}
 			if (!$auth["overwrite"]) {
-				checkAttrib("overwrite", $acl["overwrite"], $aai_groups);
+				self::checkAttr("overwrite", $acl["overwrite"], $aai_groups);
 			}
 			if (!$auth["admin"]) {
-				checkAttrib("admin", $acl["admin"], $aai_groups);
+				self::checkAttr("admin", $acl["admin"], $aai_groups);
 			}
 
 		}

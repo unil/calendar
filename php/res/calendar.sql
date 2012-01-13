@@ -218,10 +218,10 @@ CREATE TABLE `room_acls` (
   `room_acl_id` int(9) NOT NULL AUTO_INCREMENT,
   `room_id` int(9) NOT NULL,
   `read` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '*',
-  `write` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'fbm-admin-g',
-  `overwrite` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'fbm-admin-g',
-  `admin` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'fbm-admin-g', 
-  `denyShibAttrib` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'fbm-admin-g',
+  `write` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `overwrite` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
+  `admin` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '', 
+  `denyShibAttrib` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '',
   PRIMARY KEY (`room_acl_id`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci  ;
 
