@@ -1,1 +1,7 @@
-Branche de production qui correspond à la dernière version sur wwwfbm
+Projet : iafbmCalendar
+Auteur : Stefan Meier
+Création : 01.03.2010
+Branches : 
+	- master = prod (sur wwwfbm)
+	- dev = pour corriger des petits problèmes
+	- dev_refactoring (nouvelle version en développement paralèlle mais avec structure différente):
