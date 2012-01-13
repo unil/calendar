@@ -58,7 +58,8 @@
 			<div id="main">
 				<!-- BEGIN CALENDAR -->
 				<div id="toolbar"></div>
-				<div id="calendar"></div>
+				<div id="calendar">
+				sdaf</div>
 				<!-- END CALENDAR -->
 			</div>
 			<!-- END MAIN -->

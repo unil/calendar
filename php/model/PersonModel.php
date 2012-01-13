@@ -6,12 +6,13 @@ class PersonModel extends AbstractModel {
 		
 	}
 	public function add(Element $element) {
-		echo (string)$element;
 		return $element;
 	}
+	
 	public function edit(Element $element) {
 		
 	}
+	
 	public function remove(Element $element) {
 		
 	}	
