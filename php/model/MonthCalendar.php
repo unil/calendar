@@ -74,7 +74,8 @@ class MonthCalendar extends Calendar {
 		$room = $this->room;
 		$roomId = $room->getId();
 		// get user permission level
-		$auth = System::authLevel();
+		$write = $_SESSION["ACL"]["write"] || $_SESSION["overwrite"];
+		
 		// get number of days in month
 		$days = $this->maxDays;
 		$day = 0;
@@ -123,7 +124,7 @@ class MonthCalendar extends Calendar {
 					$month_cal .= "_cell\">\n";
 
 
-					if ($auth > 0) {
+					if ($write) {
 						$month_cal .= "\t\t<a class=\"psf\" id=\"$day-$roomId\" onClick=\"newEvent('$currentDate')\">\n";
 						$month_cal .= "<span class=\"";
 

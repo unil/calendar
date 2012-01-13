@@ -18,7 +18,7 @@ class Room {
     private $manager;
     private $building;
     private $local;
-    private $admins;
+    private $acl;
     private $superAdmin;
     private $acceptStudents;
     private $isLogged;
@@ -32,9 +32,7 @@ class Room {
             $manager = "",
             $building = "",
             $local = "",
-            $admins = array(),
-            $superAdmin = array(),
-            $acceptStudents = true,
+            $acl = array(),
             $isLogged = false,
             $maxEvents = 1,
             $category = "") {
@@ -44,9 +42,7 @@ class Room {
         $this->manager = $manager;
         $this->building = $building;
         $this->local = $local;
-        $this->admins = $admins;
-        $this->superAdmin = $superAdmin;
-        $this->acceptStudents = $acceptStudents;
+        $this->acl = $acl;
         $this->isLogged = $isLogged;
         $this->maxEvents = $maxEvents;
         $this->category = $category;
@@ -70,16 +66,8 @@ class Room {
         return $this->local;
     }
 
-    public function getAdmins() {
-        return $this->admins;
-    }
-
-    public function getSuperAdmins() {
-        return $this->superAdmin;
-    }
-
-    public function getAcceptStudents() {
-        return $this->acceptStudents;
+    public function getAcl() {
+        return $this->acl;
     }
 
     public function getIsLogged() {

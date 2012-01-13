@@ -9,7 +9,6 @@
 	include_once("model/EventHandler.php");
 
 	session_start();
-	include_once("helpers/System.php");
 
 
 	$globalRegistry = $_SESSION["GlobalRegistry"];
@@ -84,7 +83,7 @@
 				$event_id = $event->getId();
 			}
 
-			if (!(($uid == $currentUser && System::authLevel() > 0) || System::authLevel() == 2)) {
+			if (!(($uid == $currentUser && $_SESSION["ACL"]["write"] > 0) || $_SESSION["overwrite"])) {
 				$disable = true;
 				echo "<script type=\"text/javascript\">disableForm()</script>";
 			}
@@ -95,7 +94,7 @@
 		if ($recurrence_id != "") {
 			echo "<span style=\"font-weight: bold;\" id=\"message-repeat\"></span>";
 		}
-		if ($uid != $currentUser && System::authLevel() < 2 && $mode == "edit") {
+		if ($uid != $currentUser && $_SESSION["overwrite"] && $mode == "edit") {
 			echo "<span style=\"font-weight: bold;\" id=\"message-other-user\"></span>";
 		}
 	}

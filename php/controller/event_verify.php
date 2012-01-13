@@ -13,8 +13,6 @@ session_start();
 $success = false;
 $return = array("success" => true);
 
-$auth = System::authLevel();
-
 $salle = 0;
 $valide = false;
 $action = $_POST['action'];
@@ -33,7 +31,7 @@ if (isset($_POST['whole_day'])) {
 }
 
 //error check
-if (System::authLevel() > 0) {
+if ($_SESSION['ACL']["write"] || $_SESSION['ACL']["overwrite"]) {
     if ($action == "delete" || $action == "edit" || $action == "add") {
         $formUser = $_POST['uid'];
         if (FormValidator::text($formUser, true) && $user == $formUser) {

@@ -7,50 +7,50 @@
  */
 class System {
 
-	
-    public static function authLevel() {
+	private static function checkAttr($attr, $group, $aai_groups) {
 
-        $authLevel = 0;
+		for ($i = 0; $i <count($acl[$attr]) && $acl[$attr] != true; $i++) {
+			if (in_array($group, $aai_groups)) {
+				$auth[$attr] = true;
+			}
+		}
 
-        if (isset($_SESSION['ADMIN']) && isset($_SESSION['SUPER_ADMIN'])) {
-            $adminGroups = explode(";", $_SESSION['ADMIN']);
-            $superAdminGroups = explode(";", $_SESSION['SUPER_ADMIN']);
-            $acceptStudents = false;
-            if(isset($_SESSION['ACCEPT_STUDENTS'])) {
-            	$acceptStudents = $_SESSION['ACCEPT_STUDENTS'];
-            }
-            
+		return $auth[$attr];
+	}
 
-            if (isset($_SERVER['HTTP_SHIB_EP_AFFILIATION']) && isset($_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'])) {
+	public static function auth($acl) {
 
-                if (!($_SERVER['HTTP_SHIB_EP_AFFILIATION'] == "student" && !$acceptStudents)) {
+		$auth = array("read" => false, "write" => false, "overwrite" => false, "admin" => false);
 
-                    ##On récupère les groupes UNIL et on en fait un array
-                    $aai_groups = explode(";", $_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF']);
-                    #$aai_groups = preg_split("[/*]", $_SERVER['HTTP_SHIB_EP_ENTITLEMENT, -1, PREG_SPLIT_NO_EMPTY);
-                    ##si un des groupes de ADMIN_GROUPS est contenu dans les attributs AAI, on est admin
+		if ($acl["read"] == "*") {
+			$auth["read"] = true;
+		}
+		if (isset($_SERVER['HTTP_SHIB_EP_AFFILIATION']) && isset($_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'])) {
+				
+			$auth["read"] = $auth["read"] && !in_array($_SERVER['HTTP_SHIB_EP_AFFILIATION'], $acl["denyShibAttr"]);
 
-                    foreach ($superAdminGroups as $group) {
-                        if (in_array($group, $aai_groups)) {
-                            $authLevel = 2;
-                        }
-                    }
+			##On récupère les groupes UNIL et on en fait un array
+			$aai_groups = explode(";", $_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF']);
 
-                    if ($authLevel < 2) {
-                        foreach ($adminGroups as $group) {
+			##si un des groupes de ADMIN_GROUPS est contenu dans les attributs AAI, on est admin
 
-                            if (in_array($group, $aai_groups)) {
-                                $authLevel = 1;
-                            }
-                        }
-                    }
-                }
-            }
-        }
+			if (!$auth["read"]) {
+				checkAttrib("read", $acl["read"], $aai_groups);
+			}
+			if (!$auth["write"]) {
+				checkAttrib("write", $acl["write"], $aai_groups);
+			}
+			if (!$auth["overwrite"]) {
+				checkAttrib("overwrite", $acl["overwrite"], $aai_groups);
+			}
+			if (!$auth["admin"]) {
+				checkAttrib("admin", $acl["admin"], $aai_groups);
+			}
 
-        return $authLevel;
-        //return 0;
-    }
+		}
+
+		return $auth;
+	}
 
 }
 

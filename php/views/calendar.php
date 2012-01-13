@@ -8,9 +8,8 @@ include_once("model/class/Room.php");
 include_once("model/class/Building.php");
 include_once("model/RoomHandler.php");
 include_once("model/BuildingHandler.php");
-include_once("helpers/System.php");
 session_start();
-
+include_once("helpers/System.php");
 $globalRegistry = $_SESSION["GlobalRegistry"];
 $languageLinker = $globalRegistry->languageLinker;
 
@@ -58,9 +57,7 @@ $calendar = new MonthCalendar($room, $month, $year);
 
 $_SESSION['CURRENT_EVENTS'] = $calendar->getCalendarEvents();
 $_SESSION['CURRENT_ROOM'] = $room;
-$_SESSION['ADMIN'] = $room->getAdmins();
-$_SESSION['SUPER_ADMIN'] = $room->getSuperAdmins();
-$_SESSION['ACCEPT_STUDENTS'] = $room->getAcceptStudents();
+$_SESSION['ACL'] = System::auth($room->getAcl());
 $_SESSION['DB_LOGGING'] = $room->getIsLogged();
 
 

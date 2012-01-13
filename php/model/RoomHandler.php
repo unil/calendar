@@ -19,13 +19,15 @@ class RoomHandler {
                             r.name,
                             local,
                             manager,
-                            admins,
-                            superAdmins,
-                            acceptStudents,
+                            ra.read,
+                            ra.write,
+                            ra.overwrite,
+                            ra.admin
+                            ra.denyShibAttrib,
                             monitoring,
                             maxEvents
                 FROM rooms r, room_categories rc
-                WHERE r.room_category_id = rc.room_category_id";
+                WHERE r.room_category_id = rc.room_category_id AND r.room_id = ra.room_id";
 		if ($building != null) {
 			$sql_select .= " AND building_id = " . $building->getId() . " ";
 		} else if ($roomId != null) {
@@ -47,19 +49,26 @@ class RoomHandler {
 			$description = $ret["description"];
 			$local = $ret["local"];
 			$manager = $ret["manager"];
-			$admins = $ret["admins"];
-			$superAdmins = $ret["superAdmins"];
-			$acceptStudents = $ret["acceptStudents"];
+			$aclRead = explode(";", $ret["read"]);
+			$aclWrite = explode(";", $ret["write"]);
+			$aclOverwrite = explode(";", $ret["overwrite"]);
+			$aclAdmin = explode(";", $ret["admin"]);
+			$aclDenyShibAttrib = explode(";", $ret["aclDenyShibAttrib"]);
+			
+			$acl = array("read" => $aclRead, "write" => $aclWrite,
+						"overwrite" => $aclOverwrite, "admin" => $aclAdmin,
+						"denyShibAttrib" => $aclDenyShibAttrib);
+
 			$monitoring = $ret["monitoring"];
 			$maxEvents = $ret["maxEvents"];
 
-			$room = new Room($id, $description, $name, $manager, $building_id, $local, $admins, $superAdmins, $acceptStudents, $monitoring, $maxEvents, $category);
+			$room = new Room($id, $description, $name, $manager, $building_id, $local, $acl, $monitoring, $maxEvents, $category);
 			$rooms[] = $room;
 		}
 
 		return $rooms;
 	}
-
+/*
 	public function add($room) {
 		$success = true;
 
@@ -113,7 +122,7 @@ class RoomHandler {
 
 		return $success;
 	}
-
+*/
 }
 
 ?>
