@@ -52,14 +52,13 @@ CREATE TABLE IF NOT EXISTS room_categories (
 
 INSERT INTO `room_categories` (`room_category_id`, `name`) VALUES
 (1, 'other'),
-(2, 'scientificSetup'),
-(3, 'seminarRoom'),
+(2, 'setup'),
+(3, 'room'),
 (4, 'animalLab'),
 (5, 'p2'),
 (6, 'microscope'),
-(7, 'machineRoom'),
-(8, 'rental'),
-(9, 'animalFacility');
+(7, 'machine'),
+(8, 'rent');
 
 DROP TABLE IF EXISTS rooms;
 CREATE TABLE IF NOT EXISTS rooms (
@@ -81,25 +80,26 @@ CREATE TABLE IF NOT EXISTS rooms (
     /*ON DELETE SET DEFAULT*/
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
+
 INSERT INTO `rooms` (`room_id`, `building_id`, `room_category_id`, `local`, `name`, `manager`, `description`, `admins`, `superAdmins`, `acceptStudents`, `monitoring`, `maxEvents`) VALUES
-(1, 27, 4, '001', 'Culture primaire - hotte 1', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
-(2, 27, 4, '001', 'Culture primaire - hotte 2', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
-(3, 27, 4, '002', 'LEA', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 0),
+(1, 27, 2, '001', 'Culture primaire - hotte 1', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
+(2, 27, 2, '001', 'Culture primaire - hotte 2', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
+(3, 27, 4, '002', 'LEA', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
 (4, 27, 4, '003', 'Microchirurgie', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
-(6, 27, 4, '008', 'LEA - cages métaboliques', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 0),
-(7, 27, 4, '009', 'LEA - cages métaboliques', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 0),
-(8, 27, 4, 'Sous-sol', 'Comportement', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 0),
-(9, 27, 4, 'Sous-sol', 'Ex labo B', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 0),
-(10, 27, 4, 'Sous-sol', 'Télémétrie', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
+(6, 27, 4, '008', 'LEA - cages métaboliques', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
+(7, 27, 4, '009', 'LEA - cages métaboliques', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
+(8, 27, 2, 'Sous-sol', 'Comportement', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
+(9, 27, 2, 'Sous-sol', 'Ex labo B', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
+(10, 27, 2, 'Sous-sol', 'Télémétrie', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
 (11, 27, 2, '317', 'Real-time PCR', '', '', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
 (12, 27, 6, '313', 'Microscope à fluorescence', '', 'Please indicate if you use fluorescence or not (fluo oui, fluo non).', 'fbm-calendar-bu27-setups-g', 'fbm-admin-g', 0, 0, 1),
-(13, 27, 3, '105', 'Salle de séminaire', '', '30 pl. assises + 3 chaises, ordinateur, beamer, rétro-projecteur, tableau noir', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-admin-g;fbm-calendar-bu27-salles-admin-g', 0, 0, 1),
-(14, 27, 3, '106', 'Salle de réunion', '', '10 pl. assises + 8 chaises, beamer, tableau blanc', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-admin-g;fbm-calendar-bu27-salles-admin-g', 0, 0, 1),
-(15, 27, 3, '219', 'Salle de conférence', '', '12 pl. assises + 9 chaises, rétro-projecteur, tableau blanc, vidéoconférence', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-admin-g;fbm-calendar-bu27-salles-admin-g', 0, 0, 1),
-(16, 27, 9, '006', 'Animalerie - Flux 1A', '', '<table class="tabular" border="0" cellspacing="0" cellpadding="0" width="220">\r\n<tbody>\r\n<tr>\r\n<th colspan="2">Horaires animaliers<br /></th>\r\n</tr>\r\n<tr>\r\n<td width="60">\r\n<p>Lu</p></td>\r\n<td width="160">\r\n<p>  06:30 - 11:30</p></td>\r\n</tr>\r\n<tr>\r\n<td>Ma</td>\r\n<td> 06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n<td>Me</td>\r\n<td><p>  06:30 - 11:30</p></td>\r\n</tr>\r\n<tr>\r\n  <td>Je</td>\r\n  <td>06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n  <td>Ve</td>\r\n  <td><p>    06:30 - 11:30</p></td>\r\n</tr>\r\n</tbody>\r\n</table>', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 1, 0, 1),
-(17, 27, 9, '006', 'Animalerie - Flux 1B', '', '<table class="tabular" border="0" cellspacing="0" cellpadding="0" width="220">\r\n<tbody>\r\n<tr>\r\n<th colspan="2">Horaires animaliers<br /></th>\r\n</tr>\r\n<tr>\r\n<td width="60">\r\n<p>Lu</p></td>\r\n<td width="160">\r\n<p>  06:30 - 11:30</p></td>\r\n</tr>\r\n<tr>\r\n<td>Ma</td>\r\n<td> 06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n<td>Me</td>\r\n<td><p>  06:30 - 11:30</p></td>\r\n</tr>\r\n<tr>\r\n  <td>Je</td>\r\n  <td>06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n  <td>Ve</td>\r\n  <td><p>    06:30 - 11:30</p></td>\r\n</tr>\r\n</tbody>\r\n</table>', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 1, 0, 1),
-(18, 27, 9, '006', 'Animalerie - Flux 3A', '', '<table class="tabular" border="0" cellspacing="0" cellpadding="0" width="220">\r\n<tbody>\r\n<tr>\r\n<th colspan="2">Horaires animaliers<br /></th>\r\n</tr>\r\n<tr>\r\n<td width="60">\r\n<p>Lu</p></td>\r\n<td width="160">\r\n<p>  06:30 - 11:30</p></td>\r\n</tr>\r\n<tr>\r\n<td>Ma</td>\r\n<td> 06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n<td>Me</td>\r\n<td><p>  06:30 - 11:30</p></td>\r\n</tr>\r\n<tr>\r\n  <td>Je</td>\r\n  <td>06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n  <td>Ve</td>\r\n  <td><p>    06:30 - 11:30</p></td>\r\n</tr>\r\n</tbody>\r\n</table>', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 1, 0, 1),
-(19, 27, 9, '006', 'Animalerie - Flux 3B', '', '<table class="tabular" border="0" cellspacing="0" cellpadding="0" width="220">\r\n<tbody>\r\n<tr>\r\n<th colspan="2">Horaires animaliers<br /></th>\r\n</tr>\r\n<tr>\r\n<td width="60">\r\n<p>Lu</p></td>\r\n<td width="160">\r\n<p>  06:30 - 11:30</p></td>\r\n</tr>\r\n<tr>\r\n<td>Ma</td>\r\n<td> 06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n<td>Me</td>\r\n<td><p>  06:30 - 11:30</p></td>\r\n</tr>\r\n<tr>\r\n  <td>Je</td>\r\n  <td>06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n  <td>Ve</td>\r\n  <td><p>    06:30 - 11:30</p></td>\r\n</tr>\r\n</tbody>\r\n</table>', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 1, 0, 1),
+(13, 27, 7, '105', 'Salle de séminaire', '', '30 pl. assises + 3 chaises, ordinateur, beamer, rétro-projecteur, tableau noir', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-admin-g;fbm-calendar-bu27-salles-admin-g', 0, 0, 1),
+(14, 27, 7, '106', 'Salle de réunion', '', '10 pl. assises + 8 chaises, beamer, tableau blanc', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-admin-g;fbm-calendar-bu27-salles-admin-g', 0, 0, 1),
+(15, 27, 7, '219', 'Salle de conférence', '', '12 pl. assises + 9 chaises, rétro-projecteur, tableau blanc, vidéoconférence', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-admin-g;fbm-calendar-bu27-salles-admin-g', 0, 0, 1),
+(16, 27, 4, '006', 'Animalerie - Flux 1A', '', '<table class="tabular" border="0" cellspacing="0" cellpadding="0" width="220">\r\n<tbody>\r\n<tr>\r\n<th colspan="2">Horaires animaliers<br /></th>\r\n</tr>\r\n<tr>\r\n<td width="60">\r\n<p>Lu</p></td>\r\n<td width="160">\r\n<p>  06:30 - 11:15</p></td>\r\n</tr>\r\n<tr>\r\n<td>Ma</td>\r\n<td> 06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n<td>Me</td>\r\n<td><p>  06:30 - 11:15</p></td>\r\n</tr>\r\n<tr>\r\n  <td>Je</td>\r\n  <td>06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n  <td>Ve</td>\r\n  <td><p>    06:30 - 11:30</p></td>\r\n</tr>\r\n</tbody>\r\n</table>', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 1, 0, 1),
+(17, 27, 4, '006', 'Animalerie - Flux 1B', '', '<table class="tabular" border="0" cellspacing="0" cellpadding="0" width="220">\r\n<tbody>\r\n<tr>\r\n<th colspan="2">Horaires animaliers<br /></th>\r\n</tr>\r\n<tr>\r\n<td width="60">\r\n<p>Lu</p></td>\r\n<td width="160">\r\n<p>  06:30 - 11:15</p></td>\r\n</tr>\r\n<tr>\r\n<td>Ma</td>\r\n<td> 06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n<td>Me</td>\r\n<td><p>  06:30 - 11:15</p></td>\r\n</tr>\r\n<tr>\r\n  <td>Je</td>\r\n  <td>06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n  <td>Ve</td>\r\n  <td><p>    06:30 - 11:30</p></td>\r\n</tr>\r\n</tbody>\r\n</table>', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 1, 0, 1),
+(18, 27, 4, '006', 'Animalerie - Flux 3A', '', '<table class="tabular" border="0" cellspacing="0" cellpadding="0" width="220">\r\n<tbody>\r\n<tr>\r\n<th colspan="2">Horaires animaliers<br /></th>\r\n</tr>\r\n<tr>\r\n<td width="60">\r\n<p>Lu</p></td>\r\n<td width="160">\r\n<p>  06:30 - 11:15</p></td>\r\n</tr>\r\n<tr>\r\n<td>Ma</td>\r\n<td> 06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n<td>Me</td>\r\n<td><p>  06:30 - 11:15</p></td>\r\n</tr>\r\n<tr>\r\n  <td>Je</td>\r\n  <td>06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n  <td>Ve</td>\r\n  <td><p>    06:30 - 11:30</p></td>\r\n</tr>\r\n</tbody>\r\n</table>', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 1, 0, 1),
+(19, 27, 4, '006', 'Animalerie - Flux 3B', '', '<table class="tabular" border="0" cellspacing="0" cellpadding="0" width="220">\r\n<tbody>\r\n<tr>\r\n<th colspan="2">Horaires animaliers<br /></th>\r\n</tr>\r\n<tr>\r\n<td width="60">\r\n<p>Lu</p></td>\r\n<td width="160">\r\n<p>  06:30 - 11:15</p></td>\r\n</tr>\r\n<tr>\r\n<td>Ma</td>\r\n<td> 06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n<td>Me</td>\r\n<td><p>  06:30 - 11:15</p></td>\r\n</tr>\r\n<tr>\r\n  <td>Je</td>\r\n  <td>06:30 - 08:30</td>\r\n</tr>\r\n<tr>\r\n  <td>Ve</td>\r\n  <td><p>    06:30 - 11:30</p></td>\r\n</tr>\r\n</tbody>\r\n</table>', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 1, 0, 1),
 (20, 71, 7, 'Niv. 1', 'Congélateur de réserve', '', '', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
 (21, 7, 4, '01 029', 'Hébergement', '', 'Respect des conditions sanitaires pour animaux', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
 (22, 7, 4, '01 027', 'Douleur (Dr Isabelle Decosterd)', '', 'Responsable: Dr Isabelle Decoster, DBCM bureau 106, tél.: 079 55 66 477', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
@@ -109,9 +109,9 @@ INSERT INTO `rooms` (`room_id`, `building_id`, `room_category_id`, `local`, `nam
 (26, 7, 4, '01 037', 'Salle d''opération', '', 'Respect des conditions sanitaires pour animaux', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
 (27, 7, 4, '01 039', 'Prélèvement d''organes', '', 'Respect des conditions sanitaires pour animaux', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
 (28, 7, 5, '01 041', 'Hotte Lenti', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
-(29, 7, 5, '01 041', 'Hotte AAV & AV', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
+(29, 7, 5, '01 041', 'Hotte AAV', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
 (30, 7, 5, '01 043', 'Poste in vivo Lenti', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
-(31, 7, 5, '01 043', 'Poste in vivo AAV & AV', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
+(31, 7, 5, '01 043', 'Poste in vivo AAV', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
 (32, 7, 5, '01 045', 'Hébergement P2', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
 (33, 7, 2, '02 corridor', 'Cytomics FC500', '', '', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
 (34, 7, 6, '03 001', 'Nikon Eclipse 80i', '', '', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
@@ -125,12 +125,8 @@ INSERT INTO `rooms` (`room_id`, `building_id`, `room_category_id`, `local`, `nam
 (42, 7, 8, '05 029', 'Reception Laptop #1', '', 'Réservé pour présentation', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
 (43, 7, 8, '05 029', 'Reception Laptop #2', '', 'Usage général, pour invités, etc.', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
 (44, 7, 3, '06 E02', 'Seminar room', '', '40 places, beamer + écran.\r\nRéservation autorisée uniquement aux chefs de groupe + Alexandra Defago', 'fbm-dp-calendar-seminaire-g', 'fbm-dp-admin-g', 1, 0, 1),
-(45, 27, 4, 'Sous-sol', 'Boxs circadiens', '', ' ', 'fbm-calendar-bu27-setups-g', 'fbm-dp-admin-g', 0, 0, 0),
-(46, 7, 5, '01 043', 'Poste in vivo Moloney', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1),
-(47, 7, 2, '03 corridor', 'ChemiDoc XRS+ (chemiluminescence)', '', '', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
-(48, 7, 2, '03 015', 'ViiA 7 Real-Time PCR System', '', '', 'fbm-dp-g', 'fbm-dp-admin-g', 1, 0, 1),
-(49, 21, 8, '5222', 'MacBook Pro 15"', NULL, '<ul>\r\n<li>DEC14546</li>\r\n<li>Sacoche noir</li>\r\n<li>Chargeur</li>\r\n<li>Batterie faible durée</li>\r\n<li>Adaptateur VGA et DVI</li>\r\n</ul>', 'fbm-decanat-informatique-g', 'fbm-admin-g', 0, 0, 1),
-(50, 21, 8, '5222', 'Dell Latitude XT', NULL, '<ul>\r\n<li>DEC17581</li>\r\n<li>Ecran tactile</li>\r\n<li>Fourre de protection noir</li>\r\n<li>Chargeur</li>\r\n<li>Batterie faible durée</li>\r\n</ul>\r\n', 'fbm-decanat-informatique-g', 'fbm-admin-g', 0, 0, 1);
+(45, 27, NULL, 'Sous-sol', 'Boxs circadiens', '', ' ', 'fbm-calendar-bu27-setups-g', 'fbm-dp-admin-g', 0, 0, 1),
+(46, 7, 5, '01 043', 'Poste in vivo Moloney', '', 'Réservation et accès uniquement pour les personnes en possession d''une carte de sécurité P2', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 1, 0, 1);
 
 
 DROP TABLE IF EXISTS events;
@@ -158,9 +154,6 @@ CREATE TABLE IF NOT EXISTS event_dates (
   FOREIGN KEY (event_id) REFERENCES events(event_id)
     ON DELETE cascade
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
-
-CREATE INDEX b ON event_dates (begin);
-CREATE INDEX e ON event_dates (end);
 
 DROP TABLE IF EXISTS logs;
 CREATE TABLE IF NOT EXISTS logs (

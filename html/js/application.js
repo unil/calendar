@@ -71,14 +71,22 @@ function init() {
 	$.getJSON('php/application/ip.php', function(data){
 	    	subdomain = parseInt(data.subdomain);
 	    	 switch (subdomain) {
+	    	 //DEC
 	    	 case 194 :
-	    		 room = 49;
+	    		 room = 53;
 	    		 building = 21;
 	    		 break;
+	    	 //DP
 	    	 case 200, 201 :
 	    		 room = 44;
 	    		 building = 7;
 	    		 break;
+	    	 //LICR
+	    	 case 212, 213 :
+	    		 room = 54;
+	    		 building = 1;
+	    		 break;
+	         //DPT
 	    	 default: 
 	    		 room = 13;
 	    	 	 building = 27;

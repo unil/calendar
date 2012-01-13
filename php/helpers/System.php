@@ -11,6 +11,7 @@ class System {
     public static function authLevel() {
 
         $authLevel = 0;
+
         if (isset($_SESSION['ADMIN']) && isset($_SESSION['SUPER_ADMIN'])) {
             $adminGroups = explode(";", $_SESSION['ADMIN']);
             $superAdminGroups = explode(";", $_SESSION['SUPER_ADMIN']);
@@ -22,9 +23,7 @@ class System {
 
             if (isset($_SERVER['HTTP_SHIB_EP_AFFILIATION']) && isset($_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'])) {
 
-
-                if (!(isset($_SERVER['HTTP_SHIB_EP_AFFILIATION']) == "student" && !$acceptStudents)) {
-
+                if (!($_SERVER['HTTP_SHIB_EP_AFFILIATION'] == "student" && !$acceptStudents)) {
 
                     ##On récupère les groupes UNIL et on en fait un array
                     $aai_groups = explode(";", $_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF']);
@@ -33,7 +32,6 @@ class System {
 
                     foreach ($superAdminGroups as $group) {
                         if (in_array($group, $aai_groups)) {
-
                             $authLevel = 2;
                         }
                     }
@@ -50,7 +48,8 @@ class System {
             }
         }
 
-        return 2;
+        return $authLevel;
+        //return 0;
     }
 
 }

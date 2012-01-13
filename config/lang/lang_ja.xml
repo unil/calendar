@@ -61,6 +61,7 @@
 	<entry key="room-category-microscope">Microscope</entry> 
 	<entry key="room-category-machineRoom">Machine room</entry> 
 	<entry key="room-category-rental">Rental material</entry>
+	<entry key="room-category-metabolicCages">Metabolic cages</entry>
 	 
 	<entry key="calendar-error-time">時間のエラーがあります。</entry> 
 	<entry key="calendar-error-unavailable-title">Dates unavailable</entry> 	

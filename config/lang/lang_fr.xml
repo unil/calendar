@@ -61,6 +61,7 @@
 	<entry key="room-category-microscope">Microscope</entry> 
 	<entry key="room-category-machineRoom">Salle des appareils</entry> 
 	<entry key="room-category-rental">Matériel de prêt</entry> 
+	<entry key="room-category-metabolicCages">Cages métaboliques</entry>	
 	 
 	<entry key="calendar-error-time">L'heure de fin doit être supérieure à l'heure de début.</entry> 
 	<entry key="calendar-error-unavailable-title">Plages horaires indisponibles</entry> 
