@@ -1,11 +1,19 @@
--- phpMyAdmin SQL Dump
--- version 3.4.9
--- http://www.phpmyadmin.net
---
--- Client: localhost
--- Généré le : Ven 13 Janvier 2012 à 11:33
--- Version du serveur: 5.1.45
--- Version de PHP: 5.3.2
+/*
+	Auteur:  Stefan Meier
+	Version: 2012.01.13
+	
+	Description: script de création de tables pour la base
+				 calendar)
+				 
+	Détails: 	 l'ordre de création est à respecter (contraintes)
+
+	Restauration d'un fichier: 
+	mysql --user=USR --password=PWD --default-character-set=utf8  < /iafbm_personnes.sql
+
+*/
+DROP DATABASE IF EXISTS calendar_dev;
+CREATE DATABASE calendar_dev DEFAULT CHARACTER SET utf8 DEFAULT COLLATE utf8_unicode_ci;
+USE calendar_dev;
 
 SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -26,7 +34,7 @@ CREATE TABLE `buildings` (
   `name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`building_id`),
   KEY `site_id` (`site_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=72 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
 
 --
 -- Contenu de la table `buildings`
@@ -72,7 +80,7 @@ CREATE TABLE `event_dates` (
   KEY `event_id` (`event_id`),
   KEY `b` (`begin`),
   KEY `e` (`end`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=21030 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
 
 -- --------------------------------------------------------
 
@@ -95,7 +103,7 @@ CREATE TABLE `logs` (
   `log_repeat_mode` varchar(5) COLLATE utf8_unicode_ci DEFAULT NULL,
   `log_repeat_end` date DEFAULT NULL,
   PRIMARY KEY (`log_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
 
 -- --------------------------------------------------------
 
@@ -119,7 +127,7 @@ CREATE TABLE `rooms` (
   PRIMARY KEY (`room_id`),
   KEY `building_id` (`building_id`),
   KEY `room_category_id` (`room_category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=55 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
 
 --
 -- Contenu de la table `rooms`
@@ -190,7 +198,8 @@ CREATE TABLE `room_categories` (
   `room_category_id` int(9) NOT NULL AUTO_INCREMENT,
   `name` varchar(50) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`room_category_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=11 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci ;
+
 
 --
 -- Contenu de la table `room_categories`
@@ -208,6 +217,72 @@ INSERT INTO `room_categories` (`room_category_id`, `name`) VALUES
 (9, 'animalFacility'),
 (10, 'metabolicCages');
 
+CREATE TABLE `room_acls` (
+  `room_acl_id` int(9) NOT NULL AUTO_INCREMENT,
+  `room_id` int(9) NOT NULL,
+  `read` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT '*',
+  `write` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'fbm-admin-g',
+  `overwrite` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'fbm-admin-g',
+  `admin` varchar(200) COLLATE utf8_unicode_ci NOT NULL DEFAULT 'fbm-admin-g', 
+  `denyShibAttrib` int(1) NOT NULL DEFAULT '1',
+  PRIMARY KEY (`room_acl_id`)
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci  ;
+
+INSERT INTO `room_acls` (`room_id`, `read`, `write`, `overwrite`, `admin`, `denyShibAttrib`) VALUES
+(1, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g', 'student'),
+(2, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(3, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(4, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(6, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(7, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(8, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(9, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(10, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(11, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(12, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
+(13, '*', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-dpt-admin-g;fbm-calendar-bu27-salles-admin-g', 'fbm-dpt-admin-g','student'),
+(14, '*', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-dpt-admin-g;fbm-calendar-bu27-salles-admin-g', 'fbm-dpt-admin-g','student'),
+(15, '*', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-dpt-admin-g;fbm-calendar-bu27-salles-admin-g', 'fbm-dpt-admin-g','student'),
+(16, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dp-admin-g',''),
+(17, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dp-admin-g',''),
+(18, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dp-admin-g',''),
+(19, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dp-admin-g',''),
+(20, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(21, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(22, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(23, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(24, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(25, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(26, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(27, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(28, '*', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(29, '*', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(30, '*', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(31, '*', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(32, '*', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(33, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(34, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(35, '*', 'fbm-dp-lp-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(36, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(37, '*', 'fbm-dp-lp-odyssey-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(38, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(39, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(40, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(41, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(42, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(43, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(44, '*', 'fbm-dp-calendar-seminaire-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(45, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g','student'),
+(46, '*', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(47, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(48, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
+(49, '*', 'fbm-decanat-informatique-g', 'fbm-admin-g', 'fbm-decanat-admin-g','student'),
+(50, '*', 'fbm-decanat-informatique-g', 'fbm-admin-g', 'fbm-decanat-admin-g','student'),
+(51, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 'fbm-dpt-admin-g',''),
+(52, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 'fbm-dpt-admin-g',''),
+(53, 'fbm-decanat-g', 'fbm-decanat-administration-secr-g', 'fbm-decanat-administration-secr-g', 'fbm-decanat-admin-g','student'),
+(54, '*', 'fbm-licr-g', 'fbm-licr-admin-g', 'fbm-licr-admin-g','');
+
 -- --------------------------------------------------------
 
 --
@@ -218,7 +293,7 @@ CREATE TABLE `sites` (
   `site_id` int(9) NOT NULL AUTO_INCREMENT,
   `name` varchar(30) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`site_id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci  ;
 
 --
 -- Contenu de la table `sites`
@@ -257,3 +332,6 @@ ALTER TABLE `event_dates`
 ALTER TABLE `rooms`
   ADD CONSTRAINT `rooms_ibfk_1` FOREIGN KEY (`building_id`) REFERENCES `buildings` (`building_id`),
   ADD CONSTRAINT `rooms_ibfk_2` FOREIGN KEY (`room_category_id`) REFERENCES `room_categories` (`room_category_id`);
+  
+ALTER TABLE `room_acls`
+ ADD CONSTRAINT `room_acls_ibfk_1` FOREIGN KEY (`room_id`) REFERENCES `rooms` (`room_id`);
