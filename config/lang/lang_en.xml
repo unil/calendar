@@ -60,7 +60,7 @@
 	<entry key="room-category-p2">Secured Lab P2</entry> 
 	<entry key="room-category-microscope">Microscope</entry> 
 	<entry key="room-category-machineRoom">Machine room</entry> 
-	<entry key="room-category-rental">Rental material</entry>
+	<entry key="room-category-metabolicCages">Metabolic cages</entry>
 	 
 	<entry key="calendar-error-time">The end time must be bigger than the start time.</entry> 
 	<entry key="calendar-error-unavailable-title">Dates unavailable</entry> 

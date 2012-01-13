@@ -1,6 +1,6 @@
 /**
  * @author:     Stefan Meier
- * @version:    20110802
+ * @version:    20110711
  * 
  * This script is a listener for all eventdialog events
  */

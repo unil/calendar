@@ -11,6 +11,8 @@ date_default_timezone_set('Europe/Zurich');
 session_start();
 /* Toutes les réponses sont envoyées en UTF-8 */
 header('Content-type: text/html; charset=UTF-8');
+header("Cache-Control: no-cache, must-revalidate");
+header("Expires: Mon, 26 Jul 1997 05:00:00 GMT");
 
 include 'config/init.php';
 require_once('php/application/BootLoader.php');

@@ -39,7 +39,7 @@ $languageLinker = $globalRegistry->languageLinker;
         <script type="text/javascript">
             <!--
             function sessionTimeout(){
-                window.location = "http://wwwfbm.unil.ch/calendar"
+                window.location = "https://wwwfbm.unil.ch/calendar"
             }
             //-->
         </script>
@@ -48,7 +48,6 @@ $languageLinker = $globalRegistry->languageLinker;
     </head>
     <body>
         <div id="main">
-            <span style="color:red; font-weight: bold">Version de développement - <a href="https://github.com/unil/calendar/issues?direction=desc&sort=created&state=open">Suivre l'évolution</a></span>
             <table border="0" cellpadding="0" cellspacing="0" width="1240"
                    style="margin-left: auto;
                    margin-right: auto;
@@ -65,9 +64,10 @@ $languageLinker = $globalRegistry->languageLinker;
                                     <td class="header" style="text-align: right; vertical-align: middle; padding: 6px;">
                                         <?php if (@!$_SERVER['HTTP_SHIB_PERSON_UID']) {
                                         ?>
-                                            <a href="https://wwwfbm.unil.ch/Shibboleth.sso/DS?entityID=https%3A%2F%2Faai.unil.ch%2Fidp%2Fshibboleth&target=http%3A%2F%2Fwwwfbm.unil.ch%2Fcalendar">
-                                                <img src="https://wwwfbm.unil.ch/html/img/login.gif" alt="login" align="absmiddle"/>
-                                            </a>
+                                        <a href="https://wwwfbm.unil.ch/Shibboleth.sso/DS?entityID=https%3A%2F%2Fidp.chuv.ch%2Fidp%2Fshibboleth&target=https%3A%2F%2Fwwwfbm.unil.ch%2Fcalendar"><img src="https://wwwfbm.unil.ch/calendar/html/img/chuv_aai.gif" alt="chuv login" align="absmiddle"/></a>
+                                             <a href="https://wwwfbm.unil.ch/Shibboleth.sso/DS?entityID=https%3A%2F%2Faai.unil.ch%2Fidp%2Fshibboleth&target=https%3A%2F%2Fwwwfbm.unil.ch%2Fcalendar">
+                                             <img src="https://wwwfbm.unil.ch/calendar/html/img/unil_aai.gif" alt="unil login" align="absmiddle"/>
+                                             </a>
                                         <?php } else {
                                         ?>
                                             <a href="https://wwwfbm.unil.ch/Shibboleth.sso/Logout?return=https://wwwfbm.unil.ch/calendar">
@@ -116,8 +116,7 @@ $languageLinker = $globalRegistry->languageLinker;
                                                        <h1><span id="monthname" ></span>&nbsp;<span id="yearName" ></span>     </h1>   
                                                     </span>     
                                                     <span id="next"><img src="html/img/right.gif" border="0" alt="" style="vertical-align: middle;" /></span>
-                                                
-                                                <div id="roomName" class="V9G" >&nbsp;</div>
+                                                                                                <div id="roomName" class="V9G" >&nbsp;</div>
                                             </td>
                                             <td class="title_r">
                                                 <!--<img src="html/img/today1.png" alt="Barre verticale" border="0" />-->

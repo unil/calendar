@@ -18,7 +18,7 @@ class LanguageLinker {
 	}
 	
 	private function loadBundle() {
-		$this->resourceBundle = new XMLResourceBoundle("/Volumes/FILES/smeier/Sites/calendar/config/lang/", $this->lang);
+		$this->resourceBundle = new XMLResourceBoundle("/data/app/calendar/prod/config/lang/", $this->lang);
 	}
 }
 ?>
