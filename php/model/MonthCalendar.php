@@ -74,7 +74,7 @@ class MonthCalendar extends Calendar {
 		$room = $this->room;
 		$roomId = $room->getId();
 		// get user permission level
-		$write = $_SESSION["ACL"]["write"] || $_SESSION["overwrite"];
+		$write = $_SESSION["ACL"]["write"];
 		
 		// get number of days in month
 		$days = $this->maxDays;

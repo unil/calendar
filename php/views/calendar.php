@@ -9,6 +9,7 @@ include_once("model/class/Building.php");
 include_once("model/RoomHandler.php");
 include_once("model/BuildingHandler.php");
 session_start();
+
 include_once("helpers/System.php");
 $globalRegistry = $_SESSION["GlobalRegistry"];
 $languageLinker = $globalRegistry->languageLinker;
@@ -52,12 +53,12 @@ $roomHandler = new RoomHandler();
 $room = $roomHandler->getRooms(null, $roomId);
 
 $room = $room[0];
-
+$_SESSION['ACL'] = System::auth($room->getAcl());
 $calendar = new MonthCalendar($room, $month, $year);
 
 $_SESSION['CURRENT_EVENTS'] = $calendar->getCalendarEvents();
 $_SESSION['CURRENT_ROOM'] = $room;
-$_SESSION['ACL'] = System::auth($room->getAcl());
+
 $_SESSION['DB_LOGGING'] = $room->getIsLogged();
 
 
