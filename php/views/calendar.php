@@ -10,6 +10,10 @@ include_once("model/RoomHandler.php");
 include_once("model/BuildingHandler.php");
 session_start();
 
+$_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "student";
+$_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'] = "fbm-dgm-admin-g;fbm-dp-admin-g;fbm-dpt-admin-g;fbm-licr-admin-g;fbm-decanat-admin-g";
+
+
 include_once("helpers/System.php");
 $globalRegistry = $_SESSION["GlobalRegistry"];
 $languageLinker = $globalRegistry->languageLinker;
@@ -67,7 +71,16 @@ $_SESSION['DB_LOGGING'] = $room->getIsLogged();
 
 <div id="cal_agenda">
 <?php
-echo $calendar->getCalendar();
+if ($_SESSION["ACL"]["read"]) {
+	echo $calendar->getCalendar();
+}
+else {
+	echo $languageLinker->resourceBundle->get("calendar-error-aclReadCalendar");
+
+	if (@!$_SERVER['HTTP_SHIB_PERSON_UID']) {
+		echo "<br /> {$languageLinker->resourceBundle->get("calendar-error-login")}";
+	}
+}
 ?>
 </div>
 

@@ -73,6 +73,8 @@
 	<entry key="calendar-error-invalid">Invalid characters (don't use JavaScript/HTML/SQL, etc.)</entry>	
 	<entry key="calendar-error-dateFormat">Invalid date format.</entry>	
 	<entry key="calendar-error-system">System error.</entry>	
+	<entry key="calendar-error-aclReadCalendar">You don't have permission to read this calendar.</entry>	
+	<entry key="calendar-error-login">Please login.</entry>	
 	
 	<entry key="calendar-message-check">赤い部分の情報を確かめてください。</entry> 
 	<entry key="calendar-message-repeatInfo">このイベントは繰り返し指定です。すべての情報は変更されます。</entry> 

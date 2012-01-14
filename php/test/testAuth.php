@@ -11,7 +11,7 @@ include_once("model/class/Room.php");
 include_once("model/RoomHandler.php");
 
 $_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "student";
-$_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'] = "fbm-dgm-admin-g;fbm-dp-admin-g;fbm-dpt-admin-g;fbm-licr-admin-g;fbm-decanat-admin-g;fbm-decanat-g";
+$_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'] = "fbm-dgm-admin-g;fbm-dp-admin-g;fbm-dpt-admin-g;fbm-licr-admin-g;fbm-decanat-admin-g";
 
 
 $roomHandler = new RoomHandler();

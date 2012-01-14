@@ -71,7 +71,9 @@
 	<entry key="calendar-error-action">This action doesn't exist (choose add | edit | delete)</entry>	
 	<entry key="calendar-error-invalid">Don't use special characters in text fields.</entry>	
 	<entry key="calendar-error-dateFormat">Invalid date format.</entry>	
-	<entry key="calendar-error-system">System error.</entry>		
+	<entry key="calendar-error-system">System error.</entry>	
+	<entry key="calendar-error-aclReadCalendar">You don't have permission to read this calendar.</entry>		
+	<entry key="calendar-error-login">Please login.</entry>		
 	
 	<entry key="calendar-message-check">Please correct the fields in red.</entry> 
 	<entry key="calendar-message-repeatInfo">This is a repeating event. Every entry will be modified.</entry> 
