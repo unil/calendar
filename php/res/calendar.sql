@@ -182,7 +182,7 @@ INSERT INTO `rooms` (`room_id`, `building_id`, `room_category_id`, `local`, `nam
 (50, 21, 8, '5222', 'Dell Latitude XT', '', '<ul>\r\n<li>DEC17581</li>\r\n<li>Ecran tactile</li>\r\n<li>Fourre de protection noir</li>\r\n<li>Chargeur</li>\r\n<li>Batterie faible durée</li>\r\n</ul>\r\n', 0, 1),
 (51, 27, 9, 'Sous-sol', 'Flux 1', '', 'Animaliers tous les mardis de 6h-14h', 0, 1),
 (52, 27, 9, 'Sous-sol', 'Flux 2', '', 'Animaliers tous les mardis de 6h-14h', 0, 1),
-(53, 21, 3, '5006', 'Salle du Décanat', '', 'Cette salle est réservé aux collaborateurs du Décanat.<br/> Pour toute réservation, veuillez vous adresser à Sandrine Kilmister.', 0, 1),
+(53, 21, 3, '5006', 'Salle du Décanat', '', 'Cette salle est réservée aux collaborateurs du Décanat.<br/> Pour toute réservation, veuillez vous adresser à Sandrine Kilmister.', 0, 1),
 (54, 1, 3, 'Niveau 2', 'Meeting room', '', 'Meeting Room LICR', 0, 1);
 
 -- --------------------------------------------------------
