@@ -73,7 +73,7 @@
 	<entry key="calendar-error-invalid">Veuillez ne pas utiliser de caractères spéciaux dans les champs de saisie.</entry>	
 	<entry key="calendar-error-dateFormat">Format de date invalid.</entry>	
 	<entry key="calendar-error-system">Erreur système</entry>
-	<entry key="calendar-error-aclReadCalendar">Vous n'avez pas d'accès en lecture pour ce calendrier.</entry>			
+	<entry key="calendar-error-aclReadCalendar">Vous n'avez pas accès à ce calendrier.</entry>			
 	<entry key="calendar-error-login">Veuillez vous authentifier.</entry>			
 	
 	<entry key="calendar-message-check">Veuillez corriger les champs en rouge.</entry> 
