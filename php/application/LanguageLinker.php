@@ -18,7 +18,8 @@ class LanguageLinker {
 	}
 	
 	private function loadBundle() {
-		$this->resourceBundle = new XMLResourceBoundle("../config/lang/", $this->lang);
+		$path = substr(dirname(get_include_path()), 2);
+		$this->resourceBundle = new XMLResourceBoundle("$path/config/lang/", $this->lang);
 	}
 }
 ?>
