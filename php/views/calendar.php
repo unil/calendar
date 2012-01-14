@@ -75,11 +75,13 @@ if ($_SESSION["ACL"]["read"]) {
 	echo $calendar->getCalendar();
 }
 else {
+	echo "<div style=\"padding: 6px\">";
 	echo $languageLinker->resourceBundle->get("calendar-error-aclReadCalendar");
 
 	if (@!$_SERVER['HTTP_SHIB_PERSON_UID']) {
 		echo "<br /> {$languageLinker->resourceBundle->get("calendar-error-login")}";
 	}
+	echo "</div>";
 }
 ?>
 </div>
