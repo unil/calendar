@@ -15,7 +15,7 @@ $_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'] = "fbm-dgm-admin-g;fbm-dp-admin-g;fbm-
 
 
 $roomHandler = new RoomHandler();
-$room = $roomHandler->getRooms(null, 53);
+$room = $roomHandler->getRooms(null, 19);
 
 $room = $room[0];
 echo "<pre>";

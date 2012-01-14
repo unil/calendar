@@ -83,7 +83,7 @@
 				$event_id = $event->getId();
 			}
 
-			if (!(($uid == $currentUser && $_SESSION["ACL"]["write"] > 0) || $_SESSION["overwrite"])) {
+			if (!($uid == $currentUser && $_SESSION["ACL"]["write"] || $_SESSION["ACL"]["overwrite"] )) {
 				$disable = true;
 				echo "<script type=\"text/javascript\">disableForm()</script>";
 			}
@@ -94,7 +94,7 @@
 		if ($recurrence_id != "") {
 			echo "<span style=\"font-weight: bold;\" id=\"message-repeat\"></span>";
 		}
-		if ($uid != $currentUser && $_SESSION["overwrite"] && $mode == "edit") {
+		if ($uid != $currentUser && !$_SESSION["ACL"]["overwrite"] && $mode == "edit") {
 			echo "<span style=\"font-weight: bold;\" id=\"message-other-user\"></span>";
 		}
 	}
