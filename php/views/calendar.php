@@ -10,10 +10,6 @@ include_once("model/RoomHandler.php");
 include_once("model/BuildingHandler.php");
 session_start();
 
-$_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "student";
-$_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'] = "fbm-dgm-admin-g;fbm-dp-admin-g;fbm-dpt-admin-g;fbm-licr-admin-g;fbm-decanat-admin-g";
-
-
 include_once("helpers/System.php");
 $globalRegistry = $_SESSION["GlobalRegistry"];
 $languageLinker = $globalRegistry->languageLinker;
