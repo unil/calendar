@@ -1,6 +1,7 @@
-Projet : iafbmCalendar
-Auteur : Stefan Meier
-Création : 01.03.2010
+Projet : 		fbmCalendar
+Auteur : 		Stefan Meier
+Création : 		01.03.2010
+Modification : 	14.01.2011
 Branches : 
 	- master = prod (sur wwwfbm)
 	- dev = pour corriger des petits problèmes
