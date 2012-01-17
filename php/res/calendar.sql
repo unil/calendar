@@ -226,7 +226,7 @@ CREATE TABLE `room_acls` (
 ) ENGINE=InnoDB  DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci  ;
 
 INSERT INTO `room_acls` (`room_id`, `read`, `write`, `overwrite`, `admin`, `denyShibAttrib`) VALUES
-(1, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g', 'student'),
+(1, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
 (2, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
 (3, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
 (4, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
@@ -240,10 +240,10 @@ INSERT INTO `room_acls` (`room_id`, `read`, `write`, `overwrite`, `admin`, `deny
 (13, '*', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-dpt-admin-g;fbm-calendar-bu27-salles-admin-g', 'fbm-dpt-admin-g','student'),
 (14, '*', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-dpt-admin-g;fbm-calendar-bu27-salles-admin-g', 'fbm-dpt-admin-g','student'),
 (15, '*', 'fbm-dgm-secretariat-g;fbm-dpt-secretariat-g', 'fbm-dpt-admin-g;fbm-calendar-bu27-salles-admin-g', 'fbm-dpt-admin-g','student'),
-(16, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dp-admin-g',''),
-(17, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dp-admin-g',''),
-(18, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dp-admin-g',''),
-(19, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dp-admin-g',''),
+(16, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
+(17, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
+(18, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
+(19, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
 (20, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
 (21, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
 (22, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
@@ -269,14 +269,14 @@ INSERT INTO `room_acls` (`room_id`, `read`, `write`, `overwrite`, `admin`, `deny
 (42, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
 (43, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
 (44, '*', 'fbm-dp-calendar-seminaire-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
-(45, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g','student'),
+(45, '*', 'fbm-calendar-bu27-setups-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g','student'),
 (46, '*', 'fbm-dp-labop2-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
 (47, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
 (48, '*', 'fbm-dp-g;fbm-dp-calendrier-g', 'fbm-dp-admin-g', 'fbm-dp-admin-g',''),
-(49, '*', 'fbm-decanat-informatique-g', 'fbm-admin-g', 'fbm-decanat-admin-g','student'),
-(50, '*', 'fbm-decanat-informatique-g', 'fbm-admin-g', 'fbm-decanat-admin-g','student'),
-(51, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 'fbm-dpt-admin-g',''),
-(52, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-admin-g', 'fbm-dpt-admin-g',''),
+(49, '*', 'fbm-decanat-informatique-g', 'fbm-decanat-admin-g', 'fbm-decanat-admin-g','student'),
+(50, '*', 'fbm-decanat-informatique-g', 'fbm-decanat-admin-g', 'fbm-decanat-admin-g','student'),
+(51, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
+(52, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
 (53, 'fbm-decanat-g', '', 'fbm-decanat-administration-secr-g', 'fbm-decanat-admin-g',''),
 (54, '*', 'fbm-licr-g', 'fbm-licr-admin-g', 'fbm-licr-admin-g','');
 
