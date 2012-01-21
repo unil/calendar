@@ -280,7 +280,7 @@ INSERT INTO `room_acls` (`room_id`, `read`, `write`, `overwrite`, `admin`, `deny
 (52, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
 (53, 'fbm-decanat-g', '', 'fbm-decanat-administration-secr-g', 'fbm-decanat-admin-g',''),
 (54, '*', 'fbm-licr-g', 'fbm-licr-admin-g', 'fbm-licr-admin-g',''),
-(54, '*', '', 'fbm-decanat-admin-g', 'fbm-decanat-admin-g','');
+(55, '*', '', 'fbm-decanat-admin-g', 'fbm-decanat-admin-g','');
 
 -- --------------------------------------------------------
 

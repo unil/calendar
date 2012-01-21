@@ -221,7 +221,7 @@ $languageLinker = $globalRegistry->languageLinker;
                             <tr>
                                 <td><img src="https://wwwfbm.unil.ch/html/img/foot_fbm.gif" alt="Barre verticale" border="0" /></td>
                                 <td>&nbsp;</td>
-                                <td valign="bottom" align="right"><span id="ja" class="language"><font color="#FFFFFF">&copy; 2011 - Université de Lausanne - All right reserved</font></span></td>
+                                <td valign="bottom" align="right"><span id="ja" class="language"><font color="#FFFFFF">&copy; 2012 - Université de Lausanne - All right reserved</font></span></td>
                             </tr>
                         </table>
                     </td>
