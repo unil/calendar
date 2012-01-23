@@ -14,7 +14,7 @@ else
   $ip=$_SERVER['REMOTE_ADDR'];
 }
 
-$ip = "127.0.0.1";
+//$ip = "127.0.0.1";
 preg_match_all("/\d+/", $ip, $matches);
 $subdomain = (int)$matches[0][2];
 
