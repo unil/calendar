@@ -43,10 +43,20 @@ class SystemTest extends PHPUnit_Framework_TestCase
 	protected function t2() {
 		$auth = array(
 				"read" => array("fbm-decanat-g"), 
-				"write" => array("fbm-calendar-bu27-animalerie-g", "fbm-dpt-g"),
+				"write" => array(),
 				"admin" => array(),
 				"overwrite" => array("fbm-dpt-admin-g"),
 				"denyShibAttrib" => array("student"));
+		$this->acl = System::auth($auth);
+	}
+	
+	protected function t3() {
+		$auth = array(
+					"read" => array("fbm-decanat-g"), 
+					"write" => array(""),
+					"admin" => array(""),
+					"overwrite" => array(""),
+					"denyShibAttrib" => array("student"));
 		$this->acl = System::auth($auth);
 	}
 	
@@ -77,5 +87,11 @@ class SystemTest extends PHPUnit_Framework_TestCase
 		self::t2();
 		$this->assertFalse($this->acl["write"]);
 	}
+	
+	public function testBlank() {
+		self::t3();
+		$this->assertFalse($this->acl["write"]);
+	}
+	
 }
 ?>
