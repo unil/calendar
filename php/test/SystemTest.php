@@ -26,7 +26,7 @@ class SystemTest extends PHPUnit_Framework_TestCase
 		$acl = System::auth($this->auth);
 		$this->assertTrue($acl["read"]);
 		
-		echo  "\ntest with groupv";
+		echo  "\ntest with group\n";
 		$this->auth["read"] = array("fbm-dpt-g");
 		$acl = System::auth($this->auth);
 		$this->assertTrue($acl["read"]);
@@ -40,17 +40,6 @@ class SystemTest extends PHPUnit_Framework_TestCase
 		$this->auth["read"] = array();
 		$acl = System::auth($this->auth);
 		$this->assertFalse($acl["read"]);
-		
-		echo "\ntest with studen attrib\n";
-		$this->auth["denyShibAttrib"] = array("student");
-		$this->auth["read"] = array("fbm-dpt-g");
-		$acl = System::auth($this->auth);
-		$this->assertFalse($acl["read"]);
-		
-		echo "\nwith affiliation different from denied attribut\n";
-		$_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "staff";
-		$acl = System::auth($this->auth);
-		$this->assertTrue($acl["read"]);
 	}
 	
 	public function testWrite() {
@@ -76,6 +65,7 @@ class SystemTest extends PHPUnit_Framework_TestCase
 		$this->assertFalse($acl["write"]);
 				
 		echo "\noverwrite is different from write\n";
+		$this->auth["denyShibAttrib"] = array();
 		$this->auth["overwrite"] = array("fbm-dpt-test-g");
 		$this->auth["write"] = array("fbm-dpt-g");
 		$acl = System::auth($this->auth);
@@ -86,6 +76,25 @@ class SystemTest extends PHPUnit_Framework_TestCase
 		$this->auth["write"] = array();
 		$acl = System::auth($this->auth);
 		$this->assertTrue($acl["write"]);
+		
+		echo "\ntest with studen attrib\n";
+		$this->auth["denyShibAttrib"] = array("student");
+		$this->auth["write"] = array("fbm-dpt-g");
+		$acl = System::auth($this->auth);
+		$this->assertFalse($acl["write"]);
+		
+		echo "\nwith affiliation different from denied attribut\n";
+		$_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "staff";
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["write"]);	
+			
+		echo "\nwith affiliation empty affiliation\n";
+		$_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "";
+		$this->auth["denyShibAttrib"] = array("");
+		$this->auth["overwrite"] = array("*");
+		$this->auth["write"] = array("*");
+		$acl = System::auth($this->auth);
+		$this->assertFalse($acl["write"]);		
 	}	
 	
 	public function testRoom() {	
