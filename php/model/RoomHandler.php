@@ -65,7 +65,6 @@ class RoomHandler {
 			$room = new Room($id, $description, $name, $manager, $building_id, $local, $acl, $monitoring, $maxEvents, $category);
 			$rooms[] = $room;
 		}
-		print_r($rooms);
 
 		return $rooms;
 	}
