@@ -1,97 +1,100 @@
 <?php
 
 class SystemTest extends PHPUnit_Framework_TestCase
-{
-
-	protected $acl;
+{	
+	protected $auth;
 	
 	protected function setUp()
 	{
-
 		set_include_path("/Volumes/FILES/smeier/Sites/calendar/php");
 		include_once("../../config/init.php");
 		include_once("helpers/System.php");
 		include_once("model/class/Room.php");
 		include_once("model/RoomHandler.php");
 
-		$_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "student";
-		$_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'] = "fbm-dgm-admin-g;fbm-dp-admin-g;fbm-dpt-admin-g;fbm-licr-admin-g;fbm-decanat-admin-g";
-		
+
 		/*$roomHandler = new RoomHandler();
 		$room = $roomHandler->getRooms(null, 19);
 		
 		$room = $room[0];
 		
 		print_r($room->getAcl());*/
+		$_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "student";
+		$_SERVER['HTTP_SHIB_CUSTOM_UNILMEMBEROF'] = "fbm-dpt-g";
+		$this->auth = array(
+						"read" => array(), 
+						"write" => array(),
+						"admin" => array(),
+						"overwrite" => array(),
+						"denyShibAttrib" => array());
 	}
-	
-	protected function tearDown()
-	{
+
+	public function testRead() {
+		echo "read test";
+		echo "test with *";
+		$this->auth["read"] = array("*");
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["read"]);
 		
-	}
-	
-	protected function t1() {
-		$auth = array(
-				"read" => array("*"), 
-				"write" => array("fbm-calendar-bu27-animalerie-g", "fbm-dpt-g"),
-				"admin" => array(),
-				"overwrite" => array("fbm-dpt-admin-g"),
-				"denyShibAttrib" => array());
-		$this->acl = System::auth($auth);
-	}
-	
-	protected function t2() {
-		$auth = array(
-				"read" => array("fbm-decanat-g"), 
-				"write" => array(),
-				"admin" => array(),
-				"overwrite" => array("fbm-dpt-admin-g"),
-				"denyShibAttrib" => array("student"));
-		$this->acl = System::auth($auth);
-	}
-	
-	protected function t3() {
-		$auth = array(
-					"read" => array("fbm-decanat-g"), 
-					"write" => array(""),
-					"admin" => array(""),
-					"overwrite" => array(""),
-					"denyShibAttrib" => array("student"));
-		$this->acl = System::auth($auth);
-	}
-	
-	public function testT1Write()
-	{
-		//print_r($room->getAcl());
-		self::t1();
+		echo  "test with group";
+		$this->auth["read"] = array("fbm-dpt-g");
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["read"]);
 		
-		$this->assertTrue($this->acl["write"]);
+		echo "test more groups";
+		$this->auth["read"] = array("fbm-test", "toto", "fbm-dpt-g");
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["read"]);
+
+		echo "test empty";
+		$this->auth["read"] = array();
+		$acl = System::auth($this->auth);
+		$this->assertFalse($acl["read"]);
+		
+		echo "test with studen attrib";
+		$this->auth["denyShibAttrib"] = array("student");
+		$this->auth["read"] = array("fbm-dpt-g");
+		$acl = System::auth($this->auth);
+		$this->assertFalse($acl["read"]);
+		
+		echo "with affiliation different from denied attribut";
+		$_SERVER['HTTP_SHIB_EP_AFFILIATION'] = "staff";
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["read"]);
 	}
 	
-	public function testT1Read() {
-		self::t1();
-		$this->assertTrue($this->acl["read"]);
-	}
-	
-	public function testT1Overwrite() {
-		self::t1();
-		$this->assertTrue($this->acl["overwrite"]);
-	}
-	
-	public function testT2Read() {
-		self::t2();
-		$this->assertFalse($this->acl["read"]);
-	}
-	
-	public function testT2Write() {
-		self::t2();
-		$this->assertFalse($this->acl["write"]);
-	}
-	
-	public function testBlank() {
-		self::t3();
-		$this->assertFalse($this->acl["write"]);
-	}
-	
+	public function testWrite() {
+		//test with *
+		$this->auth["write"] = array("*");
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["write"]);
+		
+		//test with group
+		$this->auth["write"] = array("fbm-dpt-g");
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["write"]);
+		
+		//test empty
+		$this->auth["write"] = array();
+		$acl = System::auth($this->auth);
+		$this->assertFalse($acl["write"]);
+		
+		//test with studen attrib
+		$this->auth["denyShibAttrib"] = array("student");
+		$acl = System::auth($this->auth);
+		$this->assertFalse($acl["write"]);
+				
+		//overwrite is different from write
+		$this->auth["overwrite"] = array("fbm-dpt-test-g");
+		$this->auth["write"] = array("fbm-dpt-g");
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["write"]);
+		
+		//overwrite is specified but not write (inherit)
+		$this->auth["overwrite"] = array("fbm-dpt-g");
+		$this->auth["write"] = array();
+		$acl = System::auth($this->auth);
+		$this->assertTrue($acl["write"]);
+	}	
 }
 ?>
