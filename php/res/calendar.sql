@@ -183,7 +183,7 @@ INSERT INTO `rooms` (`room_id`, `building_id`, `room_category_id`, `local`, `nam
 (51, 27, 9, 'Sous-sol', 'Flux 1', '', 'Animaliers tous les mardis de 6h-14h', 0, 1),
 (52, 27, 9, 'Sous-sol', 'Flux 2', '', 'Animaliers tous les mardis de 6h-14h', 0, 1),
 (53, 21, 3, '5006', 'Salle du Décanat', '', 'Cette salle est réservée aux collaborateurs du Décanat.<br/> Pour toute réservation, veuillez vous adresser à Sandrine Kilmister.', 0, 1),
-(54, 1, 3, 'Niveau 2', 'Meeting room', '', 'Meeting Room LICR', 0, 1),
+(54, 1, 3, 'Niveau 0', 'Meeting room', '', 'Meeting Room LICR', 0, 1),
 (55, 21, 8, '5246', 'Portables ECOS', NULL, 'Portables appartenant à l''UP et mis à disposition du Décanat en cas de besoin.', 0, 0);
 
 -- --------------------------------------------------------
@@ -279,7 +279,7 @@ INSERT INTO `room_acls` (`room_id`, `read`, `write`, `overwrite`, `admin`, `deny
 (51, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
 (52, '*', 'fbm-calendar-bu27-animalerie-g', 'fbm-dpt-admin-g', 'fbm-dpt-admin-g',''),
 (53, 'fbm-decanat-g', '', 'fbm-decanat-administration-secr-g', 'fbm-decanat-admin-g',''),
-(54, '*', 'fbm-licr-g', 'fbm-licr-admin-g', 'fbm-licr-admin-g',''),
+(54, '*', 'biopole3-g', 'fbm-licr-admin-g', 'fbm-licr-admin-g',''),
 (55, '*', '', 'fbm-decanat-admin-g', 'fbm-decanat-admin-g','');
 
 -- --------------------------------------------------------
