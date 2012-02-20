@@ -64,10 +64,12 @@ $languageLinker = $globalRegistry->languageLinker;
                                     <td class="header" style="text-align: right; vertical-align: middle; padding: 6px;">
                                         <?php if (@!$_SERVER['HTTP_SHIB_PERSON_UID']) {
                                         ?>
-                                        <a href="https://wwwfbm.unil.ch/Shibboleth.sso/DS?entityID=https%3A%2F%2Fidp.chuv.ch%2Fidp%2Fshibboleth&target=https%3A%2F%2Fwwwfbm.unil.ch%2F<?php echo $_SESSION["URL_SUFFIX"];?>"><img src="https://wwwfbm.unil.ch/calendar/html/img/chuv_aai.gif" alt="chuv login" align="absmiddle"/></a>
-                                             <a href="https://wwwfbm.unil.ch/Shibboleth.sso/DS?entityID=https%3A%2F%2Faai.unil.ch%2Fidp%2Fshibboleth&target=https%3A%2F%2Fwwwfbm.unil.ch%2F<?php echo $_SESSION["URL_SUFFIX"];?>">
-                                             <img src="https://wwwfbm.unil.ch/calendar/html/img/unil_aai.gif" alt="unil login" align="absmiddle"/>
-                                             </a>
+                                        <a href="https://wwwfbm.unil.ch/Shibboleth.sso/DS?entityID=https://idp.chuv.ch/idp/shibboleth&target=https://wwwfbm.unil.ch/<?php echo $_SESSION["URL_SUFFIX"];?>">
+                                        <img src="https://wwwfbm.unil.ch/calendar/html/img/chuv_aai.gif" alt="chuv login" align="absmiddle"/></a>
+                                        <a href="https://wwwfbm.unil.ch/Shibboleth.sso/DS?entityID=https://idp.epfl.ch/idp/shibboleth&target=https://wwwfbm.unil.ch/<?php echo $_SESSION["URL_SUFFIX"];?>">
+                                         <img src="https://wwwfbm.unil.ch/calendar/html/img/epfl_aai.gif" alt="chuv login" align="absmiddle"/></a>
+                                        <a href="https://wwwfbm.unil.ch/Shibboleth.sso/DS?entityID=https://aai.unil.ch/idp/shibboleth&target=https://wwwfbm.unil.ch/<?php echo $_SESSION["URL_SUFFIX"];?>">
+                                          <img src="https://wwwfbm.unil.ch/calendar/html/img/unil_aai.gif" alt="unil login" align="absmiddle"/></a>
                                         <?php } else {
                                         ?>
                                             <a href="https://wwwfbm.unil.ch/Shibboleth.sso/Logout?return=https://wwwfbm.unil.ch/<?php echo $_SESSION["URL_SUFFIX"];?>">
