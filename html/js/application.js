@@ -109,8 +109,12 @@ function init() {
 		    }
 		    if ($.cookie("lang") == null) {
 			    if (browserLang() != null && browserLang() != 'undefined' && browserLang() != "") {
-			        lang = browserLang();
-			        $.cookie("lang", lang);
+			        tlang = browserLang();
+			        
+			        if (tlang == 'fr' || tlang == 'en' || tlang == 'ja') {
+			        	lang = tlang;
+			        	$.cookie("lang", lang);
+			        }
 			    }
 			}
 		    appUI();
