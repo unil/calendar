@@ -82,7 +82,7 @@ function init() {
 	    		 building = 7;
 	    		 break;
 	    	 //LICR
-	    	 case 212, 213 :
+	    	 case 210, 211 :
 	    		 room = 54;
 	    		 building = 1;
 	    		 break;
