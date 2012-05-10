@@ -17,10 +17,8 @@
 	type="image/x-icon" />
 
 <!-- BEGIN JQUERY -->
-<link type="text/css" rel="StyleSheet"
-	href="css/jquery-ui-orange.css" />
-<link type="text/css" rel="StyleSheet"
-	href="css/jquery-ui-gray.css" />
+<link type="text/css" rel="StyleSheet" href="css/jquery-ui-orange.css" />
+<link type="text/css" rel="StyleSheet" href="css/jquery-ui-gray.css" />
 
 
 <link type="text/css" href="css/fg.menu.css" media="screen"
@@ -28,7 +26,8 @@
 <script type="text/javascript" src="javascript/lib/jquery.js"></script>
 <script type="text/javascript" src="javascript/lib/jquery.ui.core.js"></script>
 <script type="text/javascript" src="javascript/lib/jquery.validate.js"></script>
-<script type="text/javascript" src="javascript/lib/jquery.livequery.min.js"></script>
+<script type="text/javascript"
+	src="javascript/lib/jquery.livequery.min.js"></script>
 <script type="text/javascript" src="javascript/lib/fg.menu.js"></script>
 <script type="text/javascript" src="javascript/lib/plugins.js"></script>
 <!-- END JQUERY -->
@@ -37,7 +36,8 @@
 <script type="text/javascript" src="javascript/global.js"></script>
 <script type="text/javascript" src="javascript/helper/DateHelper.js"></script>
 <script type="text/javascript" src="javascript/controller/Controller.js"></script>
-<script type="text/javascript" src="javascript/controller/CalendarController.js"></script>
+<script type="text/javascript"
+	src="javascript/controller/CalendarController.js"></script>
 <script type="text/javascript" src="javascript/application.js"></script>
 <!-- END APPLICATION -->
 </head>
@@ -58,8 +58,7 @@
 			<div id="main">
 				<!-- BEGIN CALENDAR -->
 				<div id="toolbar"></div>
-				<div id="calendar">
-				sdaf</div>
+				<div id="calendar">sdaf</div>
 				<!-- END CALENDAR -->
 			</div>
 			<!-- END MAIN -->
