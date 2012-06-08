@@ -164,14 +164,12 @@ class MonthCalendar extends Calendar {
 							$description = $e->getDescription();
 								
 							if (strlen($title) > $this->title_char_limit)
-							$title = substr(stripslashes($title), 0, $this->title_char_limit) . "...";
-
+							$title = utf8_encode(substr(utf8_decode(stripslashes($title)), 0, $this->title_char_limit) . "...");
 
 							if (strlen($description) > $this->description_char_limit) {
-								$description = substr(stripslashes($description), 0, $this->title_char_limit) . "...";
+								$description = utf8_encode(substr(utf8_decode(stripslashes($description)), 0, $this->title_char_limit) . "...");
 							}
 								
-
 							$month_cal .= "\t\t<a class=\"psf\" onClick=\"editEvent('$posX', '$posY', '$currentDate')\">\n";
 
 							$month_cal .= "\t\t\t<span class=\"event_entry\">";
