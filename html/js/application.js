@@ -77,12 +77,29 @@ function init() {
 	    		 building = 21;
 	    		 break;
 	    	 //DP
-	    	 case 200, 201 :
+	    	 case 201 :
 	    		 room = 44;
 	    		 building = 7;
 	    		 break;
+             	 case 200 :
+                 	 room = 44;
+                 	 building = 7;
+                 	 break;
+             	 case 197 :
+                 	 room = 44;
+                 	 building = 7;
+                 	 break;
+	    	 //DB, Etat de Vaud
+	    	 case 210 :
+	    	 	 room = 61;
+	    	 	 building = 72;
+	    	 	 break;
+             	 case 221 :
+                 	 room = 61;
+                 	 building = 72;
+                 	 break;
 	    	 //LICR
-	    	 case 210, 211 :
+	    	 case 211 :
 	    		 room = 54;
 	    		 building = 1;
 	    		 break;
